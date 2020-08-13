@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Callback and helper function to add hooks in models"
 description: "Callback and helper function to add hooks in models"
+nb_path: "nbs/15_callback.hook.ipynb"
 ---
 <!--
 
@@ -108,13 +109,13 @@ description: "Callback and helper function to add hooks in models"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([[-2.0659,  0.0029, -0.9297, -1.6083, -1.7315],
-        [-1.6195, -1.5001, -0.8875, -0.3388, -0.3652],
-        [ 0.2002,  0.2435,  1.2172,  0.8630,  1.2036],
-        [ 0.6391,  1.2876, -1.9677,  0.1012, -0.4137]]),) tensor([[-0.1301,  0.0155,  0.2497],
-        [ 0.2340, -0.3740, -0.4380],
-        [-0.3792, -0.4760, -0.1643],
-        [ 0.4125,  0.9391, -1.2156]], grad_fn=&lt;AddmmBackward&gt;)
+<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([[ 1.5469e+00, -8.8636e-01,  5.0203e-01,  1.5994e-01,  1.2272e+00],
+        [ 4.8025e-01,  7.8592e-04, -1.0296e+00, -1.9297e+00,  1.2433e-01],
+        [ 7.4777e-01, -1.6163e-02, -2.2598e+00, -9.2172e-01,  1.4019e+00],
+        [ 3.3838e-01, -7.0636e-01,  1.6084e-01,  7.3097e-02,  2.9105e-02]]),) tensor([[ 0.1569, -0.0761, -0.3640],
+        [ 0.0530,  0.4646,  0.8272],
+        [ 0.7636,  1.3767,  0.9218],
+        [ 0.0565, -0.4380, -0.1608]], grad_fn=&lt;AddmmBackward&gt;)
 </pre>
 </div>
 </div>
@@ -159,14 +160,14 @@ description: "Callback and helper function to add hooks in models"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([-0.0889, -0.1311, -0.3239]), None, tensor([[-0.1187,  0.2066, -0.1778],
-        [-0.0607,  0.3248, -0.0937],
-        [ 0.0405, -0.0819,  0.1595],
-        [ 0.0120, -0.1240,  0.0143],
-        [-0.0533, -0.2217, -0.2708]])) (tensor([[-0.0366,  0.0250, -0.1122],
-        [-0.0503, -0.0623, -0.1142],
-        [ 0.0212, -0.1468, -0.0359],
-        [-0.0231,  0.0530, -0.0617]]),)
+<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([ 0.0418,  0.2453, -0.5478]), None, tensor([[-0.2083, -0.0263, -0.3125],
+        [-0.3270,  0.4916, -0.7432],
+        [-0.1454, -0.2618, -0.4977],
+        [ 0.0569, -0.1084, -0.4065],
+        [ 0.2697,  0.0396, -0.0799]])) (tensor([[ 0.0223,  0.2184, -0.0859],
+        [ 0.0111, -0.0302, -0.2742],
+        [-0.1179,  0.0389, -0.2361],
+        [ 0.1264,  0.0182,  0.0485]]),)
 </pre>
 </div>
 </div>
@@ -311,7 +312,7 @@ description: "Callback and helper function to add hooks in models"
 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">hook</span> <span class="o">=</span> <span class="n">Hook</span><span class="p">(</span><span class="n">tst_model</span><span class="p">,</span> <span class="n">example_forward_hook</span><span class="p">)</span>
-<span class="n">test_stdout</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{tst_model}</span><span class="s2"> (</span><span class="si">{x}</span><span class="s2">,) {y.detach()}&quot;</span><span class="p">)</span>
+<span class="n">test_stdout</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tst_model</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">,) </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">hook</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 <span class="n">test_stdout</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
@@ -397,7 +398,7 @@ description: "Callback and helper function to add hooks in models"
 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">Hook</span><span class="p">(</span><span class="n">tst_model</span><span class="p">,</span> <span class="n">example_forward_hook</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
-    <span class="n">test_stdout</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{tst_model}</span><span class="s2"> (</span><span class="si">{x}</span><span class="s2">,) {y.detach()}&quot;</span><span class="p">)</span>
+    <span class="n">test_stdout</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tst_model</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">,) </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">test_stdout</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">tst_model</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -1036,7 +1037,7 @@ description: "Callback and helper function to add hooks in models"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,17.76603126525879,23.31198501586914,&#39;00:00&#39;]
+<pre>(#4) [0,4.099071979522705,3.5469274520874023,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
@@ -1076,7 +1077,7 @@ description: "Callback and helper function to add hooks in models"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,3.439974069595337,2.1897826194763184,&#39;00:00&#39;]
+<pre>(#4) [0,12.485884666442871,11.434316635131836,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
@@ -1098,7 +1099,7 @@ description: "Callback and helper function to add hooks in models"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="HookCallback.begin_fit" class="doc_header"><code>HookCallback.begin_fit</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>HookCallback.begin_fit</code>()</p>
+<h4 id="HookCallback.before_fit" class="doc_header"><code>HookCallback.before_fit</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>HookCallback.before_fit</code>()</p>
 </blockquote>
 <p>Register the <a href="/callback.hook#Hooks"><code>Hooks</code></a> on <code>self.modules</code>.</p>
 
@@ -1313,7 +1314,7 @@ description: "Callback and helper function to add hooks in models"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Module.summary" class="doc_header"><code>Module.summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L160" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Module.summary</code>(<strong>*<code>xb</code></strong>)</p>
+<h4 id="module_summary" class="doc_header"><code>module_summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L160" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>module_summary</code>(<strong>*<code>xb</code></strong>)</p>
 </blockquote>
 <p>Print a summary of <code>self</code> using <code>xb</code></p>
 
@@ -1337,7 +1338,7 @@ description: "Callback and helper function to add hooks in models"
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span> <span class="n">p</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">sample_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">m</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">sample_input</span><span class="p">)</span>
+<span class="n">module_summary</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">sample_input</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1397,7 +1398,7 @@ Total non-trainable params: 100
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Learner.summary" class="doc_header"><code>Learner.summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L184" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.summary</code>()</p>
+<h4 id="Learner.summary" class="doc_header"><code>Learner.summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L183" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.summary</code>()</p>
 </blockquote>
 <p>Print a summary of the model, optimizer and loss function.</p>
 
@@ -1455,7 +1456,7 @@ Total params: 251
 Total trainable params: 151
 Total non-trainable params: 100
 
-Optimizer used: functools.partial(&lt;function SGD at 0x7f6dd8ae4f80&gt;, mom=0.9)
+Optimizer used: functools.partial(&lt;function SGD at 0x7fa1e61daf80&gt;, mom=0.9)
 Loss function: FlattenedLoss of MSELoss()
 
 Model unfrozen
@@ -1514,7 +1515,7 @@ Total params: 0
 Total trainable params: 0
 Total non-trainable params: 0
 
-Optimizer used: functools.partial(&lt;function SGD at 0x7f6dd8ae4f80&gt;, mom=0.9)
+Optimizer used: functools.partial(&lt;function SGD at 0x7fa1e61daf80&gt;, mom=0.9)
 Loss function: FlattenedLoss of MSELoss()
 
 Callbacks:
@@ -1558,9 +1559,9 @@ Callbacks:
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">with_hist</span> <span class="o">=</span> <span class="n">with_hist</span>
 
-    <span class="k">def</span> <span class="nf">begin_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">before_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s2">&quot;Initialize stats.&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">begin_fit</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">before_fit</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="n">L</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
@@ -1575,11 +1576,11 @@ Callbacks:
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">training</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">every</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_iter</span><span class="o">%</span><span class="k">self</span>.every == 0):
             <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">stored</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">after_batch</span><span class="p">()</span>
-        
+
     <span class="k">def</span> <span class="nf">layer_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="n">lstats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">itemgot</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">L</span><span class="p">(</span><span class="n">lstats</span><span class="o">.</span><span class="n">itemgot</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span><span class="s1">&#39;near_zero&#39;</span><span class="p">))</span>
-    
+
     <span class="k">def</span> <span class="nf">hist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">itemgot</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">itemgot</span><span class="p">(</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">res</span><span class="p">))</span><span class="o">.</span><span class="n">t</span><span class="p">()</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">log1p</span><span class="p">()</span>
@@ -1616,7 +1617,7 @@ Callbacks:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ActivationStats" class="doc_header"><code>class</code> <code>ActivationStats</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L197" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ActivationStats</code>(<strong><code>with_hist</code></strong>=<em><code>False</code></em>, <strong><code>modules</code></strong>=<em><code>None</code></em>, <strong><code>every</code></strong>=<em><code>None</code></em>, <strong><code>remove_end</code></strong>=<em><code>True</code></em>, <strong><code>is_forward</code></strong>=<em><code>True</code></em>, <strong><code>detach</code></strong>=<em><code>True</code></em>, <strong><code>cpu</code></strong>=<em><code>True</code></em>, <strong><code>hook</code></strong>=<em><code>None</code></em>) :: <a href="/callback.hook#HookCallback"><code>HookCallback</code></a></p>
+<h2 id="ActivationStats" class="doc_header"><code>class</code> <code>ActivationStats</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L196" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ActivationStats</code>(<strong><code>with_hist</code></strong>=<em><code>False</code></em>, <strong><code>modules</code></strong>=<em><code>None</code></em>, <strong><code>every</code></strong>=<em><code>None</code></em>, <strong><code>remove_end</code></strong>=<em><code>True</code></em>, <strong><code>is_forward</code></strong>=<em><code>True</code></em>, <strong><code>detach</code></strong>=<em><code>True</code></em>, <strong><code>cpu</code></strong>=<em><code>True</code></em>, <strong><code>hook</code></strong>=<em><code>None</code></em>) :: <a href="/callback.hook#HookCallback"><code>HookCallback</code></a></p>
 </blockquote>
 <p>Callback that record the mean and std of activations.</p>
 
@@ -1651,7 +1652,7 @@ Callbacks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,15.9533109664917,16.78474998474121,&#39;00:00&#39;]
+<pre>(#4) [0,7.390630722045898,6.929471969604492,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
@@ -1684,7 +1685,7 @@ Callbacks:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(#2) [(#1) [{&#39;mean&#39;: 0.7498316168785095, &#39;std&#39;: 1.0590876340866089, &#39;near_zero&#39;: 0.375}],(#1) [{&#39;mean&#39;: 0.6023440361022949, &#39;std&#39;: 0.915452241897583, &#39;near_zero&#39;: 0.1875}]]</pre>
+<pre>(#2) [(#1) [{&#39;mean&#39;: 0.5417343378067017, &#39;std&#39;: 0.9456170797348022, &#39;near_zero&#39;: 0.25}],(#1) [{&#39;mean&#39;: 0.6769891977310181, &#39;std&#39;: 1.007888913154602, &#39;near_zero&#39;: 0.3125}]]</pre>
 </div>
 
 </div>
@@ -1733,12 +1734,12 @@ Callbacks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,11.752055168151855,14.988609313964844,&#39;00:00&#39;]
-(#4) [0,14.951037406921387,18.276052474975586,&#39;00:00&#39;]
-(#4) [0,9.073861122131348,7.193134307861328,&#39;00:00&#39;]
-(#4) [0,9.109945297241211,7.256011486053467,&#39;00:00&#39;]
-(#4) [0,3.2069666385650635,2.0685923099517822,&#39;00:00&#39;]
-(#4) [0,22.388145446777344,16.59320068359375,&#39;00:00&#39;]
+<pre>(#4) [0,8.83222484588623,7.885854244232178,&#39;00:00&#39;]
+(#4) [0,5.357978820800781,4.344269275665283,&#39;00:00&#39;]
+(#4) [0,3.5338547229766846,2.614889144897461,&#39;00:00&#39;]
+(#4) [0,13.072734832763672,5.290627479553223,&#39;00:00&#39;]
+(#4) [0,11.162595748901367,8.782794952392578,&#39;00:00&#39;]
+(#4) [0,7.24176025390625,5.438442230224609,&#39;00:00&#39;]
 </pre>
 </div>
 </div>

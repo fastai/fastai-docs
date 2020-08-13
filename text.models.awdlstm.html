@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smerity et al.</a> "
 description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smerity et al.</a> "
+nb_path: "nbs/32_text.models.awdlstm.ipynb"
 ---
 <!--
 
@@ -181,13 +182,6 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
@@ -195,7 +189,7 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="WeightDropout" class="doc_header"><code>class</code> <code>WeightDropout</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L29" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>WeightDropout</code>(<strong><code>module</code></strong>, <strong><code>weight_p</code></strong>, <strong><code>layer_names</code></strong>=<em><code>'weight_hh_l0'</code></em>) :: <a href="/torch_core#Module"><code>Module</code></a></p>
+<h3 id="WeightDropout" class="doc_header"><code>class</code> <code>WeightDropout</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L26" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>WeightDropout</code>(<strong><code>module</code></strong>, <strong><code>weight_p</code></strong>, <strong><code>layer_names</code></strong>=<em><code>'weight_hh_l0'</code></em>) :: <a href="/torch_core#Module"><code>Module</code></a></p>
 </blockquote>
 <p>A module that warps another layer in which some weights will be replaced by 0 during training.</p>
 
@@ -216,16 +210,21 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">module</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">module</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">dp_module</span> <span class="o">=</span> <span class="n">WeightDropout</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
-<span class="n">wgts</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dp_module</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="s1">&#39;weight_hh_l0&#39;</span><span class="p">)</span>
-<span class="n">tst_inp</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">(),</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<span class="n">wgts</span> <span class="o">=</span> <span class="n">dp_module</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">weight_hh_l0</span>
+<span class="n">tst_inp</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">dp_module</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 <span class="n">x</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">dp_module</span><span class="p">(</span><span class="n">tst_inp</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
 <span class="n">new_wgts</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dp_module</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="s1">&#39;weight_hh_l0&#39;</span><span class="p">)</span>
 <span class="n">test_eq</span><span class="p">(</span><span class="n">wgts</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dp_module</span><span class="p">,</span> <span class="s1">&#39;weight_hh_l0_raw&#39;</span><span class="p">))</span>
 <span class="k">assert</span> <span class="mf">0.2</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">new_wgts</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">/</span><span class="n">new_wgts</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">0.6</span>
+<span class="k">assert</span> <span class="n">dp_module</span><span class="o">.</span><span class="n">weight_hh_l0_raw</span><span class="o">.</span><span class="n">requires_grad</span>
+<span class="k">assert</span> <span class="n">dp_module</span><span class="o">.</span><span class="n">weight_hh_l0_raw</span><span class="o">.</span><span class="n">grad</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="k">assert</span> <span class="p">((</span><span class="n">dp_module</span><span class="o">.</span><span class="n">weight_hh_l0_raw</span><span class="o">.</span><span class="n">grad</span> <span class="o">==</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_wgts</span> <span class="o">==</span> <span class="mf">0.</span><span class="p">))</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -253,7 +252,7 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="EmbeddingDropout" class="doc_header"><code>class</code> <code>EmbeddingDropout</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L65" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>EmbeddingDropout</code>(<strong><code>emb</code></strong>, <strong><code>embed_p</code></strong>) :: <a href="/torch_core#Module"><code>Module</code></a></p>
+<h3 id="EmbeddingDropout" class="doc_header"><code>class</code> <code>EmbeddingDropout</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L64" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>EmbeddingDropout</code>(<strong><code>emb</code></strong>, <strong><code>embed_p</code></strong>) :: <a href="/torch_core#Module"><code>Module</code></a></p>
 </blockquote>
 <p>Apply dropout with probabily <code>embed_p</code> to an embedding layer <code>emb</code>.</p>
 
@@ -307,7 +306,7 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="AWD_LSTM" class="doc_header"><code>class</code> <code>AWD_LSTM</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L82" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>AWD_LSTM</code>(<strong><code>vocab_sz</code></strong>, <strong><code>emb_sz</code></strong>, <strong><code>n_hid</code></strong>, <strong><code>n_layers</code></strong>, <strong><code>pad_token</code></strong>=<em><code>1</code></em>, <strong><code>hidden_p</code></strong>=<em><code>0.2</code></em>, <strong><code>input_p</code></strong>=<em><code>0.6</code></em>, <strong><code>embed_p</code></strong>=<em><code>0.1</code></em>, <strong><code>weight_p</code></strong>=<em><code>0.5</code></em>, <strong><code>bidir</code></strong>=<em><code>False</code></em>) :: <a href="/torch_core#Module"><code>Module</code></a></p>
+<h3 id="AWD_LSTM" class="doc_header"><code>class</code> <code>AWD_LSTM</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L81" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>AWD_LSTM</code>(<strong><code>vocab_sz</code></strong>, <strong><code>emb_sz</code></strong>, <strong><code>n_hid</code></strong>, <strong><code>n_layers</code></strong>, <strong><code>pad_token</code></strong>=<em><code>1</code></em>, <strong><code>hidden_p</code></strong>=<em><code>0.2</code></em>, <strong><code>input_p</code></strong>=<em><code>0.6</code></em>, <strong><code>embed_p</code></strong>=<em><code>0.1</code></em>, <strong><code>weight_p</code></strong>=<em><code>0.5</code></em>, <strong><code>bidir</code></strong>=<em><code>False</code></em>) :: <a href="/torch_core#Module"><code>Module</code></a></p>
 </blockquote>
 <p>AWD-LSTM inspired by <a href="https://arxiv.org/abs/1708.02182">https://arxiv.org/abs/1708.02182</a></p>
 
@@ -342,7 +341,7 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tst</span> <span class="o">=</span> <span class="n">AWD_LSTM</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tst</span> <span class="o">=</span> <span class="n">AWD_LSTM</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">tst</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">test_eq</span><span class="p">(</span><span class="n">tst</span><span class="o">.</span><span class="n">bs</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -352,6 +351,11 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 <span class="n">test_eq</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
 <span class="n">test_eq</span><span class="p">(</span><span class="n">r</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">tst</span><span class="o">.</span><span class="n">hidden</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#hidden state is the last timestep in raw outputs</span>
+
+<span class="n">tst</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">tst</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">tst</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">tst</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -379,7 +383,7 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="awd_lstm_lm_split" class="doc_header"><code>awd_lstm_lm_split</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>awd_lstm_lm_split</code>(<strong><code>model</code></strong>)</p>
+<h4 id="awd_lstm_lm_split" class="doc_header"><code>awd_lstm_lm_split</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L139" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>awd_lstm_lm_split</code>(<strong><code>model</code></strong>)</p>
 </blockquote>
 <p>Split a RNN <code>model</code> in groups for differential learning rates.</p>
 
@@ -396,23 +400,6 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">splits</span> <span class="o">=</span> <span class="n">awd_lstm_lm_split</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -435,7 +422,7 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="awd_lstm_clas_split" class="doc_header"><code>awd_lstm_clas_split</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>awd_lstm_clas_split</code>(<strong><code>model</code></strong>)</p>
+<h4 id="awd_lstm_clas_split" class="doc_header"><code>awd_lstm_clas_split</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L150" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>awd_lstm_clas_split</code>(<strong><code>model</code></strong>)</p>
 </blockquote>
 <p>Split a RNN <code>model</code> in groups for differential learning rates.</p>
 
@@ -480,7 +467,7 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="AWD_QRNN" class="doc_header"><code>class</code> <code>AWD_QRNN</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L163" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>AWD_QRNN</code>(<strong><code>vocab_sz</code></strong>, <strong><code>emb_sz</code></strong>, <strong><code>n_hid</code></strong>, <strong><code>n_layers</code></strong>, <strong><code>pad_token</code></strong>=<em><code>1</code></em>, <strong><code>hidden_p</code></strong>=<em><code>0.2</code></em>, <strong><code>input_p</code></strong>=<em><code>0.6</code></em>, <strong><code>embed_p</code></strong>=<em><code>0.1</code></em>, <strong><code>weight_p</code></strong>=<em><code>0.5</code></em>, <strong><code>bidir</code></strong>=<em><code>False</code></em>) :: <a href="/text.models.awdlstm#AWD_LSTM"><code>AWD_LSTM</code></a></p>
+<h3 id="AWD_QRNN" class="doc_header"><code>class</code> <code>AWD_QRNN</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/models/awdlstm.py#L162" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>AWD_QRNN</code>(<strong><code>vocab_sz</code></strong>, <strong><code>emb_sz</code></strong>, <strong><code>n_hid</code></strong>, <strong><code>n_layers</code></strong>, <strong><code>pad_token</code></strong>=<em><code>1</code></em>, <strong><code>hidden_p</code></strong>=<em><code>0.2</code></em>, <strong><code>input_p</code></strong>=<em><code>0.6</code></em>, <strong><code>embed_p</code></strong>=<em><code>0.1</code></em>, <strong><code>weight_p</code></strong>=<em><code>0.5</code></em>, <strong><code>bidir</code></strong>=<em><code>False</code></em>) :: <a href="/text.models.awdlstm#AWD_LSTM"><code>AWD_LSTM</code></a></p>
 </blockquote>
 <p>Same as an AWD-LSTM, but using QRNNs instead of LSTMs</p>
 
@@ -501,7 +488,8 @@ description: "AWD LSTM from <a href='https://arxiv.org/pdf/1708.02182.pdf'>Smeri
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">AWD_QRNN</span><span class="p">(</span><span class="n">vocab_sz</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">emb_sz</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">bidir</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># cpp</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AWD_QRNN</span><span class="p">(</span><span class="n">vocab_sz</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">emb_sz</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">bidir</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">test_eq</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>

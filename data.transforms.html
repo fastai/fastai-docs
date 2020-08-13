@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Functions for getting, splitting, and labeling data, as well as generic transforms"
 description: "Functions for getting, splitting, and labeling data, as well as generic transforms"
+nb_path: "nbs/05_data.transforms.ipynb"
 ---
 <!--
 
@@ -199,7 +200,7 @@ description: "Functions for getting, splitting, and labeling data, as well as ge
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It's often useful to be able to create functions with customized behavior. <code>fastai.data</code> generally uses functions named as CamelCase verbs ending in <code>er</code> to create these functions. <a href="data.transforms#FileGetter"><code>FileGetter</code></a> is a simple example of such a function creator.</p>
+<p>It's often useful to be able to create functions with customized behavior. <code>fastai.data</code> generally uses functions named as CamelCase verbs ending in <code>er</code> to create these functions. <a href="/data.transforms#FileGetter"><code>FileGetter</code></a> is a simple example of such a function creator.</p>
 
 </div>
 </div>
@@ -224,7 +225,7 @@ description: "Functions for getting, splitting, and labeling data, as well as ge
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="FileGetter" class="doc_header"><code>FileGetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L45" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FileGetter</code>(<strong><code>suf</code></strong>=<em><code>''</code></em>, <strong><code>extensions</code></strong>=<em><code>None</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Create <a href="data.transforms#get_files"><code>get_files</code></a> partial function that searches path suffix <code>suf</code>, only in <code>folders</code>, if specified, and passes along args</p>
+<p>Create <a href="/data.transforms#get_files"><code>get_files</code></a> partial function that searches path suffix <code>suf</code>, only in <code>folders</code>, if specified, and passes along args</p>
 
 </div>
 
@@ -298,7 +299,7 @@ description: "Functions for getting, splitting, and labeling data, as well as ge
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is simply <a href="data.transforms#get_files"><code>get_files</code></a> called with a list of standard image extensions.</p>
+<p>This is simply <a href="/data.transforms#get_files"><code>get_files</code></a> called with a list of standard image extensions.</p>
 
 </div>
 </div>
@@ -340,7 +341,7 @@ description: "Functions for getting, splitting, and labeling data, as well as ge
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="ImageGetter" class="doc_header"><code>ImageGetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ImageGetter</code>(<strong><code>suf</code></strong>=<em><code>''</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Create <a href="data.transforms#get_image_files"><code>get_image_files</code></a> partial function that searches path suffix <code>suf</code> and passes along <code>kwargs</code>, only in <code>folders</code>, if specified.</p>
+<p>Create <a href="/data.transforms#get_image_files"><code>get_image_files</code></a> partial function that searches path suffix <code>suf</code> and passes along <code>kwargs</code>, only in <code>folders</code>, if specified.</p>
 
 </div>
 
@@ -354,7 +355,7 @@ description: "Functions for getting, splitting, and labeling data, as well as ge
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Same as <a href="data.transforms#FileGetter"><code>FileGetter</code></a>, but for image extensions.</p>
+<p>Same as <a href="/data.transforms#FileGetter"><code>FileGetter</code></a>, but for image extensions.</p>
 
 </div>
 </div>
@@ -1091,7 +1092,7 @@ description: "Functions for getting, splitting, and labeling data, as well as ge
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that <a href="data.transforms#parent_label"><code>parent_label</code></a> doesn't have anything customize, so it doesn't return a function - you can just use it directly.</p>
+<p>Note that <a href="/data.transforms#parent_label"><code>parent_label</code></a> doesn't have anything customize, so it doesn't return a function - you can just use it directly.</p>
 
 </div>
 </div>
@@ -1165,8 +1166,8 @@ description: "Functions for getting, splitting, and labeling data, as well as ge
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="data.transforms#RegexLabeller"><code>RegexLabeller</code></a> is a very flexible function since it handles any regex search of the stringified item. Pass <code>match=True</code> to use <code>re.match</code> (i.e. check only start of string), or <code>re.search</code> otherwise (default).</p>
-<p>For instance, here's an example the replicates the previous <a href="data.transforms#parent_label"><code>parent_label</code></a> results.</p>
+<p><a href="/data.transforms#RegexLabeller"><code>RegexLabeller</code></a> is a very flexible function since it handles any regex search of the stringified item. Pass <code>match=True</code> to use <code>re.match</code> (i.e. check only start of string), or <code>re.search</code> otherwise (default).</p>
+<p>For instance, here's an example the replicates the previous <a href="/data.transforms#parent_label"><code>parent_label</code></a> results.</p>
 
 </div>
 </div>
@@ -1585,7 +1586,7 @@ errors defaults to 'strict'.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="MultiCategorize" class="doc_header"><code>class</code> <code>MultiCategorize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L254" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MultiCategorize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>) :: <a href="data.transforms#Categorize"><code>Categorize</code></a></p>
+<h2 id="MultiCategorize" class="doc_header"><code>class</code> <code>MultiCategorize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L254" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MultiCategorize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>) :: <a href="/data.transforms#Categorize"><code>Categorize</code></a></p>
 </blockquote>
 <p>Reversible transform of multi-category strings to <code>vocab</code> id</p>
 
@@ -1754,7 +1755,7 @@ errors defaults to 'strict'.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="EncodedMultiCategorize" class="doc_header"><code>class</code> <code>EncodedMultiCategorize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L292" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EncodedMultiCategorize</code>(<strong><code>vocab</code></strong>) :: <a href="data.transforms#Categorize"><code>Categorize</code></a></p>
+<h2 id="EncodedMultiCategorize" class="doc_header"><code>class</code> <code>EncodedMultiCategorize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L292" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EncodedMultiCategorize</code>(<strong><code>vocab</code></strong>) :: <a href="/data.transforms#Categorize"><code>Categorize</code></a></p>
 </blockquote>
 <p>Transform of one-hot encoded multi-category that decodes with <code>vocab</code></p>
 
@@ -1920,7 +1921,7 @@ decodes: (object,object) -&gt; decodes
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's show how to use those functions to grab the mnist dataset in a <a href="data.core#Datasets"><code>Datasets</code></a>. First we grab all the images.</p>
+<p>Let's show how to use those functions to grab the mnist dataset in a <a href="/data.core#Datasets"><code>Datasets</code></a>. First we grab all the images.</p>
 
 </div>
 </div>
@@ -2252,7 +2253,7 @@ decodes: (object,object) -&gt; decodes
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="Normalize" class="doc_header"><code>class</code> <code>Normalize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L355" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Normalize</code>(<strong><code>mean</code></strong>=<em><code>None</code></em>, <strong><code>std</code></strong>=<em><code>None</code></em>, <strong><code>axes</code></strong>=<em><code>(0, 2, 3)</code></em>) :: <code>Transform</code></p>
 </blockquote>
-<p>Normalize/denorm batch of <a href="torch_core#TensorImage"><code>TensorImage</code></a></p>
+<p>Normalize/denorm batch of <a href="/torch_core#TensorImage"><code>TensorImage</code></a></p>
 
 </div>
 

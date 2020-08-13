@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "How to use the mid-level API for data collection, model creation and training"
 description: "How to use the mid-level API for data collection, model creation and training"
+nb_path: "nbs/24_tutorial.siamese.ipynb"
 ---
 <!--
 
@@ -160,13 +161,13 @@ description: "How to use the mid-level API for data collection, model creation a
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 <span class="ansi-green-fg">&lt;ipython-input-3-8ba97a1a3123&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">import</span> PIL
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>img <span class="ansi-blue-fg">=</span> PIL<span class="ansi-blue-fg">.</span>Image<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span>files<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span> img
 
-<span class="ansi-red-fg">AttributeError</span>: module &#39;PIL&#39; has no attribute &#39;Image&#39;</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;files&#39; is not defined</pre>
 </div>
 </div>
 
@@ -2250,7 +2251,7 @@ description: "How to use the mid-level API for data collection, model creation a
     <span class="k">if</span> <span class="n">figsize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="n">ncols</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span> <span class="n">max_n</span><span class="o">//</span><span class="n">ncols</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">ctxs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">ctxs</span> <span class="o">=</span> <span class="n">get_grid</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">max_n</span><span class="p">),</span> <span class="n">nrows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ctx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ctxs</span><span class="p">):</span> 
-        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Actual: {[&quot;Not similar&quot;,&quot;Similar&quot;][x[2][i].item()]} </span><span class="se">\n</span><span class="s1"> Prediction: {[&quot;Not similar&quot;,&quot;Similar&quot;][y[2][i].item()]}&#39;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Actual: </span><span class="si">{</span><span class="p">[</span><span class="s2">&quot;Not similar&quot;</span><span class="p">,</span><span class="s2">&quot;Similar&quot;</span><span class="p">][</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> Prediction: </span><span class="si">{</span><span class="p">[</span><span class="s2">&quot;Not similar&quot;</span><span class="p">,</span><span class="s2">&quot;Similar&quot;</span><span class="p">][</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()]</span><span class="si">}</span><span class="s1">&#39;</span>
         <span class="n">SiameseImage</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">)</span>
 </pre></div>
 

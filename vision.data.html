@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Helper functions to get data in a `DataLoaders` in the vision application and higher class `ImageDataLoaders`"
 description: "Helper functions to get data in a `DataLoaders` in the vision application and higher class `ImageDataLoaders`"
+nb_path: "nbs/08_vision.data.ipynb"
 ---
 <!--
 
@@ -511,9 +512,9 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Path(&#39;/home/sgugger/.fastai/data/mnist_tiny/valid/7/9172.png&#39;),
- Path(&#39;/home/sgugger/.fastai/data/mnist_tiny/valid/3/7024.png&#39;),
- Path(&#39;/home/sgugger/.fastai/data/mnist_tiny/valid/3/9156.png&#39;)]</pre>
+<pre>[Path(&#39;/home/jhoward/.fastai/data/mnist_tiny/test/5071.png&#39;),
+ Path(&#39;/home/jhoward/.fastai/data/mnist_tiny/train/3/8684.png&#39;),
+ Path(&#39;/home/jhoward/.fastai/data/mnist_tiny/train/3/8188.png&#39;)]</pre>
 </div>
 
 </div>
@@ -586,26 +587,6 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
-<span class="n">fnames</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">&quot;images&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">label_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_path_func</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">label_func</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -631,7 +612,7 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The validation set is a random subset of <code>valid_pct</code>, optionally created with <code>seed</code> for reproducibility.</p>
-<p>Here is how to create the same <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> on the PETS dataset as the previous example (you will need to change the initial two / by a \ on Windows):</p>
+<p>Here is how to create the same <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> on the MNIST dataset as the previous example (you will need to change the initial two / by a \ on Windows):</p>
 
 </div>
 </div>
@@ -643,8 +624,8 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/([^/]*)_\d+.jpg$&#39;</span>
-<span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_path_re</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/([^/]*)/\d+.png$&#39;</span>
+<span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_path_re</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">pat</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -682,29 +663,10 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The validation set is a random subset of <code>valid_pct</code>, optionally created with <code>seed</code> for reproducibility. This method does the same as <a href="/vision.data#ImageDataLoaders.from_path_func"><code>ImageDataLoaders.from_path_func</code></a> except <code>label_func</code> is applied to the name of each filenames, and not the full path.</p>
-<p>Here is how to create the same <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> on the PETS dataset:</p>
 
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">label_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_name_func</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">label_func</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -733,29 +695,10 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The validation set is a random subset of <code>valid_pct</code>, optionally created with <code>seed</code> for reproducibility. This method does the same as <a href="/vision.data#ImageDataLoaders.from_path_re"><code>ImageDataLoaders.from_path_re</code></a> except <code>pat</code> is applied to the name of each filenames, and not the full path.</p>
-<p>Here is how to create the same <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> on the PETS dataset:</p>
 
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(.*)_\d+.jpg$&#39;</span>
-<span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_name_re</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1003,7 +946,7 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">valid_col</span><span class="o">=</span><span class="s1">&#39;is_valid&#39;</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">valid_col</span><span class="o">=</span><span class="s1">&#39;is_valid&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1060,7 +1003,7 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;train.csv&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">valid_col</span><span class="o">=</span><span class="s1">&#39;is_valid&#39;</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;train.csv&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">valid_col</span><span class="o">=</span><span class="s1">&#39;is_valid&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1112,7 +1055,7 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
 <span class="n">fnames</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">&quot;images&quot;</span><span class="p">)</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fnames</span><span class="p">]</span>
-<span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_lists</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">))</span>
+<span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_lists</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1195,7 +1138,7 @@ description: "Helper functions to get data in a `DataLoaders` in the vision appl
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">CAMVID_TINY</span><span class="p">)</span>
 <span class="n">fnames</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;images&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">label_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;labels&#39;</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{x.stem}</span><span class="s1">_P</span><span class="si">{x.suffix}</span><span class="s1">&#39;</span>
+<span class="k">def</span> <span class="nf">label_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;labels&#39;</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s1">_P</span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s1">&#39;</span>
 <span class="n">codes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;codes.txt&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
     
 <span class="n">dls</span> <span class="o">=</span> <span class="n">SegmentationDataLoaders</span><span class="o">.</span><span class="n">from_label_func</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">label_func</span><span class="p">,</span> <span class="n">codes</span><span class="o">=</span><span class="n">codes</span><span class="p">)</span>

@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>CutMix</a> data augmentation technique to the training data."
 description: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>CutMix</a> data augmentation technique to the training data."
+nb_path: "nbs/74_callback.cutmix.ipynb"
 ---
 <!--
 
@@ -36,7 +37,7 @@ description: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>C
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From the <a href="https://arxiv.org/pdf/1905.04899.pdf">research paper</a>, <a href="callback.cutmix#CutMix"><code>CutMix</code></a> is a way to combine two images. It comes from <a href="callback.mixup#MixUp"><code>MixUp</code></a> and <code>Cutout</code>. In this data augmentation technique:</p>
+<p>From the <a href="https://arxiv.org/pdf/1905.04899.pdf">research paper</a>, <a href="/callback.cutmix#CutMix"><code>CutMix</code></a> is a way to combine two images. It comes from <a href="/callback.mixup#MixUp"><code>MixUp</code></a> and <code>Cutout</code>. In this data augmentation technique:</p>
 <blockquote><p>patches are cut and pasted among training images where the ground truth labels are also mixed proportionally to the area of the patches</p>
 </blockquote>
 <p>Also, from the paper:&gt; By making efficient use of training pixels and retaining the regularization effect of regional dropout, CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks, as well as on the ImageNet weakly-supervised localization task. Moreover, unlike previous augmentation methods, our CutMix-trained ImageNet classifier, when used as a pretrained model, results in consistent performance gains in Pascal detection and MS-COCO image captioning benchmarks. We also show that CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.</p>
@@ -62,7 +63,7 @@ description: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>C
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CutMix" class="doc_header"><code>class</code> <code>CutMix</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/cutmix.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CutMix</code>(<strong><code>alpha</code></strong>=<em><code>1.0</code></em>) :: <a href="callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="CutMix" class="doc_header"><code>class</code> <code>CutMix</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/cutmix.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CutMix</code>(<strong><code>alpha</code></strong>=<em><code>1.0</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Implementation of <code>https://arxiv.org/abs/1905.04899</code></p>
 
@@ -78,13 +79,13 @@ description: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>C
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-does-the-batch-with-CutMix-data-augmentation-technique-look-like?">How does the batch with <a href="callback.cutmix#CutMix"><code>CutMix</code></a> data augmentation technique look like?<a class="anchor-link" href="#How-does-the-batch-with-CutMix-data-augmentation-technique-look-like?"> </a></h2>
+<h2 id="How-does-the-batch-with-CutMix-data-augmentation-technique-look-like?">How does the batch with <a href="/callback.cutmix#CutMix"><code>CutMix</code></a> data augmentation technique look like?<a class="anchor-link" href="#How-does-the-batch-with-CutMix-data-augmentation-technique-look-like?"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First, let's quickly create the <code>dls</code> using <a href="vision.data#ImageDataLoaders.from_name_re"><code>ImageDataLoaders.from_name_re</code></a> DataBlocks API.</p>
+<p>First, let's quickly create the <code>dls</code> using <a href="/vision.data#ImageDataLoaders.from_name_re"><code>ImageDataLoaders.from_name_re</code></a> DataBlocks API.</p>
 
 </div>
 </div>
@@ -114,7 +115,7 @@ description: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>C
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next, let's initialize the callback <a href="callback.cutmix#CutMix"><code>CutMix</code></a>, create a learner, do one batch and display the images with the labels. <a href="callback.cutmix#CutMix"><code>CutMix</code></a> inside updates the loss function based on the ratio of the cutout bbox to the complete image.</p>
+<p>Next, let's initialize the callback <a href="/callback.cutmix#CutMix"><code>CutMix</code></a>, create a learner, do one batch and display the images with the labels. <a href="/callback.cutmix#CutMix"><code>CutMix</code></a> inside updates the loss function based on the ratio of the cutout bbox to the complete image.</p>
 
 </div>
 </div>
@@ -144,12 +145,12 @@ description: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>C
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span>  <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet50</span><span class="p">,</span> <span class="n">loss_func</span><span class="o">=</span><span class="n">CrossEntropyLossFlat</span><span class="p">(),</span> <span class="n">cbs</span><span class="o">=</span><span class="n">cutmix</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">error_rate</span><span class="p">])</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">_do_begin_fit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">_do_before_fit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">epoch</span><span class="p">,</span><span class="n">learn</span><span class="o">.</span><span class="n">training</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="kc">True</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">dl</span> <span class="o">=</span> <span class="n">dls</span><span class="o">.</span><span class="n">train</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">dls</span><span class="o">.</span><span class="n">one_batch</span><span class="p">()</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">_split</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">learn</span><span class="p">(</span><span class="s1">&#39;begin_batch&#39;</span><span class="p">)</span>
+<span class="n">learn</span><span class="p">(</span><span class="s1">&#39;before_batch&#39;</span><span class="p">)</span>
 <span class="n">_</span><span class="p">,</span><span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
 <span class="n">dls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="n">cutmix</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">cutmix</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">ctxs</span><span class="o">=</span><span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
 </pre></div>
@@ -181,7 +182,7 @@ description: "Callback to apply <a href='https://arxiv.org/pdf/1905.04899.pdf'>C
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-CutMix-in-Training">Using <a href="callback.cutmix#CutMix"><code>CutMix</code></a> in Training<a class="anchor-link" href="#Using-CutMix-in-Training"> </a></h2>
+<h2 id="Using-CutMix-in-Training">Using <a href="/callback.cutmix#CutMix"><code>CutMix</code></a> in Training<a class="anchor-link" href="#Using-CutMix-in-Training"> </a></h2>
 </div>
 </div>
 </div>

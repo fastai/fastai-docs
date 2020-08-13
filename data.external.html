@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Helper functions to download the fastai datasets"
 description: "Helper functions to download the fastai datasets"
+nb_path: "nbs/04_data.external.ipynb"
 ---
 <!--
 
@@ -236,10 +237,10 @@ path.ls()</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;archive_path&#39;: &#39;/home/sgugger/.fastai/archive&#39;,
- &#39;data_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
- &#39;model_path&#39;: &#39;/home/sgugger/.fastai/models&#39;,
- &#39;storage_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
+<pre>{&#39;archive_path&#39;: &#39;/home/jhoward/.fastai/archive&#39;,
+ &#39;data_path&#39;: &#39;/home/jhoward/.fastai/data&#39;,
+ &#39;model_path&#39;: &#39;/home/jhoward/.fastai/models&#39;,
+ &#39;storage_path&#39;: &#39;/tmp&#39;,
  &#39;version&#39;: 2}</pre>
 </div>
 
@@ -309,10 +310,10 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;archive_path&#39;: &#39;.&#39;,
- &#39;data_archive_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
- &#39;data_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
- &#39;model_path&#39;: &#39;/home/sgugger/.fastai/models&#39;,
- &#39;storage_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
+ &#39;data_archive_path&#39;: &#39;/home/jhoward/.fastai/data&#39;,
+ &#39;data_path&#39;: &#39;/home/jhoward/.fastai/data&#39;,
+ &#39;model_path&#39;: &#39;/home/jhoward/.fastai/models&#39;,
+ &#39;storage_path&#39;: &#39;/tmp&#39;,
  &#39;version&#39;: 2}</pre>
 </div>
 
@@ -355,11 +356,11 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;archive_path&#39;: &#39;/home/sgugger/.fastai/archive&#39;,
- &#39;data_archive_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
- &#39;data_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
- &#39;model_path&#39;: &#39;/home/sgugger/.fastai/models&#39;,
- &#39;storage_path&#39;: &#39;/home/sgugger/.fastai/data&#39;,
+<pre>{&#39;archive_path&#39;: &#39;/home/jhoward/.fastai/archive&#39;,
+ &#39;data_archive_path&#39;: &#39;/home/jhoward/.fastai/data&#39;,
+ &#39;data_path&#39;: &#39;/home/jhoward/.fastai/data&#39;,
+ &#39;model_path&#39;: &#39;/home/jhoward/.fastai/models&#39;,
+ &#39;storage_path&#39;: &#39;/tmp&#39;,
  &#39;version&#39;: 2}</pre>
 </div>
 
@@ -435,7 +436,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Path(&#39;/home/sgugger/.fastai/archive/oxford-iiit-pet.tgz&#39;)</pre>
+<pre>Path(&#39;/home/jhoward/.fastai/archive/oxford-iiit-pet.tgz&#39;)</pre>
 </div>
 
 </div>
@@ -470,7 +471,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Path(&#39;/home/sgugger/.fastai/models/oxford-iiit-pet.tgz&#39;)</pre>
+<pre>Path(&#39;/home/jhoward/.fastai/models/oxford-iiit-pet.tgz&#39;)</pre>
 </div>
 
 </div>
@@ -911,18 +912,31 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_eq</span><span class="p">(</span><span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_SAMPLE</span><span class="p">),</span> <span class="n">config</span><span class="o">.</span><span class="n">data</span><span class="o">/</span><span class="s1">&#39;mnist_sample&#39;</span><span class="p">)</span>
 
-<span class="c1">#Test specific fname</span>
-<span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_TINY</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">p</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
-    
-<span class="c1">#Test specific dest</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_TINY</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">),</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;mnist_tiny&#39;</span><span class="p">))</span>
-<span class="k">assert</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;mnist_tiny&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;mnist_tiny&#39;</span><span class="p">))</span>
+<span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">dest</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_TINY</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="s1">&#39;mnist_tiny&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">)</span>
 
 <span class="c1">#Test c_key</span>
 <span class="n">tst_model</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">/</span><span class="s1">&#39;mnist_sample&#39;</span>
@@ -968,15 +982,17 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_TINY</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">Path</span><span class="p">(</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;nims_tini.tgz&#39;</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;nims_tini.tgz&#39;</span><span class="p">)</span>
-<span class="n">dest</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;nims_tini&#39;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">p</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="n">file_extract</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">dest</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
-<span class="n">rename_extracted</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
-<span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_TINY</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;mnist_tiny.tgz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;nims_tini.tgz&#39;</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;nims_tini.tgz&#39;</span><span class="p">)</span>
+    <span class="n">dest</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;nims_tini&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">p</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+    <span class="n">file_extract</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">dest</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+    <span class="n">rename_extracted</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
 </pre></div>
 
     </div>

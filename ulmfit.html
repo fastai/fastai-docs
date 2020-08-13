@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 
 
+nb_path: "nbs/examples/ulmfit.ipynb"
 ---
 <!--
 
@@ -111,7 +112,7 @@ sidebar: home_sidebar
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we put it in a <a href="data.core#Datasets"><code>Datasets</code></a>. For a language model, we don't have targets, so there is only one transform to numericalize the texts. Note that <a href="text.core#tokenize_df"><code>tokenize_df</code></a> returns the count of the words in the corpus to make it easy to create a vocabulary.</p>
+<p>Then we put it in a <a href="/data.core#Datasets"><code>Datasets</code></a>. For a language model, we don't have targets, so there is only one transform to numericalize the texts. Note that <a href="/text.core#tokenize_df"><code>tokenize_df</code></a> returns the count of the words in the corpus to make it easy to create a vocabulary.</p>
 
 </div>
 </div>
@@ -154,7 +155,7 @@ sidebar: home_sidebar
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we use that <a href="data.core#Datasets"><code>Datasets</code></a> to create a <a href="data.core#DataLoaders"><code>DataLoaders</code></a>. Here the class of <a href="data.core#TfmdDL"><code>TfmdDL</code></a> we need to use is <a href="text.data#LMDataLoader"><code>LMDataLoader</code></a> which will concatenate all the texts in a source (with a shuffle at each epoch for the training set), split it in <code>bs</code> chunks then read continuously through it.</p>
+<p>Then we use that <a href="/data.core#Datasets"><code>Datasets</code></a> to create a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a>. Here the class of <a href="/data.core#TfmdDL"><code>TfmdDL</code></a> we need to use is <a href="/text.data#LMDataLoader"><code>LMDataLoader</code></a> which will concatenate all the texts in a source (with a shuffle at each epoch for the training set), split it in <code>bs</code> chunks then read continuously through it.</p>
 
 </div>
 </div>
@@ -266,7 +267,7 @@ sidebar: home_sidebar
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we have a convenience method to directly grab a <a href="learner#Learner"><code>Learner</code></a> from it, using the <a href="text.models.awdlstm#AWD_LSTM"><code>AWD_LSTM</code></a> architecture.</p>
+<p>Then we have a convenience method to directly grab a <a href="/learner#Learner"><code>Learner</code></a> from it, using the <a href="/text.models.awdlstm#AWD_LSTM"><code>AWD_LSTM</code></a> architecture.</p>
 
 </div>
 </div>
@@ -680,7 +681,7 @@ sidebar: home_sidebar
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we once again have a convenience function to create a classifier from this <a href="data.core#DataLoaders"><code>DataLoaders</code></a> with the <a href="text.models.awdlstm#AWD_LSTM"><code>AWD_LSTM</code></a> architecture.</p>
+<p>Then we once again have a convenience function to create a classifier from this <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> with the <a href="/text.models.awdlstm#AWD_LSTM"><code>AWD_LSTM</code></a> architecture.</p>
 
 </div>
 </div>

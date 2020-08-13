@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Callback and helper function to track progress of training or log results"
 description: "Callback and helper function to track progress of training or log results"
+nb_path: "nbs/16_callback.progress.ipynb"
 ---
 <!--
 
@@ -86,9 +87,9 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ProgressCallback" class="doc_header"><code>class</code> <code>ProgressCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ProgressCallback</code>(<strong><code>begin_fit</code></strong>=<em><code>None</code></em>, <strong><code>begin_epoch</code></strong>=<em><code>None</code></em>, <strong><code>begin_train</code></strong>=<em><code>None</code></em>, <strong><code>begin_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>begin_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="ProgressCallback" class="doc_header"><code>class</code> <code>ProgressCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ProgressCallback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
-<p>A <a href="callback.core#Callback"><code>Callback</code></a> to handle the display of progress bars</p>
+<p>A <a href="/callback.core#Callback"><code>Callback</code></a> to handle the display of progress bars</p>
 
 </div>
 
@@ -253,7 +254,7 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ProgressCallback.begin_fit" class="doc_header"><code>ProgressCallback.begin_fit</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.begin_fit</code>()</p>
+<h4 id="ProgressCallback.before_fit" class="doc_header"><code>ProgressCallback.before_fit</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.before_fit</code>()</p>
 </blockquote>
 <p>Setup the master bar over the epochs</p>
 
@@ -278,7 +279,7 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ProgressCallback.begin_epoch" class="doc_header"><code>ProgressCallback.begin_epoch</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.begin_epoch</code>()</p>
+<h4 id="ProgressCallback.before_epoch" class="doc_header"><code>ProgressCallback.before_epoch</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.before_epoch</code>()</p>
 </blockquote>
 <p>Update the master bar</p>
 
@@ -303,7 +304,7 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ProgressCallback.begin_train" class="doc_header"><code>ProgressCallback.begin_train</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L25" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.begin_train</code>()</p>
+<h4 id="ProgressCallback.before_train" class="doc_header"><code>ProgressCallback.before_train</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L25" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.before_train</code>()</p>
 </blockquote>
 <p>Launch a progress bar over the training dataloader</p>
 
@@ -328,7 +329,7 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ProgressCallback.begin_validate" class="doc_header"><code>ProgressCallback.begin_validate</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L26" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.begin_validate</code>()</p>
+<h4 id="ProgressCallback.before_validate" class="doc_header"><code>ProgressCallback.before_validate</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L26" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ProgressCallback.before_validate</code>()</p>
 </blockquote>
 <p>Launch a progress bar over the validation dataloader</p>
 
@@ -460,7 +461,7 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ShowGraphCallback" class="doc_header"><code>class</code> <code>ShowGraphCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L70" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ShowGraphCallback</code>(<strong><code>begin_fit</code></strong>=<em><code>None</code></em>, <strong><code>begin_epoch</code></strong>=<em><code>None</code></em>, <strong><code>begin_train</code></strong>=<em><code>None</code></em>, <strong><code>begin_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>begin_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="ShowGraphCallback" class="doc_header"><code>class</code> <code>ShowGraphCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L70" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ShowGraphCallback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Update a graph of training and validation loss</p>
 
@@ -608,9 +609,9 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CSVLogger" class="doc_header"><code>class</code> <code>CSVLogger</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L91" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CSVLogger</code>(<strong><code>fname</code></strong>=<em><code>'history.csv'</code></em>, <strong><code>append</code></strong>=<em><code>False</code></em>) :: <a href="callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="CSVLogger" class="doc_header"><code>class</code> <code>CSVLogger</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L91" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CSVLogger</code>(<strong><code>fname</code></strong>=<em><code>'history.csv'</code></em>, <strong><code>append</code></strong>=<em><code>False</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
-<p>Basic class handling tweaks of the training loop by changing a <a href="learner#Learner"><code>Learner</code></a> in various events</p>
+<p>Basic class handling tweaks of the training loop by changing a <a href="/learner#Learner"><code>Learner</code></a> in various events</p>
 
 </div>
 
@@ -760,7 +761,7 @@ description: "Callback and helper function to track progress of training or log 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="CSVLogger.begin_fit" class="doc_header"><code>CSVLogger.begin_fit</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CSVLogger.begin_fit</code>()</p>
+<h4 id="CSVLogger.before_fit" class="doc_header"><code>CSVLogger.before_fit</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/progress.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CSVLogger.before_fit</code>()</p>
 </blockquote>
 <p>Prepare file with metric names.</p>
 

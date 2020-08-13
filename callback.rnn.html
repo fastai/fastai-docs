@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Callback that uses the outputs of language models to add AR and TAR regularization"
 description: "Callback that uses the outputs of language models to add AR and TAR regularization"
+nb_path: "nbs/34_callback.rnn.ipynb"
 ---
 <!--
 
@@ -69,7 +70,7 @@ description: "Callback that uses the outputs of language models to add AR and TA
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ModelResetter" class="doc_header"><code>class</code> <code>ModelResetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/rnn.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ModelResetter</code>() :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="ModelResetter" class="doc_header"><code>class</code> <code>ModelResetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/rnn.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ModelResetter</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p><a href="/callback.core#Callback"><code>Callback</code></a> that resets the model at each validation/training step</p>
 

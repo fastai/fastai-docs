@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Using the fastai library for collaborative filtering."
 description: "Using the fastai library for collaborative filtering."
+nb_path: "nbs/46_tutorial.collab.ipynb"
 ---
 <!--
 
@@ -637,7 +638,7 @@ description: "Using the fastai library for collaborative filtering."
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">title</span><span class="p">)[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">top_movies</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
 <span class="n">top_movies</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
@@ -730,7 +731,7 @@ description: "Using the fastai library for collaborative filtering."
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">title</span><span class="p">)[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">movie_ratings</span> <span class="o">=</span> <span class="p">[(</span><span class="n">b</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">mean_ratings</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">top_movies</span><span class="p">,</span><span class="n">movie_bias</span><span class="p">)]</span>
 </pre></div>
 

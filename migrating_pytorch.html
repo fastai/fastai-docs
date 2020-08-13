@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Incrementally adding fastai goodness to your PyTorch models"
 description: "Incrementally adding fastai goodness to your PyTorch models"
+nb_path: "nbs/examples/migrating_pytorch.ipynb"
 ---
 <!--
 
@@ -97,7 +98,7 @@ description: "Incrementally adding fastai goodness to your PyTorch models"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We also added <a href="callback.data#CudaCallback"><code>CudaCallback</code></a> to have the model and data moved to the GPU for us. Alternatively, you can use the fastai <a href="data.load#DataLoader"><code>DataLoader</code></a>, which provides a superset of the functionality of PyTorch's (with the same API), and can handle moving data to the GPU for us (see <code>migrating_ignite.ipynb</code> for an example of this approach).</p>
+<p>We also added <a href="/callback.data#CudaCallback"><code>CudaCallback</code></a> to have the model and data moved to the GPU for us. Alternatively, you can use the fastai <a href="/data.load#DataLoader"><code>DataLoader</code></a>, which provides a superset of the functionality of PyTorch's (with the same API), and can handle moving data to the GPU for us (see <code>migrating_ignite.ipynb</code> for an example of this approach).</p>
 <p>fastai supports many schedulers. We recommend fitting with 1cycle training:</p>
 
 </div>

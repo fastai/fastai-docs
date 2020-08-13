@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Callbacks that make decisions depending how a monitored metric/loss behaves"
 description: "Callbacks that make decisions depending how a monitored metric/loss behaves"
+nb_path: "nbs/18a_callback.training.ipynb"
 ---
 <!--
 
@@ -81,6 +82,36 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -96,6 +127,37 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>12.395771</td>
+      <td>00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -156,6 +218,76 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>10.566907</td>
+      <td>3.633753</td>
+      <td>00:00</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>5.525984</td>
+      <td>0.397483</td>
+      <td>00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.476599</td>
+      <td>0.397483</td>
+      <td>00:00</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.478213</td>
+      <td>0.397483</td>
+      <td>00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -183,7 +315,7 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_bn_eval" class="doc_header"><code>set_bn_eval</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_bn_eval</code>(<strong><code>m</code></strong>:<a href="/torch_core#Module"><code>Module</code></a>)</p>
+<h4 id="set_bn_eval" class="doc_header"><code>set_bn_eval</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_bn_eval</code>(<strong><code>m</code></strong>:<a href="/torch_core#Module"><code>Module</code></a>, <strong><code>use_eval</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Set bn layers in eval mode for all recursive children of <code>m</code>.</p>
 
@@ -208,7 +340,7 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BnFreeze" class="doc_header"><code>class</code> <code>BnFreeze</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L47" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BnFreeze</code>() :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="BnFreeze" class="doc_header"><code>class</code> <code>BnFreeze</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L48" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BnFreeze</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Freeze moving average statistics in all non-trainable batchnorm layers.</p>
 
@@ -252,7 +384,7 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We first demonstrate the mismatch of the running stats when using only <code>train_bn=False</code></p>
+<p>We first demonstrate the mismatch of the running stats when using only <code>train_bn=False</code>, by creating a <a href="/learner#Learner"><code>Learner</code></a>...:</p>
 
 </div>
 </div>
@@ -265,10 +397,6 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn1</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">dls</span><span class="p">),</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">train_bn</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">learn2</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">dls</span><span class="p">),</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">train_bn</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="n">learn1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
-<span class="n">learn2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -278,6 +406,13 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>...and grab the first <a href="/layers#BatchNorm"><code>BatchNorm</code></a> layer, and store its running mean:</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -285,23 +420,7 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SOURCE: https://discuss.pytorch.org/t/check-if-models-have-same-weights/4351/6</span>
-<span class="k">def</span> <span class="nf">models_equal</span><span class="p">(</span><span class="n">model_1</span><span class="p">,</span> <span class="n">model_2</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="n">models_differ</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">key_item_1</span><span class="p">,</span> <span class="n">key_item_2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">model_1</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">model_2</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-        <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">key_item_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">key_item_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-            <span class="k">pass</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">models_differ</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">key_item_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">key_item_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mismtach found at </span><span class="si">{key_item_1[0]}</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">Exception</span>
-                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Models being compared have different architectures&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">models_differ</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Models match perfectly&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="kc">False</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">learn1</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">running_mean</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -311,6 +430,13 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can see that now that running mean has changed:</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -318,16 +444,56 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">models_equal</span><span class="p">(</span><span class="n">learn1</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">learn2</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="n">test_ne</span><span class="p">(</span><span class="n">learn1</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">running_mean</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.058304</td>
+      <td>0.713414</td>
+      <td>00:02</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we use the <a href="/callback.training#BnFreeze"><code>BnFreeze</code></a> callback, the running statistics will not be changed during training. This is often important for getting good results from transfer learning.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -336,15 +502,44 @@ description: "Callbacks that make decisions depending how a monitored metric/los
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn1</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">dls</span><span class="p">),</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">train_bn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cbs</span><span class="o">=</span><span class="n">BnFreeze</span><span class="p">)</span>
-<span class="n">learn2</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">dls</span><span class="p">),</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">train_bn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cbs</span><span class="o">=</span><span class="n">BnFreeze</span><span class="p">)</span>
-
+<span class="n">m</span> <span class="o">=</span> <span class="n">learn1</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">running_mean</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
 <span class="n">learn1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
-<span class="n">learn2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
-
-<span class="k">assert</span> <span class="n">models_equal</span><span class="p">(</span><span class="n">learn1</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">learn2</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">learn1</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">running_mean</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.540841</td>
+      <td>0.432421</td>
+      <td>00:02</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
 </div>
 </div>
 

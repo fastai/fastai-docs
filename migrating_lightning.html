@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Incrementally adding fastai goodness to your Lightning training"
 description: "Incrementally adding fastai goodness to your Lightning training"
+nb_path: "nbs/examples/migrating_lightning.ipynb"
 ---
 <!--
 
@@ -86,7 +87,7 @@ description: "Incrementally adding fastai goodness to your Lightning training"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To use it in fastai, we first pull the DataLoaders from the module into a <a href="data.core#DataLoaders"><code>DataLoaders</code></a> object:</p>
+<p>To use it in fastai, we first pull the DataLoaders from the module into a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> object:</p>
 
 </div>
 </div>
@@ -110,7 +111,7 @@ description: "Incrementally adding fastai goodness to your Lightning training"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now create a <a href="learner#Learner"><code>Learner</code></a> and fit:</p>
+<p>We can now create a <a href="/learner#Learner"><code>Learner</code></a> and fit:</p>
 
 </div>
 </div>
@@ -170,7 +171,7 @@ description: "Incrementally adding fastai goodness to your Lightning training"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see, migrating from Ignite allowed us to reduce the amount of code, and doesn't require you to change any of your existing data pipelines, optimizers, loss functions, models, etc. Once you've made this change, you can then benefit from fastai's rich set of callbacks, transforms, visualizations, and so forth.</p>
-<p>For instance, in the Lightning example, Tensorboard support was defined a special-case "logger". In fastai, Tensorboard is just another <a href="callback.core#Callback"><code>Callback</code></a> that you can add, with the parameter <code>cbs=Tensorboard</code>, when you create your <a href="learner#Learner"><code>Learner</code></a>. The callbacks all work together, so you can add an remove any schedulers, loggers, visualizers, and so forth. You don't have to learn about special types of functionality for each - they are all just plain callbacks.</p>
+<p>For instance, in the Lightning example, Tensorboard support was defined a special-case "logger". In fastai, Tensorboard is just another <a href="/callback.core#Callback"><code>Callback</code></a> that you can add, with the parameter <code>cbs=Tensorboard</code>, when you create your <a href="/learner#Learner"><code>Learner</code></a>. The callbacks all work together, so you can add an remove any schedulers, loggers, visualizers, and so forth. You don't have to learn about special types of functionality for each - they are all just plain callbacks.</p>
 <p>Note that fastai is very different from Lightning, in that it is much more than just a training loop (although we're only using the training loop in this example) - it is a complete framework including GPU-accelerated transformations, end-to-end inference, integrated applications for vision, text, tabular, and collaborative filtering, and so forth. You can use any part of the framework on its own, or combine them together, as described in the <a href="https://arxiv.org/abs/2002.04688">fastai paper</a>.</p>
 
 </div>
@@ -212,7 +213,7 @@ description: "Incrementally adding fastai goodness to your Lightning training"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, we're telling <a href="data.block#DataBlock"><code>DataBlock</code></a> that we have a B&amp;W image input, and a category output, our input items are file names of images, the images are labeled based on the name of the parent folder, and they are split by training vs validation based on the grandparent folder name. It's important to actually look at your data, so fastai also makes it easy to visualize your inputs and outputs, for instance:</p>
+<p>Here, we're telling <a href="/data.block#DataBlock"><code>DataBlock</code></a> that we have a B&amp;W image input, and a category output, our input items are file names of images, the images are labeled based on the name of the parent folder, and they are split by training vs validation based on the grandparent folder name. It's important to actually look at your data, so fastai also makes it easy to visualize your inputs and outputs, for instance:</p>
 
 </div>
 </div>

@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Integration with <a href='https://docs.wandb.com/'>Weights & Biases</a> "
 description: "Integration with <a href='https://docs.wandb.com/'>Weights & Biases</a> "
+nb_path: "nbs/70_callback.wandb.ipynb"
 ---
 <!--
 
@@ -89,7 +90,7 @@ description: "Integration with <a href='https://docs.wandb.com/'>Weights & Biase
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="WandbCallback" class="doc_header"><code>class</code> <code>WandbCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/wandb.py#L16" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WandbCallback</code>(<strong><code>log</code></strong>=<em><code>'gradients'</code></em>, <strong><code>log_preds</code></strong>=<em><code>True</code></em>, <strong><code>valid_dl</code></strong>=<em><code>None</code></em>, <strong><code>n_preds</code></strong>=<em><code>36</code></em>, <strong><code>seed</code></strong>=<em><code>12345</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="WandbCallback" class="doc_header"><code>class</code> <code>WandbCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/wandb.py#L17" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WandbCallback</code>(<strong><code>log</code></strong>=<em><code>'gradients'</code></em>, <strong><code>log_preds</code></strong>=<em><code>True</code></em>, <strong><code>log_dataset</code></strong>=<em><code>False</code></em>, <strong><code>dataset_name</code></strong>=<em><code>None</code></em>, <strong><code>valid_dl</code></strong>=<em><code>None</code></em>, <strong><code>n_preds</code></strong>=<em><code>36</code></em>, <strong><code>seed</code></strong>=<em><code>12345</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Saves model topology, losses &amp; metrics</p>
 
@@ -107,6 +108,14 @@ description: "Integration with <a href='https://docs.wandb.com/'>Weights & Biase
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Optionally logs weights and or gradients depending on <code>log</code> (can be "gradients", "parameters", "all" or None), sample predictions if <code>log_preds=True</code> that will come from <code>valid_dl</code> or a random sample pf the validation set (determined by <code>seed</code>). <code>n_preds</code> are logged in this case.</p>
 <p>If used in combination with <a href="/callback.tracker#SaveModelCallback"><code>SaveModelCallback</code></a>, the best model is saved as well.</p>
+<p>Datasets can also be tracked:</p>
+<ul>
+<li>if <a href="/callback.wandb#log_dataset"><code>log_dataset</code></a> is <code>True</code>, tracked folder is retrieved from <code>dls.path</code></li>
+<li><a href="/callback.wandb#log_dataset"><code>log_dataset</code></a> can explicitly be set to the folder to track</li>
+<li>the name of the dataset can explicitly be given through <code>dataset_name</code>, otherwise it is set to the folder name</li>
+<li>for more complex scenarios (such as logging separately training and validation datasets), use the function <code>log_dataset(data_path, "dataset_name")</code></li>
+<li><em>Note: the subfolder "models" is always ignored</em></li>
+</ul>
 
 </div>
 </div>
@@ -127,6 +136,7 @@ learn.fit(..., cbs=WandbCallback())
 
 # To log continuously for all training phases
 learn = learner(..., cbs=WandbCallback())</code></pre>
+<p>Datasets can be tracked through the callback or</p>
 
 </div>
 </div>
@@ -141,6 +151,45 @@ learn = learner(..., cbs=WandbCallback())</code></pre>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="log_dataset" class="doc_header"><code>log_dataset</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/wandb.py#L141" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_dataset</code>(<strong><code>path</code></strong>=<em><code>None</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>learner_path</code></strong>=<em><code>None</code></em>)</p>
+</blockquote>
+<p>Log dataset folder</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}

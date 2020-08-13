@@ -7,6 +7,7 @@ sidebar: home_sidebar
 
 summary: "Incrementally adding fastai goodness to your Catalyst training"
 description: "Incrementally adding fastai goodness to your Catalyst training"
+nb_path: "nbs/examples/migrating_catalyst.ipynb"
 ---
 <!--
 
@@ -94,7 +95,7 @@ description: "Incrementally adding fastai goodness to your Catalyst training"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To use it in fastai, we first convert the Catalyst dict into a <a href="data.core#DataLoaders"><code>DataLoaders</code></a> object:</p>
+<p>To use it in fastai, we first convert the Catalyst dict into a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> object:</p>
 
 </div>
 </div>
@@ -136,7 +137,7 @@ description: "Incrementally adding fastai goodness to your Catalyst training"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@begin_batch_cb</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@before_batch_cb</span>
 <span class="k">def</span> <span class="nf">cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xb</span><span class="p">,</span> <span class="n">yb</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">xb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">xb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">),),</span><span class="n">yb</span>
 </pre></div>
 
@@ -149,7 +150,7 @@ description: "Incrementally adding fastai goodness to your Catalyst training"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The Catalyst example also modifies the training loop to add metrics, but you can pass these directly to your <a href="learner#Learner"><code>Learner</code></a> in fastai:</p>
+<p>The Catalyst example also modifies the training loop to add metrics, but you can pass these directly to your <a href="/learner#Learner"><code>Learner</code></a> in fastai:</p>
 
 </div>
 </div>
@@ -249,7 +250,7 @@ description: "Incrementally adding fastai goodness to your Catalyst training"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Instead of using callbacks, in this case you can also simply change the model. Here we pull the <code>view()</code> out of the training loop, and into the model, using fastai's <a href="layers#Flatten"><code>Flatten</code></a> layer:</p>
+<p>Instead of using callbacks, in this case you can also simply change the model. Here we pull the <code>view()</code> out of the training loop, and into the model, using fastai's <a href="/layers#Flatten"><code>Flatten</code></a> layer:</p>
 
 </div>
 </div>
@@ -275,7 +276,7 @@ description: "Incrementally adding fastai goodness to your Catalyst training"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now create a <a href="learner#Learner"><code>Learner</code></a> and train without using any callbacks:</p>
+<p>We can now create a <a href="/learner#Learner"><code>Learner</code></a> and train without using any callbacks:</p>
 
 </div>
 </div>
