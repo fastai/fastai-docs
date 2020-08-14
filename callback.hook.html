@@ -109,13 +109,13 @@ nb_path: "nbs/15_callback.hook.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([[ 1.5469e+00, -8.8636e-01,  5.0203e-01,  1.5994e-01,  1.2272e+00],
-        [ 4.8025e-01,  7.8592e-04, -1.0296e+00, -1.9297e+00,  1.2433e-01],
-        [ 7.4777e-01, -1.6163e-02, -2.2598e+00, -9.2172e-01,  1.4019e+00],
-        [ 3.3838e-01, -7.0636e-01,  1.6084e-01,  7.3097e-02,  2.9105e-02]]),) tensor([[ 0.1569, -0.0761, -0.3640],
-        [ 0.0530,  0.4646,  0.8272],
-        [ 0.7636,  1.3767,  0.9218],
-        [ 0.0565, -0.4380, -0.1608]], grad_fn=&lt;AddmmBackward&gt;)
+<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([[ 0.1800,  0.3520, -0.4931, -1.7999,  1.4483],
+        [-0.7465, -1.1864, -0.8031,  0.0359,  1.4905],
+        [ 1.4436, -0.0306,  0.5153, -0.3651,  1.2812],
+        [-0.2445,  0.2442,  1.6167, -0.0388,  0.4127]]),) tensor([[-0.7753, -1.3809,  0.2013],
+        [-0.2287, -0.5858,  0.0458],
+        [-0.6677, -1.3756,  0.1527],
+        [ 0.3419, -0.2536,  0.4552]], grad_fn=&lt;AddmmBackward&gt;)
 </pre>
 </div>
 </div>
@@ -160,14 +160,14 @@ nb_path: "nbs/15_callback.hook.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([ 0.0418,  0.2453, -0.5478]), None, tensor([[-0.2083, -0.0263, -0.3125],
-        [-0.3270,  0.4916, -0.7432],
-        [-0.1454, -0.2618, -0.4977],
-        [ 0.0569, -0.1084, -0.4065],
-        [ 0.2697,  0.0396, -0.0799]])) (tensor([[ 0.0223,  0.2184, -0.0859],
-        [ 0.0111, -0.0302, -0.2742],
-        [-0.1179,  0.0389, -0.2361],
-        [ 0.1264,  0.0182,  0.0485]]),)
+<pre>Linear(in_features=5, out_features=3, bias=True) (tensor([-0.0540, -0.3042, -0.0928]), None, tensor([[-0.2777, -0.6483, -0.5103],
+        [ 0.1898,  0.3238,  0.3187],
+        [ 0.1839,  0.2838,  0.3302],
+        [-0.0485, -0.0478, -0.1163],
+        [-0.0107, -0.0062,  0.0186]])) (tensor([[-0.1005, -0.2200, -0.1706],
+        [ 0.0101, -0.0002, -0.0116],
+        [ 0.0199,  0.0020,  0.0450],
+        [ 0.0165, -0.0860,  0.0444]]),)
 </pre>
 </div>
 </div>
@@ -1037,7 +1037,7 @@ nb_path: "nbs/15_callback.hook.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,4.099071979522705,3.5469274520874023,&#39;00:00&#39;]
+<pre>(#4) [0,14.337016105651855,9.152174949645996,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
@@ -1077,7 +1077,7 @@ nb_path: "nbs/15_callback.hook.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,12.485884666442871,11.434316635131836,&#39;00:00&#39;]
+<pre>(#4) [0,28.941675186157227,30.372051239013672,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
@@ -1218,7 +1218,7 @@ nb_path: "nbs/15_callback.hook.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="layer_info" class="doc_header"><code>layer_info</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>layer_info</code>(<strong><code>model</code></strong>, <strong>*<code>xb</code></strong>)</p>
+<h4 id="layer_info" class="doc_header"><code>layer_info</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>layer_info</code>(<strong><code>learn</code></strong>, <strong>*<code>xb</code></strong>)</p>
 </blockquote>
 <p>Return layer infos of <code>model</code> on <code>xb</code> (only support batch first inputs)</p>
 
@@ -1239,9 +1239,9 @@ nb_path: "nbs/15_callback.hook.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_m</span><span class="p">():</span> <span class="k">return</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">sample_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">layer_info</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">sample_input</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">layer_info</span><span class="p">(</span><span class="n">synth_learner</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">_m</span><span class="p">()),</span> <span class="n">sample_input</span><span class="p">),</span> <span class="p">[</span>
     <span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">]),</span>
     <span class="p">(</span><span class="s1">&#39;ReLU&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">]),</span>
     <span class="p">(</span><span class="s1">&#39;BatchNorm1d&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">]),</span>
@@ -1253,124 +1253,53 @@ nb_path: "nbs/15_callback.hook.ipynb"
 </div>
 </div>
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">_2InpModel</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">inps</span><span class="p">):</span>
-        <span class="n">outputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">inps</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span>
-
-
-<span class="n">m</span> <span class="o">=</span> <span class="n">_2InpModel</span><span class="p">()</span>
-<span class="n">sample_inputs</span> <span class="o">=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">layer_info</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="o">*</span><span class="n">sample_inputs</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">]),</span>
-    <span class="p">(</span><span class="s1">&#39;ReLU&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">]),</span>
-    <span class="p">(</span><span class="s1">&#39;BatchNorm1d&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">]),</span>
-    <span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
 <div class="output_area">
 
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="module_summary" class="doc_header"><code>module_summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L160" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>module_summary</code>(<strong>*<code>xb</code></strong>)</p>
-</blockquote>
-<p>Print a summary of <code>self</code> using <code>xb</code></p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span> <span class="n">p</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">sample_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">module_summary</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">sample_input</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Sequential (Input shape: [&#39;16 x 1&#39;])
-================================================================
-Layer (type)         Output Shape         Param #    Trainable 
-================================================================
-Linear               16 x 50              100        False     
-________________________________________________________________
-ReLU                 16 x 50              0          False     
-________________________________________________________________
-BatchNorm1d          16 x 50              100        True      
-________________________________________________________________
-Linear               16 x 1               51         True      
-________________________________________________________________
-
-Total params: 251
-Total trainable params: 151
-Total non-trainable params: 100
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(#4) [0,None,&#39;00:00&#39;,&#39;00:00&#39;]
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="module_summary" class="doc_header"><code>module_summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>module_summary</code>(<strong><code>learn</code></strong>, <strong>*<code>xb</code></strong>)</p>
+</blockquote>
+<p>Print a summary of <code>model</code> using <code>xb</code></p>
+
+</div>
 
 </div>
 
@@ -1398,7 +1327,7 @@ Total non-trainable params: 100
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Learner.summary" class="doc_header"><code>Learner.summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L183" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.summary</code>()</p>
+<h4 id="Learner.summary" class="doc_header"><code>Learner.summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L185" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.summary</code>()</p>
 </blockquote>
 <p>Print a summary of the model, optimizer and loss function.</p>
 
@@ -1419,11 +1348,7 @@ Total non-trainable params: 100
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span> <span class="n">p</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">learn</span> <span class="o">=</span> <span class="n">synth_learner</span><span class="p">()</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">create_opt</span><span class="p">()</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="n">m</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">synth_learner</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">_m</span><span class="p">())</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
@@ -1436,6 +1361,14 @@ Total non-trainable params: 100
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(#4) [0,None,&#39;00:00&#39;,&#39;00:00&#39;]
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1443,7 +1376,7 @@ Total non-trainable params: 100
 ================================================================
 Layer (type)         Output Shape         Param #    Trainable 
 ================================================================
-Linear               16 x 50              100        False     
+Linear               16 x 50              100        True      
 ________________________________________________________________
 ReLU                 16 x 50              0          False     
 ________________________________________________________________
@@ -1453,69 +1386,10 @@ Linear               16 x 1               51         True
 ________________________________________________________________
 
 Total params: 251
-Total trainable params: 151
-Total non-trainable params: 100
-
-Optimizer used: functools.partial(&lt;function SGD at 0x7fa1e61daf80&gt;, mom=0.9)
-Loss function: FlattenedLoss of MSELoss()
-
-Model unfrozen
-
-Callbacks:
-  - TrainEvalCallback
-  - Recorder</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">_NOutModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x1</span><span class="p">):</span>
-        <span class="n">seq_len</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">hid_size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">256</span>
-        <span class="n">num_layer</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">hid_size</span><span class="p">)),</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="n">num_layer</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">hid_size</span><span class="p">))</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">_NOutModel</span><span class="p">()</span>
-<span class="n">learn</span> <span class="o">=</span> <span class="n">synth_learner</span><span class="p">()</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">m</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> <span class="c1"># Output Shape should be (50, 16, 256), (1, 16, 256)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>_NOutModel (Input shape: [&#39;16 x 1&#39;])
-================================================================
-Layer (type)         Output Shape         Param #    Trainable 
-================================================================
-_NOutModel           [&#39;16 x 16 x 256&#39;, &#39;  0          False     
-________________________________________________________________
-
-Total params: 0
-Total trainable params: 0
+Total trainable params: 251
 Total non-trainable params: 0
 
-Optimizer used: functools.partial(&lt;function SGD at 0x7fa1e61daf80&gt;, mom=0.9)
+Optimizer used: functools.partial(&lt;function SGD at 0x7fb8d1340440&gt;, mom=0.9)
 Loss function: FlattenedLoss of MSELoss()
 
 Callbacks:
@@ -1617,7 +1491,7 @@ Callbacks:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ActivationStats" class="doc_header"><code>class</code> <code>ActivationStats</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L196" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ActivationStats</code>(<strong><code>with_hist</code></strong>=<em><code>False</code></em>, <strong><code>modules</code></strong>=<em><code>None</code></em>, <strong><code>every</code></strong>=<em><code>None</code></em>, <strong><code>remove_end</code></strong>=<em><code>True</code></em>, <strong><code>is_forward</code></strong>=<em><code>True</code></em>, <strong><code>detach</code></strong>=<em><code>True</code></em>, <strong><code>cpu</code></strong>=<em><code>True</code></em>, <strong><code>hook</code></strong>=<em><code>None</code></em>) :: <a href="/callback.hook#HookCallback"><code>HookCallback</code></a></p>
+<h2 id="ActivationStats" class="doc_header"><code>class</code> <code>ActivationStats</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/hook.py#L198" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ActivationStats</code>(<strong><code>with_hist</code></strong>=<em><code>False</code></em>, <strong><code>modules</code></strong>=<em><code>None</code></em>, <strong><code>every</code></strong>=<em><code>None</code></em>, <strong><code>remove_end</code></strong>=<em><code>True</code></em>, <strong><code>is_forward</code></strong>=<em><code>True</code></em>, <strong><code>detach</code></strong>=<em><code>True</code></em>, <strong><code>cpu</code></strong>=<em><code>True</code></em>, <strong><code>hook</code></strong>=<em><code>None</code></em>) :: <a href="/callback.hook#HookCallback"><code>HookCallback</code></a></p>
 </blockquote>
 <p>Callback that record the mean and std of activations.</p>
 
@@ -1652,7 +1526,7 @@ Callbacks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,7.390630722045898,6.929471969604492,&#39;00:00&#39;]
+<pre>(#4) [0,21.134803771972656,21.965744018554688,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
@@ -1685,7 +1559,7 @@ Callbacks:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(#2) [(#1) [{&#39;mean&#39;: 0.5417343378067017, &#39;std&#39;: 0.9456170797348022, &#39;near_zero&#39;: 0.25}],(#1) [{&#39;mean&#39;: 0.6769891977310181, &#39;std&#39;: 1.007888913154602, &#39;near_zero&#39;: 0.3125}]]</pre>
+<pre>(#2) [(#1) [{&#39;mean&#39;: -0.8755316734313965, &#39;std&#39;: 0.7497552037239075, &#39;near_zero&#39;: 0.875}],(#1) [{&#39;mean&#39;: -0.8900261521339417, &#39;std&#39;: 0.8982859253883362, &#39;near_zero&#39;: 0.875}]]</pre>
 </div>
 
 </div>
@@ -1734,12 +1608,12 @@ Callbacks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,8.83222484588623,7.885854244232178,&#39;00:00&#39;]
-(#4) [0,5.357978820800781,4.344269275665283,&#39;00:00&#39;]
-(#4) [0,3.5338547229766846,2.614889144897461,&#39;00:00&#39;]
-(#4) [0,13.072734832763672,5.290627479553223,&#39;00:00&#39;]
-(#4) [0,11.162595748901367,8.782794952392578,&#39;00:00&#39;]
-(#4) [0,7.24176025390625,5.438442230224609,&#39;00:00&#39;]
+<pre>(#4) [0,7.302354335784912,9.316861152648926,&#39;00:00&#39;]
+(#4) [0,14.255256652832031,12.71296501159668,&#39;00:00&#39;]
+(#4) [0,17.057458877563477,16.113502502441406,&#39;00:00&#39;]
+(#4) [0,7.450095176696777,8.360347747802734,&#39;00:00&#39;]
+(#4) [0,9.364590644836426,9.349203109741211,&#39;00:00&#39;]
+(#4) [0,20.653480529785156,16.937889099121094,&#39;00:00&#39;]
 </pre>
 </div>
 </div>

@@ -67,7 +67,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Callbacks can occur at any of these times:: <em>before_fit before_epoch before_train before_batch after_pred after_loss after_backward after_step after_cancel_batch after_batch after_cancel_train after_train before_validate after_cancel_validate after_validate after_cancel_epoch after_epoch after_cancel_fit after_fit</em>.</p>
+<p>Callbacks can occur at any of these times:: <em>before_fit before_epoch before_train before_batch after_pred after_loss before_backward after_backward after_step after_cancel_batch after_batch after_cancel_train after_train before_validate after_cancel_validate after_validate after_cancel_epoch after_epoch after_cancel_fit after_fit</em>.</p>
 
 </div>
 </div>
@@ -160,7 +160,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Callback" class="doc_header"><code>class</code> <code>Callback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L31" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Callback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <code>GetAttr</code></p>
+<h2 id="Callback" class="doc_header"><code>class</code> <code>Callback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L31" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Callback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>before_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <code>GetAttr</code></p>
 </blockquote>
 <p>Basic class handling tweaks of the training loop by changing a <a href="/learner#Learner"><code>Learner</code></a> in various events</p>
 
@@ -192,6 +192,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 <li><code>before_batch</code>: called at the beginning of each batch, just after drawing said batch. It can be used to do any setup necessary for the batch (like hyper-parameter scheduling) or to change the input/target before it goes in the model (change of the input with techniques like mixup for instance).</li>
 <li><code>after_pred</code>: called after computing the output of the model on the batch. It can be used to change that output before it's fed to the loss.</li>
 <li><code>after_loss</code>: called after the loss has been computed, but before the backward pass. It can be used to add any penalty to the loss (AR or TAR in RNN training for instance).</li>
+<li><code>before_backward</code>: called after the loss has been computed, but only in training mode (i.e. when the backward pass will be used)</li>
 <li><code>after_backward</code>: called after the backward pass, but before the update of the parameters. It can be used to do any change to the gradients before said update (gradient clipping for instance).</li>
 <li><code>after_step</code>: called after the step and before the gradients are zeroed.</li>
 <li><code>after_batch</code>: called at the end of a batch, for any clean-up before the next one.</li>
@@ -505,7 +506,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="TrainEvalCallback" class="doc_header"><code>class</code> <code>TrainEvalCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L59" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>TrainEvalCallback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h3 id="TrainEvalCallback" class="doc_header"><code>class</code> <code>TrainEvalCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L59" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>TrainEvalCallback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>before_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p><a href="/callback.core#Callback"><code>Callback</code></a> that tracks the number of iterations done and properly sets training/eval mode</p>
 
@@ -590,31 +591,6 @@ nb_path: "nbs/13_callback.core.ipynb"
 <h4 id="TrainEvalCallback.before_train" class="doc_header"><code>TrainEvalCallback.before_train</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TrainEvalCallback.before_train</code>()</p>
 </blockquote>
 <p>Set the model in training mode</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="TrainEvalCallback.before_validate" class="doc_header"><code>TrainEvalCallback.before_validate</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TrainEvalCallback.before_validate</code>()</p>
-</blockquote>
-<p>Set the model in validation mode</p>
 
 </div>
 
@@ -726,7 +702,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GatherPredsCallback.after_validate" class="doc_header"><code>GatherPredsCallback.after_validate</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GatherPredsCallback.after_validate</code>()</p>
+<h4 id="GatherPredsCallback.after_validate" class="doc_header"><code>GatherPredsCallback.after_validate</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GatherPredsCallback.after_validate</code>()</p>
 </blockquote>
 <p>Concatenate all recorded tensors</p>
 
@@ -758,7 +734,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="FetchPredsCallback" class="doc_header"><code>class</code> <code>FetchPredsCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L129" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>FetchPredsCallback</code>(<strong><code>ds_idx</code></strong>=<em><code>1</code></em>, <strong><code>dl</code></strong>=<em><code>None</code></em>, <strong><code>with_input</code></strong>=<em><code>False</code></em>, <strong><code>with_decoded</code></strong>=<em><code>False</code></em>, <strong><code>cbs</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h3 id="FetchPredsCallback" class="doc_header"><code>class</code> <code>FetchPredsCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/core.py#L131" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>FetchPredsCallback</code>(<strong><code>ds_idx</code></strong>=<em><code>1</code></em>, <strong><code>dl</code></strong>=<em><code>None</code></em>, <strong><code>with_input</code></strong>=<em><code>False</code></em>, <strong><code>with_decoded</code></strong>=<em><code>False</code></em>, <strong><code>cbs</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>A callback to fetch predictions during the training loop</p>
 
