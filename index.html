@@ -30,7 +30,7 @@ nb_path: "nbs/index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://github.com/fastai/fastai2/actions?query=workflow%3ACI"><img src="https://github.com/fastai/fastai2/workflows/CI/badge.svg" alt="CI-Badge"></a> <a href="https://pypi.org/project/fastai2/#description"><img src="https://img.shields.io/pypi/v/fastai2?color=blue&amp;label=pypi%20version" alt="PyPI"></a> <a href="https://anaconda.org/fastai/fastai2"><img src="https://img.shields.io/conda/vn/fastai/fastai2?color=seagreen&amp;label=conda%20version" alt="Conda (channel only)"></a> <a href="https://github.com/fastai/docker-containers"><img src="https://github.com/fastai/docker-containers/workflows/Build%20fastai2%20images/badge.svg" alt="Build fastai2 images"></a></p>
+<p><a href="https://github.com/fastai/fastai/actions?query=workflow%3ACI"><img src="https://github.com/fastai/fastai/workflows/CI/badge.svg" alt="CI-Badge"></a> <a href="https://pypi.org/project/fastai2/#description"><img src="https://img.shields.io/pypi/v/fastai2?color=blue&amp;label=pypi%20version" alt="PyPI"></a> <a href="https://anaconda.org/fastai/fastai2"><img src="https://img.shields.io/conda/vn/fastai/fastai2?color=seagreen&amp;label=conda%20version" alt="Conda (channel only)"></a> <a href="https://github.com/fastai/docker-containers"><img src="https://github.com/fastai/docker-containers/workflows/Build%20fastai2%20images/badge.svg" alt="Build fastai2 images"></a></p>
 
 </div>
 </div>
@@ -43,7 +43,7 @@ nb_path: "nbs/index.ipynb"
 <pre><code> git clone --recurse-submodules https://github.com/fastai/fastai2
 
 </code></pre>
-<p>If you're using a fork of fastai2, you'll need to fork the <code>fastai-docs</code> repo as well.</p>
+<p>If you're using a fork of fastai2, you'll need to fork the <a href="https://github.com/fastai/fastai-docs">fastai-docs</a> repo as well.</p>
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 </div>
 </div>
@@ -106,6 +106,9 @@ pip install pydicom kornia opencv-python scikit-image
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After you clone this repository, please run <code>nbdev_install_git_hooks</code> in your terminal. This sets up git hooks, which clean up the notebooks to remove the extraneous stuff stored in the notebooks (e.g. which cells you ran) which causes unnecessary merge conflicts.</p>
+<p>Remember that fastai v2 uses <a href="https://git-scm.com/docs/gitsubmodules">Git submodules</a>, so you have to include the flag <code>--recurse-submodules</code> in some of your Git commands (<code>git clone</code>, <code>git pull</code>). Alternatively, you can set the Git configuration option (since Git 2.15):</p>
+
+<pre><code>git config --local submodule.recurse true</code></pre>
 <p>Before submitting a PR, check that the local library and notebooks match. The script <code>nbdev_diff_nbs</code> can let you know if there is a difference between the local library and the notebooks.</p>
 <ul>
 <li>If you made a change to the notebooks in one of the exported cells, you can export it to the library with <code>nbdev_build_lib</code> or <code>make fastai2</code>.</li>
