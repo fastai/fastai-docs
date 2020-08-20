@@ -543,9 +543,9 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 <p>To process this data to train a model, we need to build a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> that will be applied lazily. In this case we might could do the pre-processing once and for all and only use the transform for decoding (we will see how just after), but the fast tokenizer from HuggingFace is, as its name indicates, fast, so it doesn't really impact performance to do it this way.</p>
 <p>In a fastai <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> you can define:</p>
 <ul>
-<li>an <a href="/tabular.core.html#encodes"><code>encodes</code></a> method that is applied when you call the transform (a bit like the <code>forward</code> method in a <code>nn.Module</code>)</li>
-<li>a <a href="/tabular.core.html#decodes"><code>decodes</code></a> method that is applied when you call the <code>decode</code> method of the transform, if you need to decode anything for showing purposes (like converting ids to a text here)</li>
-<li>a <a href="/tabular.core.html#setups"><code>setups</code></a> method that sets some inner state of the <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> (not needed here so we skip it)</li>
+<li>an <code>encodes</code> method that is applied when you call the transform (a bit like the <code>forward</code> method in a <code>nn.Module</code>)</li>
+<li>a <code>decodes</code> method that is applied when you call the <code>decode</code> method of the transform, if you need to decode anything for showing purposes (like converting ids to a text here)</li>
+<li>a <code>setups</code> method that sets some inner state of the <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> (not needed here so we skip it)</li>
 </ul>
 
 </div>
@@ -577,8 +577,8 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Two comments on the code above:</p>
 <ul>
-<li>in <a href="/tabular.core.html#encodes"><code>encodes</code></a> we don't use the <code>tokenizer.encode</code> method since it does some additional preprocessing for the model after tokenizing and numericalizing (the aprt throwing a warning before). Here we don't need any post-processing so it's fine to skip it.</li>
-<li>in <a href="/tabular.core.html#decodes"><code>decodes</code></a> we return a <a href="/torch_core.html#TitledStr"><code>TitledStr</code></a> object and not jsut a plain string. That's a fastai class that adds a <code>show</code> method to the string, which will allow us to use all the fastai show methods.</li>
+<li>in <code>encodes</code> we don't use the <code>tokenizer.encode</code> method since it does some additional preprocessing for the model after tokenizing and numericalizing (the aprt throwing a warning before). Here we don't need any post-processing so it's fine to skip it.</li>
+<li>in <code>decodes</code> we return a <a href="/torch_core.html#TitledStr"><code>TitledStr</code></a> object and not jsut a plain string. That's a fastai class that adds a <code>show</code> method to the string, which will allow us to use all the fastai show methods.</li>
 </ul>
 
 </div>
@@ -1088,7 +1088,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the <a href="/tabular.core.html#encodes"><code>encodes</code></a> method, we still account for the case where we get something that's not already tokenized, just in case we were to build a dataset with new texts using this transform.</p>
+<p>In the <code>encodes</code> method, we still account for the case where we get something that's not already tokenized, just in case we were to build a dataset with new texts using this transform.</p>
 
 </div>
 </div>

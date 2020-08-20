@@ -1560,7 +1560,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 <p>As for <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a> or <a href="/learner.html#Learner.show_results"><code>Learner.show_results</code></a>, they internally rely on two methods your loss function should have:</p>
 <ul>
 <li>if you have a loss that combines activation and loss function (such as <code>nn.CrossEntropyLoss</code>), an <code>activation</code> function.</li>
-<li>a <a href="/tabular.core.html#decodes"><code>decodes</code></a> function that converts your predictions to the same format your targets are: for instance in the case of <code>nn.CrossEntropyLoss</code>, the <a href="/tabular.core.html#decodes"><code>decodes</code></a> function should take the argmax.it's </li>
+<li>a <code>decodes</code> function that converts your predictions to the same format your targets are: for instance in the case of <code>nn.CrossEntropyLoss</code>, the <code>decodes</code> function should take the argmax.it's </li>
 </ul>
 <p>As an example, let's look at how to implement a custom loss function doing label smoothing (this is already in fastai as <a href="/layers.html#LabelSmoothingCrossEntropy"><code>LabelSmoothingCrossEntropy</code></a>).</p>
 
@@ -1601,7 +1601,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We won't comment on the <code>forward</code> pass that just implements the loss in itself. What is important is to notice how the <code>reduction</code> attribute plays in how the final result is computed.</p>
 <p>Then since this loss function combines activation (softmax) with the actual loss, we implement <code>activation</code> that take the softmax of the output. This is what will make <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a> or <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a> return the actual predictions instead of the final activations.</p>
-<p>Lastly, <a href="/tabular.core.html#decodes"><code>decodes</code></a> changes the outputs of the model to put them in the same format as the targets (one int for each sample in the batch size) by taking the argmax of the predictions. We can pass this loss function to <a href="/learner.html#Learner"><code>Learner</code></a>:</p>
+<p>Lastly, <code>decodes</code> changes the outputs of the model to put them in the same format as the targets (one int for each sample in the batch size) by taking the argmax of the predictions. We can pass this loss function to <a href="/learner.html#Learner"><code>Learner</code></a>:</p>
 
 </div>
 </div>

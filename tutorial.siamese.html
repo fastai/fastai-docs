@@ -589,7 +589,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When you have a custom dataset like before, you can easily convert it into a fastai <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> by just changing the <code>__getitem__</code> function to <a href="/tabular.core.html#encodes"><code>encodes</code></a>. In general, a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> in fastai calls the <a href="/tabular.core.html#encodes"><code>encodes</code></a> method when you apply it on an item (a bit like PyTorch modules call <code>forward</code> when applied on something) so this will transform your python dataset in a function that transforms integer to your data.</p>
+<p>When you have a custom dataset like before, you can easily convert it into a fastai <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> by just changing the <code>__getitem__</code> function to <code>encodes</code>. In general, a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> in fastai calls the <code>encodes</code> method when you apply it on an item (a bit like PyTorch modules call <code>forward</code> when applied on something) so this will transform your python dataset in a function that transforms integer to your data.</p>
 <p>If you then return a tuple (or a subclass of a tuple), and use fastai's semantic type, you can then apply any other fastai's transform on your data and it will be dispatched properly. Let's see how that works:</p>
 
 </div>
@@ -649,7 +649,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 <p>So three things changed:</p>
 <ul>
 <li>the <code>__len__</code> disappeared, we won't need it </li>
-<li><code>__getitem___</code> became <a href="/tabular.core.html#encodes"><code>encodes</code></a></li>
+<li><code>__getitem___</code> became <code>encodes</code></li>
 <li>we return <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a> for our images</li>
 </ul>
 <p>How do we build a dataset with this? We will use <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>. It's just an object that lazily applies a collection of <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a>s on a list. Here since our transform takes integers, we will pass simple ranges for this list.</p>
@@ -716,7 +716,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The show methods in fastai all rely on some types being able to show themselves. Additionally, some transforms that need to be reversed for showing purposes (like changing a category to an index, or normalizing) have a <a href="/tabular.core.html#decodes"><code>decodes</code></a> method to undo what their encodes did. In general, fastai will call those decodes method until it arrives at a type that knows how to show itself, then call the show method on this type.</p>
+<p>The show methods in fastai all rely on some types being able to show themselves. Additionally, some transforms that need to be reversed for showing purposes (like changing a category to an index, or normalizing) have a <code>decodes</code> method to undo what their encodes did. In general, fastai will call those decodes method until it arrives at a type that knows how to show itself, then call the show method on this type.</p>
 <p>So to make this work, let's first create a new type with a show method!</p>
 
 </div>

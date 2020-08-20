@@ -2062,7 +2062,7 @@ End Fit
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>with_decoded</code> will also return the decoded predictions using the <a href="/tabular.core.html#decodes"><code>decodes</code></a> function of the loss function (if it exists). For instance, fastai's <code>CrossEntropyFlat</code> takes the argmax or predictions in its decodes.</p>
+<p><code>with_decoded</code> will also return the decoded predictions using the <code>decodes</code> function of the loss function (if it exists). For instance, fastai's <code>CrossEntropyFlat</code> takes the argmax or predictions in its decodes.</p>
 <p>Depending on the <code>loss_func</code> attribute of <a href="/learner.html#Learner"><code>Learner</code></a>, an activation function will be picked automatically so that the predictions make sense. For instance if the loss is a case of cross-entropy, a softmax will be applied, or if the loss is binary cross entropy with logits, a sigmoid will be applied. If you want to make sure a certain activation function is applied, you can pass it with <code>act</code>.</p>
 <p><code>save_preds</code> and <code>save_targs</code> should be used when your predictions are too big to fit all in memory. Give a <code>Path</code> object that points to a folder where the predictions and targets will be saved.</p>
 <p><code>concat_dim</code> is the batch dimension, where all the tensors will be concatenated.</p>
@@ -2133,7 +2133,7 @@ End Fit
 <p>It returns a tuple of three elements with, in reverse order,</p>
 <ul>
 <li>the prediction from the model, potentially passed through the activation of the loss function (if it has one)</li>
-<li>the decoded prediction, using the poential <a href="/tabular.core.html#decodes"><code>decodes</code></a> method from it</li>
+<li>the decoded prediction, using the poential <code>decodes</code> method from it</li>
 <li>the fully decoded prediction, using the transforms used to buil the <a href="/data.core.html#Datasets"><code>Datasets</code></a>/<a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a></li>
 </ul>
 

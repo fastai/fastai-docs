@@ -1643,7 +1643,7 @@ nb_path: "nbs/01_layers.ipynb"
 <ul>
 <li>it flattens the tensors before trying to take the losses since it's more convenient (with a potential tranpose to put <code>axis</code> at the end)</li>
 <li>it has a potential <code>activation</code> method that tells the library if there is an activation fused in the loss (useful for inference and methods such as <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a> or <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a>)</li>
-<li>it has a potential <a href="/tabular.core.html#decodes"><code>decodes</code></a> method that is used on predictions in inference (for instance, an argmax in classification)</li>
+<li>it has a potential <code>decodes</code> method that is used on predictions in inference (for instance, an argmax in classification)</li>
 </ul>
 
 </div>
@@ -2077,7 +2077,7 @@ nb_path: "nbs/01_layers.ipynb"
 <ul>
 <li>a <code>reduction</code> attribute, that will be used when we call <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a></li>
 <li>an <code>activation</code> function that represents the activation fused in the loss (since we use cross entropy behind the scenes). It will be applied to the output of the model when calling <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a> or <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a></li>
-<li>a <a href="/tabular.core.html#decodes"><code>decodes</code></a> function that converts the output of the model to a format similar to the target (here indices). This is used in <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a> and <a href="/learner.html#Learner.show_results"><code>Learner.show_results</code></a> to decode the predictions </li>
+<li>a <code>decodes</code> function that converts the output of the model to a format similar to the target (here indices). This is used in <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a> and <a href="/learner.html#Learner.show_results"><code>Learner.show_results</code></a> to decode the predictions </li>
 </ul>
 
 </div>
