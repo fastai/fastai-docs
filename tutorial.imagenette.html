@@ -680,7 +680,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Another way to compose several functions for <code>get_y</code> is to put them in a <code>Pipeline</code>:</p>
+<p>Another way to compose several functions for <code>get_y</code> is to put them in a <a href="https://fastcore.fast.ai/transform#Pipeline"><code>Pipeline</code></a>:</p>
 
 </div>
 </div>
@@ -758,7 +758,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's see how we can load the data with the medium-level API: we will learn about <code>Transform</code>s and <a href="/data.core.html#Datasets"><code>Datasets</code></a>. The beginning is the same as before: we download our data and get all our filenames:</p>
+<p>Now let's see how we can load the data with the medium-level API: we will learn about <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a>s and <a href="/data.core.html#Datasets"><code>Datasets</code></a>. The beginning is the same as before: we download our data and get all our filenames:</p>
 
 </div>
 </div>
@@ -783,12 +783,12 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Every bit of transformation we apply to our raw items (here the filenames) is called a <code>Transform</code> in fastai. It's basically a function with a bit of added functionality:</p>
+<p>Every bit of transformation we apply to our raw items (here the filenames) is called a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> in fastai. It's basically a function with a bit of added functionality:</p>
 <ul>
 <li>it can have different behavior depending on the type it receives (this is called type dispatch)</li>
 <li>it will generally be applied on each element of a tuple</li>
 </ul>
-<p>This way, when you have a <code>Transform</code> like resize, you can apply it on a tuple (image, label) and it will resize the image but not the categorical label (since there is no implementation of resize for categories). The exact same transform applied on a tuple (image, mask) will resize the image and the target, using bilinear interpolation on the image and nearest neighbor on the mask. This is how the library manages to always apply data augmentation transforms on every computer vision application (segmentation, point localization or object detection).</p>
+<p>This way, when you have a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> like resize, you can apply it on a tuple (image, label) and it will resize the image but not the categorical label (since there is no implementation of resize for categories). The exact same transform applied on a tuple (image, mask) will resize the image and the target, using bilinear interpolation on the image and nearest neighbor on the mask. This is how the library manages to always apply data augmentation transforms on every computer vision application (segmentation, point localization or object detection).</p>
 <p>Aditionnaly, a transform can have</p>
 <ul>
 <li>a setup executed on the whole set (or the whole training set). This is how <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> builds it vocabulary automatically.</li>
@@ -883,7 +883,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To make them proper categories that are mapped to an index before being fed to the model, we need to add the <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> transform. If we want to apply it directly, we need to give it a vocab (so that it knows how to associate a string with an int). We already saw that we can compose several transforms by using a <code>Pipeline</code>:</p>
+<p>To make them proper categories that are mapped to an index before being fed to the model, we need to add the <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> transform. If we want to apply it directly, we need to give it a vocab (so that it knows how to associate a string with an int). We already saw that we can compose several transforms by using a <a href="https://fastcore.fast.ai/transform#Pipeline"><code>Pipeline</code></a>:</p>
 
 </div>
 </div>

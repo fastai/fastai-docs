@@ -33,7 +33,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 <p>In this tutorial, we will see how to deal with a new type of task using the middle layer of the fastai library. The example we will use is a Siamese network, that takes two images and determine if they are of the same class or not. In particular we will see:</p>
 <ul>
 <li>how to quickly get <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> from a standard PyTorch <a href="/data.core.html#Datasets"><code>Datasets</code></a></li>
-<li>how to adapt this in a <code>Transform</code> to get some of the show features of fastai</li>
+<li>how to adapt this in a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> to get some of the show features of fastai</li>
 <li>how to add some new behavior to <code>show_batch</code>/<code>show_results</code> for a custom task</li>
 <li>how to write a custom <a href="/data.block.html#DataBlock"><code>DataBlock</code></a></li>
 <li>how to create your own model from a pretrained model</li>
@@ -52,7 +52,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To make our data ready for training a model, we need to create a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object in fastai. It is just a wrapper around a training <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> and a validation <a href="/data.load.html#DataLoader"><code>DataLoader</code></a>, so if you already have your own PyTorch dataloaders, you can create such an object directly.</p>
-<p>Here we don't have anything ready yet. Usually, when using PyTorch, the first step is to create a <code>Dataset</code> that is then wrapped inside a <a href="/data.load.html#DataLoader"><code>DataLoader</code></a>. We will do this first, then see how to change this <code>Dataset</code> into a <code>Transform</code> that will let us take advantage of fastai's functionality for showing a batch or using data augmentation on the GPU. Lastly we will see how we can customize the data block API and create our own new <a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a>.</p>
+<p>Here we don't have anything ready yet. Usually, when using PyTorch, the first step is to create a <code>Dataset</code> that is then wrapped inside a <a href="/data.load.html#DataLoader"><code>DataLoader</code></a>. We will do this first, then see how to change this <code>Dataset</code> into a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> that will let us take advantage of fastai's functionality for showing a batch or using data augmentation on the GPU. Lastly we will see how we can customize the data block API and create our own new <a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a>.</p>
 
 </div>
 </div>
@@ -589,7 +589,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When you have a custom dataset like before, you can easily convert it into a fastai <code>Transform</code> by just changing the <code>__getitem__</code> function to <a href="/tabular.core.html#encodes"><code>encodes</code></a>. In general, a <code>Transform</code> in fastai calls the <a href="/tabular.core.html#encodes"><code>encodes</code></a> method when you apply it on an item (a bit like PyTorch modules call <code>forward</code> when applied on something) so this will transform your python dataset in a function that transforms integer to your data.</p>
+<p>When you have a custom dataset like before, you can easily convert it into a fastai <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> by just changing the <code>__getitem__</code> function to <a href="/tabular.core.html#encodes"><code>encodes</code></a>. In general, a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> in fastai calls the <a href="/tabular.core.html#encodes"><code>encodes</code></a> method when you apply it on an item (a bit like PyTorch modules call <code>forward</code> when applied on something) so this will transform your python dataset in a function that transforms integer to your data.</p>
 <p>If you then return a tuple (or a subclass of a tuple), and use fastai's semantic type, you can then apply any other fastai's transform on your data and it will be dispatched properly. Let's see how that works:</p>
 
 </div>
@@ -652,7 +652,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 <li><code>__getitem___</code> became <a href="/tabular.core.html#encodes"><code>encodes</code></a></li>
 <li>we return <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a> for our images</li>
 </ul>
-<p>How do we build a dataset with this? We will use <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>. It's just an object that lazily applies a collection of <code>Transform</code>s on a list. Here since our transform takes integers, we will pass simple ranges for this list.</p>
+<p>How do we build a dataset with this? We will use <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>. It's just an object that lazily applies a collection of <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a>s on a list. Here since our transform takes integers, we will pass simple ranges for this list.</p>
 
 </div>
 </div>
@@ -1222,7 +1222,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since it's a subclass of <code>fastuple</code>, <code>Transform</code>s will be applied over each part of the tuple. For instance <a href="/data.transforms.html#ToTensor"><code>ToTensor</code></a> will convert this <code>ImageTuple</code> to a tuple of <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a>s:</p>
+<p>Since it's a subclass of <a href="https://fastcore.fast.ai/utils#fastuple"><code>fastuple</code></a>, <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a>s will be applied over each part of the tuple. For instance <a href="/data.transforms.html#ToTensor"><code>ToTensor</code></a> will convert this <code>ImageTuple</code> to a tuple of <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a>s:</p>
 
 </div>
 </div>
@@ -1445,7 +1445,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can check the types of the elements in one batch with the <code>explode_types</code> method. Here we have a tuple with one <code>ImageTuple</code> of two <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a>s and one <a href="/torch_core.html#TensorCategory"><code>TensorCategory</code></a>. The transform properly kept the types of everything even after collating the samples together!</p>
+<p>We can check the types of the elements in one batch with the <a href="https://fastcore.fast.ai/dispatch#explode_types"><code>explode_types</code></a> method. Here we have a tuple with one <code>ImageTuple</code> of two <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a>s and one <a href="/torch_core.html#TensorCategory"><code>TensorCategory</code></a>. The transform properly kept the types of everything even after collating the samples together!</p>
 
 </div>
 </div>

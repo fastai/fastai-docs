@@ -185,7 +185,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Like fastai <code>Transform</code>s, the tokenizer has a <code>decode</code> method to give you back a text from ids:</p>
+<p>Like fastai <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a>s, the tokenizer has a <code>decode</code> method to give you back a text from ids:</p>
 
 </div>
 </div>
@@ -540,12 +540,12 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To process this data to train a model, we need to build a <code>Transform</code> that will be applied lazily. In this case we might could do the pre-processing once and for all and only use the transform for decoding (we will see how just after), but the fast tokenizer from HuggingFace is, as its name indicates, fast, so it doesn't really impact performance to do it this way.</p>
-<p>In a fastai <code>Transform</code> you can define:</p>
+<p>To process this data to train a model, we need to build a <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> that will be applied lazily. In this case we might could do the pre-processing once and for all and only use the transform for decoding (we will see how just after), but the fast tokenizer from HuggingFace is, as its name indicates, fast, so it doesn't really impact performance to do it this way.</p>
+<p>In a fastai <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> you can define:</p>
 <ul>
 <li>an <a href="/tabular.core.html#encodes"><code>encodes</code></a> method that is applied when you call the transform (a bit like the <code>forward</code> method in a <code>nn.Module</code>)</li>
 <li>a <a href="/tabular.core.html#decodes"><code>decodes</code></a> method that is applied when you call the <code>decode</code> method of the transform, if you need to decode anything for showing purposes (like converting ids to a text here)</li>
-<li>a <a href="/tabular.core.html#setups"><code>setups</code></a> method that sets some inner state of the <code>Transform</code> (not needed here so we skip it)</li>
+<li>a <a href="/tabular.core.html#setups"><code>setups</code></a> method that sets some inner state of the <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> (not needed here so we skip it)</li>
 </ul>
 
 </div>
@@ -586,7 +586,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can then group your data with this <code>Transform</code> using a <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>. It has an s in its name because it contains the training and validation set. We indicate the indices of the training set and the validation set with <code>splits</code> (here all the first indices until <code>len(df_train)</code> and then all the remaining indices):</p>
+<p>You can then group your data with this <a href="https://fastcore.fast.ai/transform#Transform"><code>Transform</code></a> using a <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>. It has an s in its name because it contains the training and validation set. We indicate the indices of the training set and the validation set with <code>splits</code> (here all the first indices until <code>len(df_train)</code> and then all the remaining indices):</p>
 
 </div>
 </div>
