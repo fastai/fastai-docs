@@ -46,7 +46,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will look at several ways to get our data in <a href="/data.core#DataLoaders"><code>DataLoaders</code></a>: first we will use <a href="/vision.data#ImageDataLoaders"><code>ImageDataLoaders</code></a> factory methods (application layer), then the data block API (high level API) and lastly, how to do the same thing with the mid-level API.</p>
+<p>We will look at several ways to get our data in <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a>: first we will use <a href="/vision.data.html#ImageDataLoaders"><code>ImageDataLoaders</code></a> factory methods (application layer), then the data block API (high level API) and lastly, how to do the same thing with the mid-level API.</p>
 
 </div>
 </div>
@@ -108,7 +108,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We use <a href="/vision.data#ImageDataLoaders.from_folder"><code>ImageDataLoaders.from_folder</code></a> to get everything (since our data is organized in an imageNet-style format):</p>
+<p>We use <a href="/vision.data.html#ImageDataLoaders.from_folder"><code>ImageDataLoaders.from_folder</code></a> to get everything (since our data is organized in an imageNet-style format):</p>
 
 </div>
 </div>
@@ -181,7 +181,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And as we saw in previous tutorials, the <a href="/data.transforms#get_image_files"><code>get_image_files</code></a> function helps get all the images in subfolders:</p>
+<p>And as we saw in previous tutorials, the <a href="/data.transforms.html#get_image_files"><code>get_image_files</code></a> function helps get all the images in subfolders:</p>
 
 </div>
 </div>
@@ -205,7 +205,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's begin with an empty <a href="/data.block#DataBlock"><code>DataBlock</code></a>.</p>
+<p>Let's begin with an empty <a href="/data.block.html#DataBlock"><code>DataBlock</code></a>.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By itself, a <a href="/data.block#DataBlock"><code>DataBlock</code></a> is just a blue print on how to assemble your data. It does not do anything until you pass it a source. You can choose to then convert that source into a <a href="/data.core#Datasets"><code>Datasets</code></a> or a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> by using the <a href="/data.block#DataBlock.datasets"><code>DataBlock.datasets</code></a> or <a href="/data.block#DataBlock.dataloaders"><code>DataBlock.dataloaders</code></a> method. Since we haven't done anything to get our data ready for batches, the <code>dataloaders</code> method will fail here, but we can have a look at how it gets converted in <a href="/data.core#Datasets"><code>Datasets</code></a>. This is where we pass the source of our data, here all of our filenames:</p>
+<p>By itself, a <a href="/data.block.html#DataBlock"><code>DataBlock</code></a> is just a blue print on how to assemble your data. It does not do anything until you pass it a source. You can choose to then convert that source into a <a href="/data.core.html#Datasets"><code>Datasets</code></a> or a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> by using the <a href="/data.block.html#DataBlock.datasets"><code>DataBlock.datasets</code></a> or <a href="/data.block.html#DataBlock.dataloaders"><code>DataBlock.dataloaders</code></a> method. Since we haven't done anything to get our data ready for batches, the <code>dataloaders</code> method will fail here, but we can have a look at how it gets converted in <a href="/data.core.html#Datasets"><code>Datasets</code></a>. This is where we pass the source of our data, here all of our filenames:</p>
 
 </div>
 </div>
@@ -338,7 +338,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Our inputs are ready to be processed as images (since images can be built from filenames), but our target is not. We need to convert that filename to a class name. For this, fastai provides <a href="/data.transforms#parent_label"><code>parent_label</code></a>:</p>
+<p>Our inputs are ready to be processed as images (since images can be built from filenames), but our target is not. We need to convert that filename to a class name. For this, fastai provides <a href="/data.transforms.html#parent_label"><code>parent_label</code></a>:</p>
 
 </div>
 </div>
@@ -476,7 +476,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that our inputs and targets are ready, we can specify types to tell the data block API that our inputs are images and our targets are categories. Types are represented by blocks in the data block API, here we use <a href="/vision.data#ImageBlock"><code>ImageBlock</code></a> and <a href="/data.block#CategoryBlock"><code>CategoryBlock</code></a>:</p>
+<p>Now that our inputs and targets are ready, we can specify types to tell the data block API that our inputs are images and our targets are categories. Types are represented by blocks in the data block API, here we use <a href="/vision.data.html#ImageBlock"><code>ImageBlock</code></a> and <a href="/data.block.html#CategoryBlock"><code>CategoryBlock</code></a>:</p>
 
 </div>
 </div>
@@ -521,7 +521,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see how the <a href="/data.block#DataBlock"><code>DataBlock</code></a> automatically added the transforms necessary to open the image, or how it changed the name "cat" to an index (with a special tensor type). To do this, it created a mapping from categories to index called "vocab" that we can access this way:</p>
+<p>We can see how the <a href="/data.block.html#DataBlock"><code>DataBlock</code></a> automatically added the transforms necessary to open the image, or how it changed the name "cat" to an index (with a special tensor type). To do this, it created a mapping from categories to index called "vocab" that we can access this way:</p>
 
 </div>
 </div>
@@ -561,8 +561,8 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that you can mix and match any block for input and targets, which is why the API is named data block API. You can also have more than two blocks (if you have multiple inputs and/or targets), you would just need to pass <code>n_inp</code> to the <a href="/data.block#DataBlock"><code>DataBlock</code></a> to tell the library how many inputs there are (the rest would be targets) and pass a list of functions to <code>get_x</code> and/or <code>get_y</code> (to explain how to process each item to be ready for its type). See the object detection below for such an example.</p>
-<p>The next step is to control how our validation set is created. We do this by passing a <code>splitter</code> to <a href="/data.block#DataBlock"><code>DataBlock</code></a>. For instance, here is how we split by grandparent folder.</p>
+<p>Note that you can mix and match any block for input and targets, which is why the API is named data block API. You can also have more than two blocks (if you have multiple inputs and/or targets), you would just need to pass <code>n_inp</code> to the <a href="/data.block.html#DataBlock"><code>DataBlock</code></a> to tell the library how many inputs there are (the rest would be targets) and pass a list of functions to <code>get_x</code> and/or <code>get_y</code> (to explain how to process each item to be ready for its type). See the object detection below for such an example.</p>
+<p>The next step is to control how our validation set is created. We do this by passing a <code>splitter</code> to <a href="/data.block.html#DataBlock"><code>DataBlock</code></a>. For instance, here is how we split by grandparent folder.</p>
 
 </div>
 </div>
@@ -608,7 +608,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The last step is to specify item transforms and batch transforms (the same way as we do it in <a href="/vision.data#ImageDataLoaders"><code>ImageDataLoaders</code></a> factory methods):</p>
+<p>The last step is to specify item transforms and batch transforms (the same way as we do it in <a href="/vision.data.html#ImageDataLoaders"><code>ImageDataLoaders</code></a> factory methods):</p>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With that resize, we are now able to batch items together and can finally call <code>dataloaders</code> to convert our <a href="/data.block#DataBlock"><code>DataBlock</code></a> to a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> object:</p>
+<p>With that resize, we are now able to batch items together and can finally call <code>dataloaders</code> to convert our <a href="/data.block.html#DataBlock"><code>DataBlock</code></a> to a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object:</p>
 
 </div>
 </div>
@@ -758,7 +758,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's see how we can load the data with the medium-level API: we will learn about <code>Transform</code>s and <a href="/data.core#Datasets"><code>Datasets</code></a>. The beginning is the same as before: we download our data and get all our filenames:</p>
+<p>Now let's see how we can load the data with the medium-level API: we will learn about <code>Transform</code>s and <a href="/data.core.html#Datasets"><code>Datasets</code></a>. The beginning is the same as before: we download our data and get all our filenames:</p>
 
 </div>
 </div>
@@ -791,8 +791,8 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 <p>This way, when you have a <code>Transform</code> like resize, you can apply it on a tuple (image, label) and it will resize the image but not the categorical label (since there is no implementation of resize for categories). The exact same transform applied on a tuple (image, mask) will resize the image and the target, using bilinear interpolation on the image and nearest neighbor on the mask. This is how the library manages to always apply data augmentation transforms on every computer vision application (segmentation, point localization or object detection).</p>
 <p>Aditionnaly, a transform can have</p>
 <ul>
-<li>a setup executed on the whole set (or the whole training set). This is how <a href="/data.transforms#Categorize"><code>Categorize</code></a> builds it vocabulary automatically.</li>
-<li>a decodes that can undo what the transform does for showing purposes (for instance <a href="/data.transforms#Categorize"><code>Categorize</code></a> will convert back an index into a category).</li>
+<li>a setup executed on the whole set (or the whole training set). This is how <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> builds it vocabulary automatically.</li>
+<li>a decodes that can undo what the transform does for showing purposes (for instance <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> will convert back an index into a category).</li>
 </ul>
 <p>We won't delve into those bits of the low level API here, but you can check out the <a href="http://dev.fast.ai/tutorial.pets">pets tutorial</a> or the more advanced <a href="http://dev.fast.ai/tutorial.siamese">siamese tutorial</a> for more information.</p>
 
@@ -801,7 +801,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To open an image, we use the <a href="/vision.core#PILImage.create"><code>PILImage.create</code></a> transform. It will open the image and make it of the fastai type <a href="/vision.core#PILImage"><code>PILImage</code></a>:</p>
+<p>To open an image, we use the <a href="/vision.core.html#PILImage.create"><code>PILImage.create</code></a> transform. It will open the image and make it of the fastai type <a href="/vision.core.html#PILImage"><code>PILImage</code></a>:</p>
 
 </div>
 </div>
@@ -843,7 +843,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In parallel, we have already seen how to get the label of our image, using <a href="/data.transforms#parent_label"><code>parent_label</code></a> and <code>lbl_dict</code>:</p>
+<p>In parallel, we have already seen how to get the label of our image, using <a href="/data.transforms.html#parent_label"><code>parent_label</code></a> and <code>lbl_dict</code>:</p>
 
 </div>
 </div>
@@ -883,7 +883,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To make them proper categories that are mapped to an index before being fed to the model, we need to add the <a href="/data.transforms#Categorize"><code>Categorize</code></a> transform. If we want to apply it directly, we need to give it a vocab (so that it knows how to associate a string with an int). We already saw that we can compose several transforms by using a <code>Pipeline</code>:</p>
+<p>To make them proper categories that are mapped to an index before being fed to the model, we need to add the <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> transform. If we want to apply it directly, we need to give it a vocab (so that it knows how to associate a string with an int). We already saw that we can compose several transforms by using a <code>Pipeline</code>:</p>
 
 </div>
 </div>
@@ -924,7 +924,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now to build our <a href="/data.core#Datasets"><code>Datasets</code></a> object, we need to specify:</p>
+<p>Now to build our <a href="/data.core.html#Datasets"><code>Datasets</code></a> object, we need to specify:</p>
 <ul>
 <li>our raw items</li>
 <li>the list of transforms that builds our inputs from the raw items</li>
@@ -955,7 +955,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can then pass all of this information to <a href="/data.core#Datasets"><code>Datasets</code></a>.</p>
+<p>We can then pass all of this information to <a href="/data.core.html#Datasets"><code>Datasets</code></a>.</p>
 
 </div>
 </div>
@@ -979,7 +979,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The main difference with what we had before is that we can just pass along <a href="/data.transforms#Categorize"><code>Categorize</code></a> without passing it the vocab: it will build it from the training data (which it knows from <code>items</code> and <code>splits</code>) during its setup phase. Let's have a look at the first element:</p>
+<p>The main difference with what we had before is that we can just pass along <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> without passing it the vocab: it will build it from the training data (which it knows from <code>items</code> and <code>splits</code>) during its setup phase. Let's have a look at the first element:</p>
 
 </div>
 </div>
@@ -1019,7 +1019,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also use our <a href="/data.core#Datasets"><code>Datasets</code></a> object to represent it:</p>
+<p>We can also use our <a href="/data.core.html#Datasets"><code>Datasets</code></a> object to represent it:</p>
 
 </div>
 </div>
@@ -1061,7 +1061,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now if we want to build a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> from this object, we need to add a few transforms that will be applied at the item level&gt; As we saw before, those transforms will be applied separately on the inputs and targets, using the appropriate implementation for each type (which can very well be don't do anything).</p>
+<p>Now if we want to build a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> from this object, we need to add a few transforms that will be applied at the item level&gt; As we saw before, those transforms will be applied separately on the inputs and targets, using the appropriate implementation for each type (which can very well be don't do anything).</p>
 <p>Here we need to:</p>
 <ul>
 <li>resize our images</li>
@@ -1119,7 +1119,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Those two bits could be done per item as well, but it's way more efficient to do it on a full batch.</p>
-<p>Note that we have more transforms than in the data block API: there was no need to think of <a href="/data.transforms#ToTensor"><code>ToTensor</code></a> or <a href="/data.transforms#IntToFloatTensor"><code>IntToFloatTensor</code></a> there. This is because data blocks come with default item transforms and batch transforms when it concerns transforms you will always need with that type.</p>
+<p>Note that we have more transforms than in the data block API: there was no need to think of <a href="/data.transforms.html#ToTensor"><code>ToTensor</code></a> or <a href="/data.transforms.html#IntToFloatTensor"><code>IntToFloatTensor</code></a> there. This is because data blocks come with default item transforms and batch transforms when it concerns transforms you will always need with that type.</p>
 <p>When passing those transforms to the <code>.dataloaders</code> method, the corresponding arguments have a slightly different name: the <code>item_tfms</code> are passed to <code>after_item</code> (because they are applied after the item has been formed) and the <code>batch_tfms</code> are passed to <code>after_batch</code> (because they are applied after the batch has been formed).</p>
 
 </div>
@@ -1192,11 +1192,11 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will start with the usual <a href="/vision.learner#cnn_learner"><code>cnn_learner</code></a> function we used in the <a href="http://dev.fast.ai/tutorial.vision">vision tutorial</a>, we will see how one can build a <a href="/learner#Learner"><code>Learner</code></a> object in fastai. Then we will learn how to customize</p>
+<p>We will start with the usual <a href="/vision.learner.html#cnn_learner"><code>cnn_learner</code></a> function we used in the <a href="http://dev.fast.ai/tutorial.vision">vision tutorial</a>, we will see how one can build a <a href="/learner.html#Learner"><code>Learner</code></a> object in fastai. Then we will learn how to customize</p>
 <ul>
 <li>the loss function and how to write one that works fully with fastai,</li>
 <li>the optimizer function and how to use PyTorch optimizers,</li>
-<li>the training loop and how to write a basic <a href="/callback.core#Callback"><code>Callback</code></a>.</li>
+<li>the training loop and how to write a basic <a href="/callback.core.html#Callback"><code>Callback</code></a>.</li>
 </ul>
 
 </div>
@@ -1204,13 +1204,13 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Building-a-Learner">Building a <a href="/learner#Learner"><code>Learner</code></a><a class="anchor-link" href="#Building-a-Learner"> </a></h3>
+<h3 id="Building-a-Learner">Building a <a href="/learner.html#Learner"><code>Learner</code></a><a class="anchor-link" href="#Building-a-Learner"> </a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The easiest way to build a <a href="/learner#Learner"><code>Learner</code></a> for image classification, as we have seen, is to use <a href="/vision.learner#cnn_learner"><code>cnn_learner</code></a>. We can specify that we don't want a pretrained model by passing <code>pretrained=False</code> (here the goal is to train a model from scratch):</p>
+<p>The easiest way to build a <a href="/learner.html#Learner"><code>Learner</code></a> for image classification, as we have seen, is to use <a href="/vision.learner.html#cnn_learner"><code>cnn_learner</code></a>. We can specify that we don't want a pretrained model by passing <code>pretrained=False</code> (here the goal is to train a model from scratch):</p>
 
 </div>
 </div>
@@ -1320,7 +1320,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's a start. But since we are not using a pretrained model, why not use a different architecture? fastai comes with a version of the resnets models that have all the tricks from modern research incorporated. While there is no pretrained model using those at the time of writing this tutorial, we can certainly use them here. For this, we just need to use the <a href="/learner#Learner"><code>Learner</code></a> class. It takes our <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> and a PyTorch model, at the minimum. Here we can use <a href="/vision.models.xresnet#xresnet34"><code>xresnet34</code></a> and since we have 10 classes, we specify <code>n_out=10</code>:</p>
+<p>That's a start. But since we are not using a pretrained model, why not use a different architecture? fastai comes with a version of the resnets models that have all the tricks from modern research incorporated. While there is no pretrained model using those at the time of writing this tutorial, we can certainly use them here. For this, we just need to use the <a href="/learner.html#Learner"><code>Learner</code></a> class. It takes our <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> and a PyTorch model, at the minimum. Here we can use <a href="/vision.models.xresnet.html#xresnet34"><code>xresnet34</code></a> and since we have 10 classes, we specify <code>n_out=10</code>:</p>
 
 </div>
 </div>
@@ -1555,14 +1555,14 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The loss function you pass to a <a href="/learner#Learner"><code>Learner</code></a> is expected to take an output and target, then return the loss. It can be any regular PyTorch function and the training loop will work without any problem. What may cause problems is when you use fastai functions like <a href="/learner#Learner.get_preds"><code>Learner.get_preds</code></a>, <a href="/learner#Learner.predict"><code>Learner.predict</code></a> or <a href="/learner#Learner.show_results"><code>Learner.show_results</code></a>.</p>
-<p>If you want <a href="/learner#Learner.get_preds"><code>Learner.get_preds</code></a> to work with the argument <code>with_loss=True</code> (which is also used when you run<a href="/interpret#ClassificationInterpretation.plot_top_losses"><code>ClassificationInterpretation.plot_top_losses</code></a> for instance), your loss function will need a <code>reduction</code> attribute (or argument) that you can set to "none" (this is standard for all PyTorch loss functions or classes). With a reduction of "none", the loss function does not return a single number (like a mean or sum) but something the same size as the target.</p>
-<p>As for <a href="/learner#Learner.predict"><code>Learner.predict</code></a> or <a href="/learner#Learner.show_results"><code>Learner.show_results</code></a>, they internally rely on two methods your loss function should have:</p>
+<p>The loss function you pass to a <a href="/learner.html#Learner"><code>Learner</code></a> is expected to take an output and target, then return the loss. It can be any regular PyTorch function and the training loop will work without any problem. What may cause problems is when you use fastai functions like <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a>, <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a> or <a href="/learner.html#Learner.show_results"><code>Learner.show_results</code></a>.</p>
+<p>If you want <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a> to work with the argument <code>with_loss=True</code> (which is also used when you run<a href="/interpret.html#ClassificationInterpretation.plot_top_losses"><code>ClassificationInterpretation.plot_top_losses</code></a> for instance), your loss function will need a <code>reduction</code> attribute (or argument) that you can set to "none" (this is standard for all PyTorch loss functions or classes). With a reduction of "none", the loss function does not return a single number (like a mean or sum) but something the same size as the target.</p>
+<p>As for <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a> or <a href="/learner.html#Learner.show_results"><code>Learner.show_results</code></a>, they internally rely on two methods your loss function should have:</p>
 <ul>
 <li>if you have a loss that combines activation and loss function (such as <code>nn.CrossEntropyLoss</code>), an <code>activation</code> function.</li>
-<li>a <a href="/tabular.core#decodes"><code>decodes</code></a> function that converts your predictions to the same format your targets are: for instance in the case of <code>nn.CrossEntropyLoss</code>, the <a href="/tabular.core#decodes"><code>decodes</code></a> function should take the argmax.it's </li>
+<li>a <a href="/tabular.core.html#decodes"><code>decodes</code></a> function that converts your predictions to the same format your targets are: for instance in the case of <code>nn.CrossEntropyLoss</code>, the <a href="/tabular.core.html#decodes"><code>decodes</code></a> function should take the argmax.it's </li>
 </ul>
-<p>As an example, let's look at how to implement a custom loss function doing label smoothing (this is already in fastai as <a href="/layers#LabelSmoothingCrossEntropy"><code>LabelSmoothingCrossEntropy</code></a>).</p>
+<p>As an example, let's look at how to implement a custom loss function doing label smoothing (this is already in fastai as <a href="/layers.html#LabelSmoothingCrossEntropy"><code>LabelSmoothingCrossEntropy</code></a>).</p>
 
 </div>
 </div>
@@ -1600,8 +1600,8 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We won't comment on the <code>forward</code> pass that just implements the loss in itself. What is important is to notice how the <code>reduction</code> attribute plays in how the final result is computed.</p>
-<p>Then since this loss function combines activation (softmax) with the actual loss, we implement <code>activation</code> that take the softmax of the output. This is what will make <a href="/learner#Learner.get_preds"><code>Learner.get_preds</code></a> or <a href="/learner#Learner.predict"><code>Learner.predict</code></a> return the actual predictions instead of the final activations.</p>
-<p>Lastly, <a href="/tabular.core#decodes"><code>decodes</code></a> changes the outputs of the model to put them in the same format as the targets (one int for each sample in the batch size) by taking the argmax of the predictions. We can pass this loss function to <a href="/learner#Learner"><code>Learner</code></a>:</p>
+<p>Then since this loss function combines activation (softmax) with the actual loss, we implement <code>activation</code> that take the softmax of the output. This is what will make <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a> or <a href="/learner.html#Learner.predict"><code>Learner.predict</code></a> return the actual predictions instead of the final activations.</p>
+<p>Lastly, <a href="/tabular.core.html#decodes"><code>decodes</code></a> changes the outputs of the model to put them in the same format as the targets (one int for each sample in the batch size) by taking the argmax of the predictions. We can pass this loss function to <a href="/learner.html#Learner"><code>Learner</code></a>:</p>
 
 </div>
 </div>
@@ -1807,9 +1807,9 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>fastai uses its own class of <a href="/optimizer#Optimizer"><code>Optimizer</code></a> built with various callbacks to refactor common functionality and provide a unique naming of hyperparameters playing the same role (like momentum in SGD, which is the same as alpha in RMSProp and beta0 in Adam) which makes it easier to schedule them (such as in <a href="/callback.schedule#Learner.fit_one_cycle"><code>Learner.fit_one_cycle</code></a>).</p>
-<p>It implements all optimizers supported by PyTorch (and much more) so you should never need to use one coming from PyTorch. Checkout the <a href="/optimizer"><code>optimizer</code></a> module to see all the optimizers natively available.</p>
-<p>However in some circumstances, you might need to use an optimizer that is not in fastai (if for instance it's a new one only implemented in PyTorch). Before learning how to port the code to our internal <a href="/optimizer#Optimizer"><code>Optimizer</code></a> (checkout the <a href="/optimizer"><code>optimizer</code></a> module to discover how), you can use the <a href="/optimizer#OptimWrapper"><code>OptimWrapper</code></a> class to wrap your PyTorch optimizer and train with it:</p>
+<p>fastai uses its own class of <a href="/optimizer.html#Optimizer"><code>Optimizer</code></a> built with various callbacks to refactor common functionality and provide a unique naming of hyperparameters playing the same role (like momentum in SGD, which is the same as alpha in RMSProp and beta0 in Adam) which makes it easier to schedule them (such as in <a href="/callback.schedule.html#Learner.fit_one_cycle"><code>Learner.fit_one_cycle</code></a>).</p>
+<p>It implements all optimizers supported by PyTorch (and much more) so you should never need to use one coming from PyTorch. Checkout the <a href="/optimizer.html"><code>optimizer</code></a> module to see all the optimizers natively available.</p>
+<p>However in some circumstances, you might need to use an optimizer that is not in fastai (if for instance it's a new one only implemented in PyTorch). Before learning how to port the code to our internal <a href="/optimizer.html#Optimizer"><code>Optimizer</code></a> (checkout the <a href="/optimizer.html"><code>optimizer</code></a> module to discover how), you can use the <a href="/optimizer.html#OptimWrapper"><code>OptimWrapper</code></a> class to wrap your PyTorch optimizer and train with it:</p>
 
 </div>
 </div>
@@ -1836,7 +1836,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We write an optimizer function that expects <code>param_groups</code>, which is a list of list of parameters. Then we pass those to the PyTorch optimizer we want to use.</p>
-<p>We can use this function and pass it to the <code>opt_func</code> argument of <a href="/learner#Learner"><code>Learner</code></a>:</p>
+<p>We can use this function and pass it to the <code>opt_func</code> argument of <a href="/learner.html#Learner"><code>Learner</code></a>:</p>
 
 </div>
 </div>
@@ -2009,7 +2009,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Changing-the-training-loop-with-a-Callback">Changing the training loop with a <a href="/callback.core#Callback"><code>Callback</code></a><a class="anchor-link" href="#Changing-the-training-loop-with-a-Callback"> </a></h3>
+<h3 id="Changing-the-training-loop-with-a-Callback">Changing the training loop with a <a href="/callback.core.html#Callback"><code>Callback</code></a><a class="anchor-link" href="#Changing-the-training-loop-with-a-Callback"> </a></h3>
 </div>
 </div>
 </div>
@@ -2023,14 +2023,14 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
     <span class="n">opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
     <span class="n">opt</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 </pre></div>
-<p>where <code>model</code>, <code>loss_func</code> and <code>opt</code> are all attributes of our <a href="/learner#Learner"><code>Learner</code></a>. To easily allow you to add new behavior in that training loop without needing to rewrite it yourself (along with all the fastai pieces you might want like mixed precision, 1cycle schedule, distributed training...), you can customize what happens in the training loop by writing a callback.</p>
-<p><a href="/callback.core#Callback"><code>Callback</code></a>s will be fully explained in an upcoming tutorial, but the basics are that:</p>
+<p>where <code>model</code>, <code>loss_func</code> and <code>opt</code> are all attributes of our <a href="/learner.html#Learner"><code>Learner</code></a>. To easily allow you to add new behavior in that training loop without needing to rewrite it yourself (along with all the fastai pieces you might want like mixed precision, 1cycle schedule, distributed training...), you can customize what happens in the training loop by writing a callback.</p>
+<p><a href="/callback.core.html#Callback"><code>Callback</code></a>s will be fully explained in an upcoming tutorial, but the basics are that:</p>
 <ul>
-<li>a <a href="/callback.core#Callback"><code>Callback</code></a> can read every piece of a <a href="/learner#Learner"><code>Learner</code></a>, hence knowing everything happening in the training loop</li>
-<li>a <a href="/callback.core#Callback"><code>Callback</code></a> can change any piece of the <a href="/learner#Learner"><code>Learner</code></a>, allowing it to alter the behavior of the training loop</li>
-<li>a <a href="/callback.core#Callback"><code>Callback</code></a> can even raise special exceptions that will allow breaking points (skipping a step, a validation phase, an epoch or even cancelling training entirely)</li>
+<li>a <a href="/callback.core.html#Callback"><code>Callback</code></a> can read every piece of a <a href="/learner.html#Learner"><code>Learner</code></a>, hence knowing everything happening in the training loop</li>
+<li>a <a href="/callback.core.html#Callback"><code>Callback</code></a> can change any piece of the <a href="/learner.html#Learner"><code>Learner</code></a>, allowing it to alter the behavior of the training loop</li>
+<li>a <a href="/callback.core.html#Callback"><code>Callback</code></a> can even raise special exceptions that will allow breaking points (skipping a step, a validation phase, an epoch or even cancelling training entirely)</li>
 </ul>
-<p>Here we will write a simple <a href="/callback.core#Callback"><code>Callback</code></a> applying <a href="https://arxiv.org/abs/1710.09412">mixup</a> to our training (the version we will write is specific to our problem, use fastai's <a href="/callback.mixup#MixUp"><code>MixUp</code></a> in other settings).</p>
+<p>Here we will write a simple <a href="/callback.core.html#Callback"><code>Callback</code></a> applying <a href="https://arxiv.org/abs/1710.09412">mixup</a> to our training (the version we will write is specific to our problem, use fastai's <a href="/callback.mixup.html#MixUp"><code>MixUp</code></a> in other settings).</p>
 <p>Mixup consists in changing the inputs by mixing two different inputs and making a linear combination of them:</p>
 <div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
@@ -2048,7 +2048,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 </pre></div>
 <p>because the loss function used is linear with respect to y.</p>
 <p>We just need to use the version with <code>reduction='none'</code> of the loss to do this linear combination, then take the mean.</p>
-<p>Here is how we write mixup in a <a href="/callback.core#Callback"><code>Callback</code></a>:</p>
+<p>Here is how we write mixup in a <a href="/callback.core.html#Callback"><code>Callback</code></a>:</p>
 
 </div>
 </div>
@@ -2106,16 +2106,16 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 <p>We can see we write two events:</p>
 <ul>
 <li><code>before_batch</code> is executed just after drawing a batch and before the model is run on the input. We first draw our random numbers <code>t</code>, following a beta distribution (like advised in the paper) and get a shuffled version of the batch (instead of drawing a second version of the batch, we mix one batch with a shuffled version of itself). Then we set <code>self.learn.xb</code> to the new input, which will be the on fed to the model.</li>
-<li><code>after_loss</code> is executed just after the loss is computed and before the backward pass. We replace <code>self.learn.loss</code> by the correct value. <a href="/layers#NoneReduce"><code>NoneReduce</code></a> is a context manager that temporarily sets the reduction attribute of a loss to 'none'.</li>
+<li><code>after_loss</code> is executed just after the loss is computed and before the backward pass. We replace <code>self.learn.loss</code> by the correct value. <a href="/layers.html#NoneReduce"><code>NoneReduce</code></a> is a context manager that temporarily sets the reduction attribute of a loss to 'none'.</li>
 </ul>
-<p>Also, we tell the <a href="/callback.core#Callback"><code>Callback</code></a> it should not run during the validation phase with <code>run_valid=False</code>.</p>
+<p>Also, we tell the <a href="/callback.core.html#Callback"><code>Callback</code></a> it should not run during the validation phase with <code>run_valid=False</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To pass a <a href="/callback.core#Callback"><code>Callback</code></a> to a <a href="/learner#Learner"><code>Learner</code></a>, we use <code>cbs=</code>:</p>
+<p>To pass a <a href="/callback.core.html#Callback"><code>Callback</code></a> to a <a href="/learner.html#Learner"><code>Learner</code></a>, we use <code>cbs=</code>:</p>
 
 </div>
 </div>
@@ -2288,7 +2288,7 @@ nb_path: "nbs/22_tutorial.imagenette.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Like label smoothing, this is a callback that provides more regularization, so you need to run more epochs before seeing any benefit. Also, our simple implementation does not have all the tricks of the fastai's implementation, so make sure to check the official one in <a href="/callback.mixup"><code>callback.mixup</code></a>!</p>
+<p>Like label smoothing, this is a callback that provides more regularization, so you need to run more epochs before seeing any benefit. Also, our simple implementation does not have all the tricks of the fastai's implementation, so make sure to check the official one in <a href="/callback.mixup.html"><code>callback.mixup</code></a>!</p>
 
 </div>
 </div>

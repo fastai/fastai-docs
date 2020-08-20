@@ -53,9 +53,9 @@ nb_path: "nbs/17_callback.tracker.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TerminateOnNaNCallback" class="doc_header"><code>class</code> <code>TerminateOnNaNCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/tracker.py#L12" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TerminateOnNaNCallback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>before_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="TerminateOnNaNCallback" class="doc_header"><code>class</code> <code>TerminateOnNaNCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/tracker.py#L12" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TerminateOnNaNCallback</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>before_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
 </blockquote>
-<p>A <a href="/callback.core#Callback"><code>Callback</code></a> that terminates training if loss is NaN.</p>
+<p>A <a href="/callback.core.html#Callback"><code>Callback</code></a> that terminates training if loss is NaN.</p>
 
 </div>
 
@@ -153,9 +153,9 @@ nb_path: "nbs/17_callback.tracker.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TrackerCallback" class="doc_header"><code>class</code> <code>TrackerCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/tracker.py#L21" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TrackerCallback</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="TrackerCallback" class="doc_header"><code>class</code> <code>TrackerCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/tracker.py#L21" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TrackerCallback</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
 </blockquote>
-<p>A <a href="/callback.core#Callback"><code>Callback</code></a> that keeps track of the best value in <code>monitor</code>.</p>
+<p>A <a href="/callback.core.html#Callback"><code>Callback</code></a> that keeps track of the best value in <code>monitor</code>.</p>
 
 </div>
 
@@ -169,7 +169,7 @@ nb_path: "nbs/17_callback.tracker.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When implementing a <a href="/callback.core#Callback"><code>Callback</code></a> that has behavior that depends on the best value of a metric or loss, subclass this <a href="/callback.core#Callback"><code>Callback</code></a> and use its <code>best</code> (for best value so far) and <code>new_best</code> (there was a new best value this epoch) attributes.</p>
+<p>When implementing a <a href="/callback.core.html#Callback"><code>Callback</code></a> that has behavior that depends on the best value of a metric or loss, subclass this <a href="/callback.core.html#Callback"><code>Callback</code></a> and use its <code>best</code> (for best value so far) and <code>new_best</code> (there was a new best value this epoch) attributes.</p>
 <p><code>comp</code> is the comparison operator used to determine if a value is best than another (defaults to <code>np.less</code> if 'loss' is in the name passed in <code>monitor</code>, <code>np.greater</code> otherwise) and <code>min_delta</code> is an optional float that requires a new value to go over the current best (depending on <code>comp</code>) by at least that amount.</p>
 
 </div>
@@ -193,9 +193,9 @@ nb_path: "nbs/17_callback.tracker.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="EarlyStoppingCallback" class="doc_header"><code>class</code> <code>EarlyStoppingCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/tracker.py#L47" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EarlyStoppingCallback</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>, <strong><code>patience</code></strong>=<em><code>1</code></em>) :: <a href="/callback.tracker#TrackerCallback"><code>TrackerCallback</code></a></p>
+<h2 id="EarlyStoppingCallback" class="doc_header"><code>class</code> <code>EarlyStoppingCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/tracker.py#L47" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EarlyStoppingCallback</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>, <strong><code>patience</code></strong>=<em><code>1</code></em>) :: <a href="/callback.tracker.html#TrackerCallback"><code>TrackerCallback</code></a></p>
 </blockquote>
-<p>A <a href="/callback.tracker#TrackerCallback"><code>TrackerCallback</code></a> that terminates training when monitored quantity stops improving.</p>
+<p>A <a href="/callback.tracker.html#TrackerCallback"><code>TrackerCallback</code></a> that terminates training when monitored quantity stops improving.</p>
 
 </div>
 
@@ -418,9 +418,9 @@ nb_path: "nbs/17_callback.tracker.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SaveModelCallback" class="doc_header"><code>class</code> <code>SaveModelCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/tracker.py#L66" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SaveModelCallback</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>, <strong><code>fname</code></strong>=<em><code>'model'</code></em>, <strong><code>every_epoch</code></strong>=<em><code>False</code></em>, <strong><code>with_opt</code></strong>=<em><code>False</code></em>) :: <a href="/callback.tracker#TrackerCallback"><code>TrackerCallback</code></a></p>
+<h2 id="SaveModelCallback" class="doc_header"><code>class</code> <code>SaveModelCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/tracker.py#L66" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SaveModelCallback</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>, <strong><code>fname</code></strong>=<em><code>'model'</code></em>, <strong><code>every_epoch</code></strong>=<em><code>False</code></em>, <strong><code>with_opt</code></strong>=<em><code>False</code></em>) :: <a href="/callback.tracker.html#TrackerCallback"><code>TrackerCallback</code></a></p>
 </blockquote>
-<p>A <a href="/callback.tracker#TrackerCallback"><code>TrackerCallback</code></a> that saves the model's best during training and loads it at the end.</p>
+<p>A <a href="/callback.tracker.html#TrackerCallback"><code>TrackerCallback</code></a> that saves the model's best during training and loads it at the end.</p>
 
 </div>
 
@@ -564,9 +564,9 @@ Better model found at epoch 1 with valid_loss value: 18.5483341217041.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ReduceLROnPlateau" class="doc_header"><code>class</code> <code>ReduceLROnPlateau</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/tracker.py#L92" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ReduceLROnPlateau</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>, <strong><code>patience</code></strong>=<em><code>1</code></em>, <strong><code>factor</code></strong>=<em><code>10.0</code></em>, <strong><code>min_lr</code></strong>=<em><code>0</code></em>) :: <a href="/callback.tracker#TrackerCallback"><code>TrackerCallback</code></a></p>
+<h2 id="ReduceLROnPlateau" class="doc_header"><code>class</code> <code>ReduceLROnPlateau</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/tracker.py#L92" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ReduceLROnPlateau</code>(<strong><code>monitor</code></strong>=<em><code>'valid_loss'</code></em>, <strong><code>comp</code></strong>=<em><code>None</code></em>, <strong><code>min_delta</code></strong>=<em><code>0.0</code></em>, <strong><code>patience</code></strong>=<em><code>1</code></em>, <strong><code>factor</code></strong>=<em><code>10.0</code></em>, <strong><code>min_lr</code></strong>=<em><code>0</code></em>) :: <a href="/callback.tracker.html#TrackerCallback"><code>TrackerCallback</code></a></p>
 </blockquote>
-<p>A <a href="/callback.tracker#TrackerCallback"><code>TrackerCallback</code></a> that reduces learning rate when a metric has stopped improving.</p>
+<p>A <a href="/callback.tracker.html#TrackerCallback"><code>TrackerCallback</code></a> that reduces learning rate when a metric has stopped improving.</p>
 
 </div>
 

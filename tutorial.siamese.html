@@ -32,12 +32,12 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this tutorial, we will see how to deal with a new type of task using the middle layer of the fastai library. The example we will use is a Siamese network, that takes two images and determine if they are of the same class or not. In particular we will see:</p>
 <ul>
-<li>how to quickly get <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> from a standard PyTorch <a href="/data.core#Datasets"><code>Datasets</code></a></li>
+<li>how to quickly get <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> from a standard PyTorch <a href="/data.core.html#Datasets"><code>Datasets</code></a></li>
 <li>how to adapt this in a <code>Transform</code> to get some of the show features of fastai</li>
 <li>how to add some new behavior to <code>show_batch</code>/<code>show_results</code> for a custom task</li>
-<li>how to write a custom <a href="/data.block#DataBlock"><code>DataBlock</code></a></li>
+<li>how to write a custom <a href="/data.block.html#DataBlock"><code>DataBlock</code></a></li>
 <li>how to create your own model from a pretrained model</li>
-<li>how to pass along a custom <code>splitter</code> to <a href="/learner#Learner"><code>Learner</code></a> to take advantage of transfer learning</li>
+<li>how to pass along a custom <code>splitter</code> to <a href="/learner.html#Learner"><code>Learner</code></a> to take advantage of transfer learning</li>
 </ul>
 
 </div>
@@ -51,8 +51,8 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To make our data ready for training a model, we need to create a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> object in fastai. It is just a wrapper around a training <a href="/data.load#DataLoader"><code>DataLoader</code></a> and a validation <a href="/data.load#DataLoader"><code>DataLoader</code></a>, so if you already have your own PyTorch dataloaders, you can create such an object directly.</p>
-<p>Here we don't have anything ready yet. Usually, when using PyTorch, the first step is to create a <code>Dataset</code> that is then wrapped inside a <a href="/data.load#DataLoader"><code>DataLoader</code></a>. We will do this first, then see how to change this <code>Dataset</code> into a <code>Transform</code> that will let us take advantage of fastai's functionality for showing a batch or using data augmentation on the GPU. Lastly we will see how we can customize the data block API and create our own new <a href="/data.block#TransformBlock"><code>TransformBlock</code></a>.</p>
+<p>To make our data ready for training a model, we need to create a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object in fastai. It is just a wrapper around a training <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> and a validation <a href="/data.load.html#DataLoader"><code>DataLoader</code></a>, so if you already have your own PyTorch dataloaders, you can create such an object directly.</p>
+<p>Here we don't have anything ready yet. Usually, when using PyTorch, the first step is to create a <code>Dataset</code> that is then wrapped inside a <a href="/data.load.html#DataLoader"><code>DataLoader</code></a>. We will do this first, then see how to change this <code>Dataset</code> into a <code>Transform</code> that will let us take advantage of fastai's functionality for showing a batch or using data augmentation on the GPU. Lastly we will see how we can customize the data block API and create our own new <a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a>.</p>
 
 </div>
 </div>
@@ -65,7 +65,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To begin with, we will only use PyTorch and PIL to create a <code>Dataset</code> and see how to get this inside fastai. The only helper functions from fastai we will use are <a href="/data.external#untar_data"><code>untar_data</code></a> (to download and untar the dataset) and <a href="/data.transforms#get_image_files"><code>get_image_files</code></a> (that looks for all images in a folder recursively). Here, we will use the <a href="https://www.robots.ox.ac.uk/~vgg/data/pets/">Oxford-IIIT Pet Dataset</a>.</p>
+<p>To begin with, we will only use PyTorch and PIL to create a <code>Dataset</code> and see how to get this inside fastai. The only helper functions from fastai we will use are <a href="/data.external.html#untar_data"><code>untar_data</code></a> (to download and untar the dataset) and <a href="/data.transforms.html#get_image_files"><code>get_image_files</code></a> (that looks for all images in a folder recursively). Here, we will use the <a href="https://www.robots.ox.ac.uk/~vgg/data/pets/">Oxford-IIIT Pet Dataset</a>.</p>
 
 </div>
 </div>
@@ -90,7 +90,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/data.external#untar_data"><code>untar_data</code></a> returns a <code>pathlib.Path</code> object with the location of the decompressed dataset, and in this case, all the images are in an images subfolder:</p>
+<p><a href="/data.external.html#untar_data"><code>untar_data</code></a> returns a <code>pathlib.Path</code> object with the location of the decompressed dataset, and in this case, all the images are in an images subfolder:</p>
 
 </div>
 </div>
@@ -487,7 +487,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All of the above would be different for your custom problem, the main point is that as soon as you have some <code>Dataset</code>s, you can create a fastai's <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> with the following factory method:</p>
+<p>All of the above would be different for your custom problem, the main point is that as soon as you have some <code>Dataset</code>s, you can create a fastai's <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> with the following factory method:</p>
 
 </div>
 </div>
@@ -528,7 +528,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can then use this <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> object in a <a href="/learner#Learner"><code>Learner</code></a> and start training. Most methods that don't rely on showing something (e.g. <a href="/data.core#DataLoaders.show_batch"><code>DataLoaders.show_batch</code></a> and <a href="/learner#Learner.show_results"><code>Learner.show_results</code></a> for instance) should work. For instance, you can get and inspect a batch with:</p>
+<p>You can then use this <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object in a <a href="/learner.html#Learner"><code>Learner</code></a> and start training. Most methods that don't rely on showing something (e.g. <a href="/data.core.html#DataLoaders.show_batch"><code>DataLoaders.show_batch</code></a> and <a href="/learner.html#Learner.show_results"><code>Learner.show_results</code></a> for instance) should work. For instance, you can get and inspect a batch with:</p>
 
 </div>
 </div>
@@ -589,7 +589,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When you have a custom dataset like before, you can easily convert it into a fastai <code>Transform</code> by just changing the <code>__getitem__</code> function to <a href="/tabular.core#encodes"><code>encodes</code></a>. In general, a <code>Transform</code> in fastai calls the <a href="/tabular.core#encodes"><code>encodes</code></a> method when you apply it on an item (a bit like PyTorch modules call <code>forward</code> when applied on something) so this will transform your python dataset in a function that transforms integer to your data.</p>
+<p>When you have a custom dataset like before, you can easily convert it into a fastai <code>Transform</code> by just changing the <code>__getitem__</code> function to <a href="/tabular.core.html#encodes"><code>encodes</code></a>. In general, a <code>Transform</code> in fastai calls the <a href="/tabular.core.html#encodes"><code>encodes</code></a> method when you apply it on an item (a bit like PyTorch modules call <code>forward</code> when applied on something) so this will transform your python dataset in a function that transforms integer to your data.</p>
 <p>If you then return a tuple (or a subclass of a tuple), and use fastai's semantic type, you can then apply any other fastai's transform on your data and it will be dispatched properly. Let's see how that works:</p>
 
 </div>
@@ -649,10 +649,10 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 <p>So three things changed:</p>
 <ul>
 <li>the <code>__len__</code> disappeared, we won't need it </li>
-<li><code>__getitem___</code> became <a href="/tabular.core#encodes"><code>encodes</code></a></li>
-<li>we return <a href="/torch_core#TensorImage"><code>TensorImage</code></a> for our images</li>
+<li><code>__getitem___</code> became <a href="/tabular.core.html#encodes"><code>encodes</code></a></li>
+<li>we return <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a> for our images</li>
 </ul>
-<p>How do we build a dataset with this? We will use <a href="/data.core#TfmdLists"><code>TfmdLists</code></a>. It's just an object that lazily applies a collection of <code>Transform</code>s on a list. Here since our transform takes integers, we will pass simple ranges for this list.</p>
+<p>How do we build a dataset with this? We will use <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>. It's just an object that lazily applies a collection of <code>Transform</code>s on a list. Here since our transform takes integers, we will pass simple ranges for this list.</p>
 
 </div>
 </div>
@@ -677,7 +677,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then, when we create a <a href="/data.load#DataLoader"><code>DataLoader</code></a>, we can add any transform we like. fastai replaces the PyTorch <a href="/data.load#DataLoader"><code>DataLoader</code></a> with its own version that has more hooks (but is fully compatible with PyTorch). The transforms we would like to be applied to items should be passed to <code>after_item</code>, the one we would like to be applied on a batch of data should be passed to <code>after_batch</code>.</p>
+<p>Then, when we create a <a href="/data.load.html#DataLoader"><code>DataLoader</code></a>, we can add any transform we like. fastai replaces the PyTorch <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> with its own version that has more hooks (but is fully compatible with PyTorch). The transforms we would like to be applied to items should be passed to <code>after_item</code>, the one we would like to be applied on a batch of data should be passed to <code>after_batch</code>.</p>
 
 </div>
 </div>
@@ -716,7 +716,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The show methods in fastai all rely on some types being able to show themselves. Additionally, some transforms that need to be reversed for showing purposes (like changing a category to an index, or normalizing) have a <a href="/tabular.core#decodes"><code>decodes</code></a> method to undo what their encodes did. In general, fastai will call those decodes method until it arrives at a type that knows how to show itself, then call the show method on this type.</p>
+<p>The show methods in fastai all rely on some types being able to show themselves. Additionally, some transforms that need to be reversed for showing purposes (like changing a category to an index, or normalizing) have a <a href="/tabular.core.html#decodes"><code>decodes</code></a> method to undo what their encodes did. In general, fastai will call those decodes method until it arrives at a type that knows how to show itself, then call the show method on this type.</p>
 <p>So to make this work, let's first create a new type with a show method!</p>
 
 </div>
@@ -729,7 +729,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">SiameseImage</span><span class="p">(</span><span class="n">Tuple</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">SiameseImage</span><span class="p">(</span><span class="n">fastuple</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
             <span class="n">img1</span><span class="p">,</span><span class="n">img2</span><span class="p">,</span><span class="n">similarity</span> <span class="o">=</span> <span class="bp">self</span>
@@ -800,7 +800,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that we used the fastai type <a href="/vision.core#PILImage"><code>PILImage</code></a> instead of a PIL.Image. That is to get access to fastai's transforms. For instance, we can use <a href="/vision.augment#Resize"><code>Resize</code></a> and <a href="/data.transforms#ToTensor"><code>ToTensor</code></a> directly on our <code>SiamesImage</code>. Since it subclasses tuple, those transforms are dispatched and applied to the part that make sense (the <a href="/vision.core#PILImage"><code>PILImage</code></a>s, not the bool).</p>
+<p>Note that we used the fastai type <a href="/vision.core.html#PILImage"><code>PILImage</code></a> instead of a PIL.Image. That is to get access to fastai's transforms. For instance, we can use <a href="/vision.augment.html#Resize"><code>Resize</code></a> and <a href="/data.transforms.html#ToTensor"><code>ToTensor</code></a> directly on our <code>SiamesImage</code>. Since it subclasses tuple, those transforms are dispatched and applied to the part that make sense (the <a href="/vision.core.html#PILImage"><code>PILImage</code></a>s, not the bool).</p>
 
 </div>
 </div>
@@ -881,7 +881,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we create our splits using a <a href="/data.transforms#RandomSplitter"><code>RandomSplitter</code></a>:</p>
+<p>Then we create our splits using a <a href="/data.transforms.html#RandomSplitter"><code>RandomSplitter</code></a>:</p>
 
 </div>
 </div>
@@ -906,7 +906,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And we can pass those splits to <a href="/data.core#TfmdLists"><code>TfmdLists</code></a>, which will then create the validation and the training set for us.</p>
+<p>And we can pass those splits to <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>, which will then create the validation and the training set for us.</p>
 
 </div>
 </div>
@@ -930,7 +930,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now use methods like <a href="/data.core#show_at"><code>show_at</code></a>:</p>
+<p>We can now use methods like <a href="/data.core.html#show_at"><code>show_at</code></a>:</p>
 
 </div>
 </div>
@@ -982,7 +982,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And we can create a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> like before, by adding our custom transforms for <code>after_item</code> and <code>after_batch</code>.</p>
+<p>And we can create a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> like before, by adding our custom transforms for <code>after_item</code> and <code>after_batch</code>.</p>
 
 </div>
 </div>
@@ -1081,7 +1081,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We will see in the next section that the behavior is different when we have a batch that does not have a show method (which is the case most of the time, only the input and target of the batch have those show methods). In that case, the arguments <code>y</code> and <code>samples</code> are useful. Here, everything is in <code>x</code>, because since the batch knows how to show itself as a whole, it is sent as a whole.</p>
-<p>Here, we create a list of matplotlib axis with the utility function <a href="/vision.data#get_grid"><code>get_grid</code></a> then pass it along to all <code>SiameseImage.show</code>. Let's see how this looks in practice:</p>
+<p>Here, we create a list of matplotlib axis with the utility function <a href="/vision.data.html#get_grid"><code>get_grid</code></a> then pass it along to all <code>SiameseImage.show</code>. Let's see how this looks in practice:</p>
 
 </div>
 </div>
@@ -1202,7 +1202,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ImageTuple</span><span class="p">(</span><span class="n">Tuple</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ImageTuple</span><span class="p">(</span><span class="n">fastuple</span><span class="p">):</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fns</span><span class="p">):</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">PILImage</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fns</span><span class="p">))</span>
     
@@ -1222,7 +1222,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since it's a subclass of <code>Tuple</code>, <code>Transform</code>s will be applied over each part of the tuple. For instance <a href="/data.transforms#ToTensor"><code>ToTensor</code></a> will convert this <code>ImageTuple</code> to a tuple of <a href="/torch_core#TensorImage"><code>TensorImage</code></a>s:</p>
+<p>Since it's a subclass of <code>fastuple</code>, <code>Transform</code>s will be applied over each part of the tuple. For instance <a href="/data.transforms.html#ToTensor"><code>ToTensor</code></a> will convert this <code>ImageTuple</code> to a tuple of <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a>s:</p>
 
 </div>
 </div>
@@ -1308,7 +1308,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now define a block associated to <code>ImageTuple</code> that we will use in the data block API. A block is basically a set of default transforms, here we specify how to create the <code>ImageTuple</code> and the <a href="/data.transforms#IntToFloatTensor"><code>IntToFloatTensor</code></a> transform necessary for image preprocessing:</p>
+<p>We can now define a block associated to <code>ImageTuple</code> that we will use in the data block API. A block is basically a set of default transforms, here we specify how to create the <code>ImageTuple</code> and the <a href="/data.transforms.html#IntToFloatTensor"><code>IntToFloatTensor</code></a> transform necessary for image preprocessing:</p>
 
 </div>
 </div>
@@ -1445,7 +1445,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can check the types of the elements in one batch with the <code>explode_types</code> method. Here we have a tuple with one <code>ImageTuple</code> of two <a href="/torch_core#TensorImage"><code>TensorImage</code></a>s and one <a href="/torch_core#TensorCategory"><code>TensorCategory</code></a>. The transform properly kept the types of everything even after collating the samples together!</p>
+<p>We can check the types of the elements in one batch with the <code>explode_types</code> method. Here we have a tuple with one <code>ImageTuple</code> of two <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a>s and one <a href="/torch_core.html#TensorCategory"><code>TensorCategory</code></a>. The transform properly kept the types of everything even after collating the samples together!</p>
 
 </div>
 </div>
@@ -1620,7 +1620,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For our encoder, we use the fastai function <a href="/vision.learner#create_body"><code>create_body</code></a>. It takes an architecture and an index where to cut it. By default it will use the pretrained version of the model we pick. If we want to check where fastai usually cuts the model, we can have a look at the <a href="/vision.learner#model_meta"><code>model_meta</code></a> dictionary:</p>
+<p>For our encoder, we use the fastai function <a href="/vision.learner.html#create_body"><code>create_body</code></a>. It takes an architecture and an index where to cut it. By default it will use the pretrained version of the model we pick. If we want to check where fastai usually cuts the model, we can have a look at the <a href="/vision.learner.html#model_meta"><code>model_meta</code></a> dictionary:</p>
 
 </div>
 </div>
@@ -1752,7 +1752,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It ends up with 512 features, so for our custom head, we will need to multiply this by 4 (i.e. 2*2): 2 because we have two images concatenated, and another 2 because of the fastai concat-pool trick (we concatenate the average pool and the max pool of the features). The <a href="/vision.learner#create_head"><code>create_head</code></a> function will give us the head that is usually used in fastai's transfer learning models.</p>
+<p>It ends up with 512 features, so for our custom head, we will need to multiply this by 4 (i.e. 2*2): 2 because we have two images concatenated, and another 2 because of the fastai concat-pool trick (we concatenate the average pool and the max pool of the features). The <a href="/vision.learner.html#create_head"><code>create_head</code></a> function will give us the head that is usually used in fastai's transfer learning models.</p>
 
 </div>
 </div>
@@ -1843,7 +1843,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We are almost ready to train our model. The last piece missing is a custom splitter: in order to use transfer learning efficiently, we will want to freeze the pretrained model at first, and train only the head. A splitter is a function that takes a model and returns lists of parameters. The <a href="/torch_core#params"><code>params</code></a> function is useful to return all parameters of the model, so we can create a simple splitter like so:</p>
+<p>We are almost ready to train our model. The last piece missing is a custom splitter: in order to use transfer learning efficiently, we will want to freeze the pretrained model at first, and train only the head. A splitter is a function that takes a model and returns lists of parameters. The <a href="/torch_core.html#params"><code>params</code></a> function is useful to return all parameters of the model, so we can create a simple splitter like so:</p>
 
 </div>
 </div>
@@ -1868,7 +1868,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we use the traditional <a href="/layers#CrossEntropyLossFlat"><code>CrossEntropyLossFlat</code></a> loss function from fastai (the same as <code>nn.CrossEntropyLoss</code>, but flattened). The only thing is, if using the data built by the mid-level API, we have a tensor of bools for our targets, so we need to convert it to integers otherwise PyTorch will throw an error.</p>
+<p>Then we use the traditional <a href="/layers.html#CrossEntropyLossFlat"><code>CrossEntropyLossFlat</code></a> loss function from fastai (the same as <code>nn.CrossEntropyLoss</code>, but flattened). The only thing is, if using the data built by the mid-level API, we have a tensor of bools for our targets, so we need to convert it to integers otherwise PyTorch will throw an error.</p>
 
 </div>
 </div>
@@ -1951,7 +1951,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can then create our <a href="/learner#Learner"><code>Learner</code></a>:</p>
+<p>We can then create our <a href="/learner.html#Learner"><code>Learner</code></a>:</p>
 
 </div>
 </div>
@@ -1975,7 +1975,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since we are not using a convenience function that directly creates the <a href="/learner#Learner"><code>Learner</code></a> for us, we need to <code>freeze</code> it manually:</p>
+<p>Since we are not using a convenience function that directly creates the <a href="/learner.html#Learner"><code>Learner</code></a> for us, we need to <code>freeze</code> it manually:</p>
 
 </div>
 </div>
@@ -2308,7 +2308,7 @@ nb_path: "nbs/24_tutorial.siamese.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Patch-in-a-siampredict-method-to-Learner,-to-automatically-show-images-and-prediction">Patch in a <code>siampredict</code> method to <a href="/learner#Learner"><code>Learner</code></a>, to automatically show images and prediction<a class="anchor-link" href="#Patch-in-a-siampredict-method-to-Learner,-to-automatically-show-images-and-prediction"> </a></h3>
+<h3 id="Patch-in-a-siampredict-method-to-Learner,-to-automatically-show-images-and-prediction">Patch in a <code>siampredict</code> method to <a href="/learner.html#Learner"><code>Learner</code></a>, to automatically show images and prediction<a class="anchor-link" href="#Patch-in-a-siampredict-method-to-Learner,-to-automatically-show-images-and-prediction"> </a></h3>
 </div>
 </div>
 </div>

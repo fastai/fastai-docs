@@ -263,7 +263,7 @@ nb_path: "nbs/44_tutorial.tabular.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some of the columns are continuous (like age) and we will treat them as float numbers we can feed our model directly. Others are categorical (like workclass or education) and we will convert them to a unique index that we will feed to embedding layers. We can specify our categorical and continuous column names, as well as the name of the dependent variable in <a href="/tabular.data#TabularDataLoaders"><code>TabularDataLoaders</code></a> factory methods:</p>
+<p>Some of the columns are continuous (like age) and we will treat them as float numbers we can feed our model directly. Others are categorical (like workclass or education) and we will convert them to a unique index that we will feed to embedding layers. We can specify our categorical and continuous column names, as well as the name of the dependent variable in <a href="/tabular.data.html#TabularDataLoaders"><code>TabularDataLoaders</code></a> factory methods:</p>
 
 </div>
 </div>
@@ -292,9 +292,9 @@ nb_path: "nbs/44_tutorial.tabular.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The last part is the list of pre-processors we apply to our data:</p>
 <ul>
-<li><a href="/tabular.core#Categorify"><code>Categorify</code></a> is going to take every categorical variable and make a map from integer to unique categories, then replace the values by the corresponding index.</li>
-<li><a href="/tabular.core#FillMissing"><code>FillMissing</code></a> will fille the missing values in the continuous variables by the median of existing values (you can choose a specific value if you prefer)</li>
-<li><a href="/data.transforms#Normalize"><code>Normalize</code></a> will normalize the continuous variables (substract the mean and divide by the std)</li>
+<li><a href="/tabular.core.html#Categorify"><code>Categorify</code></a> is going to take every categorical variable and make a map from integer to unique categories, then replace the values by the corresponding index.</li>
+<li><a href="/tabular.core.html#FillMissing"><code>FillMissing</code></a> will fille the missing values in the continuous variables by the median of existing values (you can choose a specific value if you prefer)</li>
+<li><a href="/data.transforms.html#Normalize"><code>Normalize</code></a> will normalize the continuous variables (substract the mean and divide by the std)</li>
 </ul>
 <p>The <code>show_batch</code> method works like for every other application:</p>
 
@@ -494,7 +494,7 @@ nb_path: "nbs/44_tutorial.tabular.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can define a model using the <a href="/tabular.learner#tabular_learner"><code>tabular_learner</code></a> method. When we define our model, <code>fastai</code> will try to infer the loss function based on our <code>y_names</code> earlier.</p>
+<p>We can define a model using the <a href="/tabular.learner.html#tabular_learner"><code>tabular_learner</code></a> method. When we define our model, <code>fastai</code> will try to infer the loss function based on our <code>y_names</code> earlier.</p>
 <p><strong>Note</strong>: Sometimes with tabular data, your <code>y</code>'s may be encoded (such as 0 and 1). In such a case you should explicitly pass <code>y_block = CategoryBlock</code> in your constructor so <code>fastai</code> won't presume you are doing regression.</p>
 
 </div>
@@ -835,7 +835,7 @@ nb_path: "nbs/44_tutorial.tabular.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To get prediction on a new dataframe, you can use the <code>test_dl</code> method of the <a href="/data.core#DataLoaders"><code>DataLoaders</code></a>. That dataframe does not need to have the dependent variable in its column.</p>
+<p>To get prediction on a new dataframe, you can use the <code>test_dl</code> method of the <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a>. That dataframe does not need to have the dependent variable in its column.</p>
 
 </div>
 </div>
@@ -861,7 +861,7 @@ nb_path: "nbs/44_tutorial.tabular.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then <a href="/learner#Learner.get_preds"><code>Learner.get_preds</code></a> will give you the predictions:</p>
+<p>Then <a href="/learner.html#Learner.get_preds"><code>Learner.get_preds</code></a> will give you the predictions:</p>
 
 </div>
 </div>

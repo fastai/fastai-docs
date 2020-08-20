@@ -543,9 +543,9 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 <p>To process this data to train a model, we need to build a <code>Transform</code> that will be applied lazily. In this case we might could do the pre-processing once and for all and only use the transform for decoding (we will see how just after), but the fast tokenizer from HuggingFace is, as its name indicates, fast, so it doesn't really impact performance to do it this way.</p>
 <p>In a fastai <code>Transform</code> you can define:</p>
 <ul>
-<li>an <a href="/tabular.core#encodes"><code>encodes</code></a> method that is applied when you call the transform (a bit like the <code>forward</code> method in a <code>nn.Module</code>)</li>
-<li>a <a href="/tabular.core#decodes"><code>decodes</code></a> method that is applied when you call the <code>decode</code> method of the transform, if you need to decode anything for showing purposes (like converting ids to a text here)</li>
-<li>a <a href="/tabular.core#setups"><code>setups</code></a> method that sets some inner state of the <code>Transform</code> (not needed here so we skip it)</li>
+<li>an <a href="/tabular.core.html#encodes"><code>encodes</code></a> method that is applied when you call the transform (a bit like the <code>forward</code> method in a <code>nn.Module</code>)</li>
+<li>a <a href="/tabular.core.html#decodes"><code>decodes</code></a> method that is applied when you call the <code>decode</code> method of the transform, if you need to decode anything for showing purposes (like converting ids to a text here)</li>
+<li>a <a href="/tabular.core.html#setups"><code>setups</code></a> method that sets some inner state of the <code>Transform</code> (not needed here so we skip it)</li>
 </ul>
 
 </div>
@@ -577,8 +577,8 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Two comments on the code above:</p>
 <ul>
-<li>in <a href="/tabular.core#encodes"><code>encodes</code></a> we don't use the <code>tokenizer.encode</code> method since it does some additional preprocessing for the model after tokenizing and numericalizing (the aprt throwing a warning before). Here we don't need any post-processing so it's fine to skip it.</li>
-<li>in <a href="/tabular.core#decodes"><code>decodes</code></a> we return a <a href="/torch_core#TitledStr"><code>TitledStr</code></a> object and not jsut a plain string. That's a fastai class that adds a <code>show</code> method to the string, which will allow us to use all the fastai show methods.</li>
+<li>in <a href="/tabular.core.html#encodes"><code>encodes</code></a> we don't use the <code>tokenizer.encode</code> method since it does some additional preprocessing for the model after tokenizing and numericalizing (the aprt throwing a warning before). Here we don't need any post-processing so it's fine to skip it.</li>
+<li>in <a href="/tabular.core.html#decodes"><code>decodes</code></a> we return a <a href="/torch_core.html#TitledStr"><code>TitledStr</code></a> object and not jsut a plain string. That's a fastai class that adds a <code>show</code> method to the string, which will allow us to use all the fastai show methods.</li>
 </ul>
 
 </div>
@@ -586,7 +586,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can then group your data with this <code>Transform</code> using a <a href="/data.core#TfmdLists"><code>TfmdLists</code></a>. It has an s in its name because it contains the training and validation set. We indicate the indices of the training set and the validation set with <code>splits</code> (here all the first indices until <code>len(df_train)</code> and then all the remaining indices):</p>
+<p>You can then group your data with this <code>Transform</code> using a <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a>. It has an s in its name because it contains the training and validation set. We indicate the indices of the training set and the validation set with <code>splits</code> (here all the first indices until <code>len(df_train)</code> and then all the remaining indices):</p>
 
 </div>
 </div>
@@ -611,8 +611,8 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We specify <code>dl_type=LMDataLoader</code> for when we will convert this <a href="/data.core#TfmdLists"><code>TfmdLists</code></a> to <a href="/data.core#DataLoaders"><code>DataLoaders</code></a>: we will use an <a href="/text.data#LMDataLoader"><code>LMDataLoader</code></a> since we have a language modeling problem, not the usual fastai <a href="/data.core#TfmdDL"><code>TfmdDL</code></a>.</p>
-<p>In a <a href="/data.core#TfmdLists"><code>TfmdLists</code></a> you can access to the elements of the training or validation set quite easily:</p>
+<p>We specify <code>dl_type=LMDataLoader</code> for when we will convert this <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a> to <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a>: we will use an <a href="/text.data.html#LMDataLoader"><code>LMDataLoader</code></a> since we have a language modeling problem, not the usual fastai <a href="/data.core.html#TfmdDL"><code>TfmdDL</code></a>.</p>
+<p>In a <a href="/data.core.html#TfmdLists"><code>TfmdLists</code></a> you can access to the elements of the training or validation set quite easily:</p>
 
 </div>
 </div>
@@ -693,7 +693,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And we can have a look at both decodes using <a href="/data.core#show_at"><code>show_at</code></a>:</p>
+<p>And we can have a look at both decodes using <a href="/data.core.html#show_at"><code>show_at</code></a>:</p>
 
 </div>
 </div>
@@ -893,7 +893,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The fastai library expects the data to be assembled in a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> object (something that has a training and validation dataloader). We can get one by using the <code>dataloaders</code> method. We just have to specify a batch size and a sequence length. Since the GPT2 model was trained with sequences of size 1024, we use this sequence length (it's a stateless model, so it will change the perplexity if we use less):</p>
+<p>The fastai library expects the data to be assembled in a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object (something that has a training and validation dataloader). We can get one by using the <code>dataloaders</code> method. We just have to specify a batch size and a sequence length. Since the GPT2 model was trained with sequences of size 1024, we use this sequence length (it's a stateless model, so it will change the perplexity if we use less):</p>
 
 </div>
 </div>
@@ -925,7 +925,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In fastai, as soo as we have a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a>, we can use <code>show_batch</code> to have a look at the data (here texts for inputs, and the same text shifted by one token to the right for validation):</p>
+<p>In fastai, as soo as we have a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a>, we can use <code>show_batch</code> to have a look at the data (here texts for inputs, and the same text shifted by one token to the right for validation):</p>
 
 </div>
 </div>
@@ -1059,7 +1059,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we change the previous <a href="/text.core#Tokenizer"><code>Tokenizer</code></a> like this:</p>
+<p>Now we change the previous <a href="/text.core.html#Tokenizer"><code>Tokenizer</code></a> like this:</p>
 
 </div>
 </div>
@@ -1088,7 +1088,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the <a href="/tabular.core#encodes"><code>encodes</code></a> method, we still account for the case where we get something that's not already tokenized, just in case we were to build a dataset with new texts using this transform.</p>
+<p>In the <a href="/tabular.core.html#encodes"><code>encodes</code></a> method, we still account for the case where we get something that's not already tokenized, just in case we were to build a dataset with new texts using this transform.</p>
 
 </div>
 </div>
@@ -1193,8 +1193,8 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The HuggingFace model will return a tuple in outputs, with the actual predictions and some additional activations (should we want to use them is some regularization scheme). To work inside the fastai training loop, we will need to drop those using a <a href="/callback.core#Callback"><code>Callback</code></a>: we use those to alter the behavior of the training loop.</p>
-<p>Here we need to write the event <code>after_pred</code> and replace <code>self.learn.pred</code> (which contains the predictions that will be passed to the loss function) by just its first element. In callbacks, there is a shortcut that lets you access any of the underlying <a href="/learner#Learner"><code>Learner</code></a> attribute so we can write <code>self.pred[0]</code> instead of <code>self.learn.pred[0]</code>. That shorcut only works for read access, not write, so we have to write <code>self.learn.pred</code> on the right side (otherwise we would set a <code>pred</code> attribute in the <a href="/callback.core#Callback"><code>Callback</code></a>).</p>
+<p>The HuggingFace model will return a tuple in outputs, with the actual predictions and some additional activations (should we want to use them is some regularization scheme). To work inside the fastai training loop, we will need to drop those using a <a href="/callback.core.html#Callback"><code>Callback</code></a>: we use those to alter the behavior of the training loop.</p>
+<p>Here we need to write the event <code>after_pred</code> and replace <code>self.learn.pred</code> (which contains the predictions that will be passed to the loss function) by just its first element. In callbacks, there is a shortcut that lets you access any of the underlying <a href="/learner.html#Learner"><code>Learner</code></a> attribute so we can write <code>self.pred[0]</code> instead of <code>self.learn.pred[0]</code>. That shorcut only works for read access, not write, so we have to write <code>self.learn.pred</code> on the right side (otherwise we would set a <code>pred</code> attribute in the <a href="/callback.core.html#Callback"><code>Callback</code></a>).</p>
 
 </div>
 </div>
@@ -1219,8 +1219,8 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Of course we could make this a bit more complex and add some penalty to the loss using the other part of the tuple of predictions, like the <a href="/callback.rnn#RNNRegularizer"><code>RNNRegularizer</code></a>.</p>
-<p>Now, we are ready to create our <a href="/learner#Learner"><code>Learner</code></a>, which is a fastai object grouping data, model and loss function and handles model training or inference. Since we are in a language model setting, we pass perplexity as a metric, and we need to use the callback we just defined. Lastly, we use mixed precision to save every bit of memory we can (and if you have a modern GPU, it will also make training faster):</p>
+<p>Of course we could make this a bit more complex and add some penalty to the loss using the other part of the tuple of predictions, like the <a href="/callback.rnn.html#RNNRegularizer"><code>RNNRegularizer</code></a>.</p>
+<p>Now, we are ready to create our <a href="/learner.html#Learner"><code>Learner</code></a>, which is a fastai object grouping data, model and loss function and handles model training or inference. Since we are in a language model setting, we pass perplexity as a metric, and we need to use the callback we just defined. Lastly, we use mixed precision to save every bit of memory we can (and if you have a modern GPU, it will also make training faster):</p>
 
 </div>
 </div>
@@ -1300,7 +1300,7 @@ nb_path: "nbs/39_tutorial.transformers.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that we have a <a href="/learner#Learner"><code>Learner</code></a> we can use all the fastai training loop capabilities: learning rate finder, training with 1cycle etc...</p>
+<p>Now that we have a <a href="/learner.html#Learner"><code>Learner</code></a> we can use all the fastai training loop capabilities: learning rate finder, training with 1cycle etc...</p>
 
 </div>
 </div>

@@ -38,23 +38,6 @@ nb_path: "nbs/06_data.block.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.showdoc</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -70,7 +53,7 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TransformBlock" class="doc_header"><code>class</code> <code>TransformBlock</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TransformBlock</code>(<strong><code>type_tfms</code></strong>=<em><code>None</code></em>, <strong><code>item_tfms</code></strong>=<em><code>None</code></em>, <strong><code>batch_tfms</code></strong>=<em><code>None</code></em>, <strong><code>dl_type</code></strong>=<em><code>None</code></em>, <strong><code>dls_kwargs</code></strong>=<em><code>None</code></em>)</p>
+<h2 id="TransformBlock" class="doc_header"><code>class</code> <code>TransformBlock</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TransformBlock</code>(<strong><code>type_tfms</code></strong>=<em><code>None</code></em>, <strong><code>item_tfms</code></strong>=<em><code>None</code></em>, <strong><code>batch_tfms</code></strong>=<em><code>None</code></em>, <strong><code>dl_type</code></strong>=<em><code>None</code></em>, <strong><code>dls_kwargs</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>A basic wrapper that links defaults transforms for the data block API</p>
 
@@ -102,9 +85,9 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="CategoryBlock" class="doc_header"><code>CategoryBlock</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CategoryBlock</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>sort</code></strong>=<em><code>True</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="CategoryBlock" class="doc_header"><code>CategoryBlock</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CategoryBlock</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>sort</code></strong>=<em><code>True</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
-<p><a href="/data.block#TransformBlock"><code>TransformBlock</code></a> for single-label categorical targets</p>
+<p><a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a> for single-label categorical targets</p>
 
 </div>
 
@@ -134,9 +117,9 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="MultiCategoryBlock" class="doc_header"><code>MultiCategoryBlock</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MultiCategoryBlock</code>(<strong><code>encoded</code></strong>=<em><code>False</code></em>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="MultiCategoryBlock" class="doc_header"><code>MultiCategoryBlock</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MultiCategoryBlock</code>(<strong><code>encoded</code></strong>=<em><code>False</code></em>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
-<p><a href="/data.block#TransformBlock"><code>TransformBlock</code></a> for multi-label categorical targets</p>
+<p><a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a> for multi-label categorical targets</p>
 
 </div>
 
@@ -166,9 +149,9 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="RegressionBlock" class="doc_header"><code>RegressionBlock</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RegressionBlock</code>(<strong><code>n_out</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="RegressionBlock" class="doc_header"><code>RegressionBlock</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RegressionBlock</code>(<strong><code>n_out</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p><a href="/data.block#TransformBlock"><code>TransformBlock</code></a> for float targets</p>
+<p><a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a> for float targets</p>
 
 </div>
 
@@ -243,9 +226,9 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DataBlock" class="doc_header"><code>class</code> <code>DataBlock</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L58" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DataBlock</code>(<strong><code>blocks</code></strong>=<em><code>None</code></em>, <strong><code>dl_type</code></strong>=<em><code>None</code></em>, <strong><code>getters</code></strong>=<em><code>None</code></em>, <strong><code>n_inp</code></strong>=<em><code>None</code></em>, <strong><code>item_tfms</code></strong>=<em><code>None</code></em>, <strong><code>batch_tfms</code></strong>=<em><code>None</code></em>, <strong><code>get_items</code></strong>=<em><code>None</code></em>, <strong><code>splitter</code></strong>=<em><code>None</code></em>, <strong><code>get_y</code></strong>=<em><code>None</code></em>, <strong><code>get_x</code></strong>=<em><code>None</code></em>)</p>
+<h2 id="DataBlock" class="doc_header"><code>class</code> <code>DataBlock</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L58" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DataBlock</code>(<strong><code>blocks</code></strong>=<em><code>None</code></em>, <strong><code>dl_type</code></strong>=<em><code>None</code></em>, <strong><code>getters</code></strong>=<em><code>None</code></em>, <strong><code>n_inp</code></strong>=<em><code>None</code></em>, <strong><code>item_tfms</code></strong>=<em><code>None</code></em>, <strong><code>batch_tfms</code></strong>=<em><code>None</code></em>, <strong><code>get_items</code></strong>=<em><code>None</code></em>, <strong><code>splitter</code></strong>=<em><code>None</code></em>, <strong><code>get_y</code></strong>=<em><code>None</code></em>, <strong><code>get_x</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Generic container to quickly build <a href="/data.core#Datasets"><code>Datasets</code></a> and <a href="/data.core#DataLoaders"><code>DataLoaders</code></a></p>
+<p>Generic container to quickly build <a href="/data.core.html#Datasets"><code>Datasets</code></a> and <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a></p>
 
 </div>
 
@@ -259,8 +242,8 @@ nb_path: "nbs/06_data.block.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To build a <a href="/data.block#DataBlock"><code>DataBlock</code></a> you need to give the library four things: the types of your input/labels, and at least two functions: <code>get_items</code> and <code>splitter</code>. You may also need to include <code>get_x</code> and <code>get_y</code> or a more generic list of <code>getters</code> that are applied to the results of <code>get_items</code>.</p>
-<p>Once those are provided, you automatically get a <a href="/data.core#Datasets"><code>Datasets</code></a> or a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a>:</p>
+<p>To build a <a href="/data.block.html#DataBlock"><code>DataBlock</code></a> you need to give the library four things: the types of your input/labels, and at least two functions: <code>get_items</code> and <code>splitter</code>. You may also need to include <code>get_x</code> and <code>get_y</code> or a more generic list of <code>getters</code> that are applied to the results of <code>get_items</code>.</p>
+<p>Once those are provided, you automatically get a <a href="/data.core.html#Datasets"><code>Datasets</code></a> or a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a>:</p>
 
 </div>
 </div>
@@ -276,9 +259,9 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataBlock.datasets" class="doc_header"><code>DataBlock.datasets</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataBlock.datasets</code>(<strong><code>source</code></strong>, <strong><code>verbose</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="DataBlock.datasets" class="doc_header"><code>DataBlock.datasets</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataBlock.datasets</code>(<strong><code>source</code></strong>, <strong><code>verbose</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
-<p>Create a <a href="/data.core#Datasets"><code>Datasets</code></a> object from <code>source</code></p>
+<p>Create a <a href="/data.core.html#Datasets"><code>Datasets</code></a> object from <code>source</code></p>
 
 </div>
 
@@ -301,9 +284,9 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataBlock.dataloaders" class="doc_header"><code>DataBlock.dataloaders</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L112" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataBlock.dataloaders</code>(<strong><code>source</code></strong>, <strong><code>path</code></strong>=<em><code>'.'</code></em>, <strong><code>verbose</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>shuffle</code></strong>=<em><code>False</code></em>, <strong><code>num_workers</code></strong>=<em><code>None</code></em>, <strong><code>do_setup</code></strong>=<em><code>True</code></em>, <strong><code>pin_memory</code></strong>=<em><code>False</code></em>, <strong><code>timeout</code></strong>=<em><code>0</code></em>, <strong><code>batch_size</code></strong>=<em><code>None</code></em>, <strong><code>drop_last</code></strong>=<em><code>False</code></em>, <strong><code>indexed</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>, <strong><code>wif</code></strong>=<em><code>None</code></em>, <strong><code>before_iter</code></strong>=<em><code>None</code></em>, <strong><code>after_item</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_iter</code></strong>=<em><code>None</code></em>, <strong><code>create_batches</code></strong>=<em><code>None</code></em>, <strong><code>create_item</code></strong>=<em><code>None</code></em>, <strong><code>create_batch</code></strong>=<em><code>None</code></em>, <strong><code>retain</code></strong>=<em><code>None</code></em>, <strong><code>get_idxs</code></strong>=<em><code>None</code></em>, <strong><code>sample</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_fn</code></strong>=<em><code>None</code></em>, <strong><code>do_batch</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="DataBlock.dataloaders" class="doc_header"><code>DataBlock.dataloaders</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L112" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataBlock.dataloaders</code>(<strong><code>source</code></strong>, <strong><code>path</code></strong>=<em><code>'.'</code></em>, <strong><code>verbose</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>shuffle</code></strong>=<em><code>False</code></em>, <strong><code>num_workers</code></strong>=<em><code>None</code></em>, <strong><code>do_setup</code></strong>=<em><code>True</code></em>, <strong><code>pin_memory</code></strong>=<em><code>False</code></em>, <strong><code>timeout</code></strong>=<em><code>0</code></em>, <strong><code>batch_size</code></strong>=<em><code>None</code></em>, <strong><code>drop_last</code></strong>=<em><code>False</code></em>, <strong><code>indexed</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>, <strong><code>wif</code></strong>=<em><code>None</code></em>, <strong><code>before_iter</code></strong>=<em><code>None</code></em>, <strong><code>after_item</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_iter</code></strong>=<em><code>None</code></em>, <strong><code>create_batches</code></strong>=<em><code>None</code></em>, <strong><code>create_item</code></strong>=<em><code>None</code></em>, <strong><code>create_batch</code></strong>=<em><code>None</code></em>, <strong><code>retain</code></strong>=<em><code>None</code></em>, <strong><code>get_idxs</code></strong>=<em><code>None</code></em>, <strong><code>sample</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_fn</code></strong>=<em><code>None</code></em>, <strong><code>do_batch</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Create a <a href="/data.core#DataLoaders"><code>DataLoaders</code></a> object from <code>source</code></p>
+<p>Create a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object from <code>source</code></p>
 
 </div>
 
@@ -317,7 +300,7 @@ nb_path: "nbs/06_data.block.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can create a <a href="/data.block#DataBlock"><code>DataBlock</code></a> by passing functions:</p>
+<p>You can create a <a href="/data.block.html#DataBlock"><code>DataBlock</code></a> by passing functions:</p>
 
 </div>
 </div>
@@ -350,7 +333,7 @@ nb_path: "nbs/06_data.block.ipynb"
 <li>at the item level of the datasets</li>
 <li>at the batch level</li>
 </ul>
-<p>They are called respectively type transforms, item transforms, batch transforms. In the case of MNIST, the type transforms are the method to create a <a href="/vision.core#PILImageBW"><code>PILImageBW</code></a> (for the input) and the <a href="/data.transforms#Categorize"><code>Categorize</code></a> transform (for the target), the item transform is <a href="/data.transforms#ToTensor"><code>ToTensor</code></a> and the batch transforms are <code>Cuda</code> and <a href="/data.transforms#IntToFloatTensor"><code>IntToFloatTensor</code></a>. You can add any other transforms by passing them in <a href="/data.block#DataBlock.datasets"><code>DataBlock.datasets</code></a> or <a href="/data.block#DataBlock.dataloaders"><code>DataBlock.dataloaders</code></a>.</p>
+<p>They are called respectively type transforms, item transforms, batch transforms. In the case of MNIST, the type transforms are the method to create a <a href="/vision.core.html#PILImageBW"><code>PILImageBW</code></a> (for the input) and the <a href="/data.transforms.html#Categorize"><code>Categorize</code></a> transform (for the target), the item transform is <a href="/data.transforms.html#ToTensor"><code>ToTensor</code></a> and the batch transforms are <code>Cuda</code> and <a href="/data.transforms.html#IntToFloatTensor"><code>IntToFloatTensor</code></a>. You can add any other transforms by passing them in <a href="/data.block.html#DataBlock.datasets"><code>DataBlock.datasets</code></a> or <a href="/data.block.html#DataBlock.dataloaders"><code>DataBlock.dataloaders</code></a>.</p>
 
 </div>
 </div>
@@ -433,7 +416,7 @@ nb_path: "nbs/06_data.block.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can pass any number of blocks to <a href="/data.block#DataBlock"><code>DataBlock</code></a>, we can then define what are the input and target blocks by changing <code>n_inp</code>. For example, defining <code>n_inp=2</code> will consider the first two blocks passed as inputs and the others as targets.</p>
+<p>We can pass any number of blocks to <a href="/data.block.html#DataBlock"><code>DataBlock</code></a>, we can then define what are the input and target blocks by changing <code>n_inp</code>. For example, defining <code>n_inp=2</code> will consider the first two blocks passed as inputs and the others as targets.</p>
 
 </div>
 </div>
@@ -544,7 +527,7 @@ nb_path: "nbs/06_data.block.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataBlock.summary" class="doc_header"><code>DataBlock.summary</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/block.py#L156" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataBlock.summary</code>(<strong><code>source</code></strong>, <strong><code>bs</code></strong>=<em><code>4</code></em>, <strong><code>show_batch</code></strong>=<em><code>False</code></em>, <strong>**<code>kwargs</code></strong>)</p>
+<h4 id="DataBlock.summary" class="doc_header"><code>DataBlock.summary</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/block.py#L156" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataBlock.summary</code>(<strong><code>source</code></strong>, <strong><code>bs</code></strong>=<em><code>4</code></em>, <strong><code>show_batch</code></strong>=<em><code>False</code></em>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
 <p>Steps through the transform pipeline for one batch, and optionally calls <code>show_batch(**kwargs)</code> on the transient <code>Dataloaders</code>.</p>
 

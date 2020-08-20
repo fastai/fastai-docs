@@ -35,23 +35,6 @@ nb_path: "nbs/05_data.transforms.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.showdoc</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Get,-split,-and-label">Get, split, and label<a class="anchor-link" href="#Get,-split,-and-label"> </a></h2>
@@ -138,7 +121,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_files" class="doc_header"><code>get_files</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L26" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_files</code>(<strong><code>path</code></strong>, <strong><code>extensions</code></strong>=<em><code>None</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>, <strong><code>followlinks</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="get_files" class="doc_header"><code>get_files</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L26" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_files</code>(<strong><code>path</code></strong>, <strong><code>extensions</code></strong>=<em><code>None</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>, <strong><code>followlinks</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Get all the files in <code>path</code> with optional <code>extensions</code>, optionally with <code>recurse</code>, only in <code>folders</code>, if specified.</p>
 
@@ -200,7 +183,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It's often useful to be able to create functions with customized behavior. <code>fastai.data</code> generally uses functions named as CamelCase verbs ending in <code>er</code> to create these functions. <a href="/data.transforms#FileGetter"><code>FileGetter</code></a> is a simple example of such a function creator.</p>
+<p>It's often useful to be able to create functions with customized behavior. <code>fastai.data</code> generally uses functions named as CamelCase verbs ending in <code>er</code> to create these functions. <a href="/data.transforms.html#FileGetter"><code>FileGetter</code></a> is a simple example of such a function creator.</p>
 
 </div>
 </div>
@@ -223,9 +206,9 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FileGetter" class="doc_header"><code>FileGetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L45" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FileGetter</code>(<strong><code>suf</code></strong>=<em><code>''</code></em>, <strong><code>extensions</code></strong>=<em><code>None</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="FileGetter" class="doc_header"><code>FileGetter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L45" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FileGetter</code>(<strong><code>suf</code></strong>=<em><code>''</code></em>, <strong><code>extensions</code></strong>=<em><code>None</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Create <a href="/data.transforms#get_files"><code>get_files</code></a> partial function that searches path suffix <code>suf</code>, only in <code>folders</code>, if specified, and passes along args</p>
+<p>Create <a href="/data.transforms.html#get_files"><code>get_files</code></a> partial function that searches path suffix <code>suf</code>, only in <code>folders</code>, if specified, and passes along args</p>
 
 </div>
 
@@ -283,7 +266,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_image_files" class="doc_header"><code>get_image_files</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_image_files</code>(<strong><code>path</code></strong>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="get_image_files" class="doc_header"><code>get_image_files</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_image_files</code>(<strong><code>path</code></strong>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get image files in <code>path</code> recursively, only in <code>folders</code>, if specified.</p>
 
@@ -299,7 +282,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is simply <a href="/data.transforms#get_files"><code>get_files</code></a> called with a list of standard image extensions.</p>
+<p>This is simply <a href="/data.transforms.html#get_files"><code>get_files</code></a> called with a list of standard image extensions.</p>
 
 </div>
 </div>
@@ -339,9 +322,9 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ImageGetter" class="doc_header"><code>ImageGetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ImageGetter</code>(<strong><code>suf</code></strong>=<em><code>''</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="ImageGetter" class="doc_header"><code>ImageGetter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ImageGetter</code>(<strong><code>suf</code></strong>=<em><code>''</code></em>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Create <a href="/data.transforms#get_image_files"><code>get_image_files</code></a> partial function that searches path suffix <code>suf</code> and passes along <code>kwargs</code>, only in <code>folders</code>, if specified.</p>
+<p>Create <a href="/data.transforms.html#get_image_files"><code>get_image_files</code></a> partial function that searches path suffix <code>suf</code> and passes along <code>kwargs</code>, only in <code>folders</code>, if specified.</p>
 
 </div>
 
@@ -355,7 +338,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Same as <a href="/data.transforms#FileGetter"><code>FileGetter</code></a>, but for image extensions.</p>
+<p>Same as <a href="/data.transforms.html#FileGetter"><code>FileGetter</code></a>, but for image extensions.</p>
 
 </div>
 </div>
@@ -396,7 +379,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_text_files" class="doc_header"><code>get_text_files</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_text_files</code>(<strong><code>path</code></strong>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="get_text_files" class="doc_header"><code>get_text_files</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_text_files</code>(<strong><code>path</code></strong>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get text files in <code>path</code> recursively, only in <code>folders</code>, if specified.</p>
 
@@ -428,7 +411,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ItemGetter" class="doc_header"><code>class</code> <code>ItemGetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L71" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ItemGetter</code>(<strong><code>i</code></strong>) :: <code>ItemTransform</code></p>
+<h2 id="ItemGetter" class="doc_header"><code>class</code> <code>ItemGetter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L71" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ItemGetter</code>(<strong><code>i</code></strong>) :: <code>ItemTransform</code></p>
 </blockquote>
 <p>Creates a proper transform that applies <code>itemgetter(i)</code> (even on a tuple)</p>
 
@@ -480,7 +463,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AttrGetter" class="doc_header"><code>class</code> <code>AttrGetter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L78" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AttrGetter</code>(<strong><code>nm</code></strong>, <strong><code>default</code></strong>=<em><code>None</code></em>) :: <code>ItemTransform</code></p>
+<h2 id="AttrGetter" class="doc_header"><code>class</code> <code>AttrGetter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L78" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AttrGetter</code>(<strong><code>nm</code></strong>, <strong><code>default</code></strong>=<em><code>None</code></em>) :: <code>ItemTransform</code></p>
 </blockquote>
 <p>Creates a proper transform that applies <code>attrgetter(nm)</code> (even on a tuple)</p>
 
@@ -543,7 +526,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="RandomSplitter" class="doc_header"><code>RandomSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L85" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RandomSplitter</code>(<strong><code>valid_pct</code></strong>=<em><code>0.2</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="RandomSplitter" class="doc_header"><code>RandomSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L85" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RandomSplitter</code>(<strong><code>valid_pct</code></strong>=<em><code>0.2</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Create function that splits <code>items</code> between train/val with <code>valid_pct</code> randomly.</p>
 
@@ -606,7 +589,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="TrainTestSplitter" class="doc_header"><code>TrainTestSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TrainTestSplitter</code>(<strong><code>test_size</code></strong>=<em><code>0.2</code></em>, <strong><code>random_state</code></strong>=<em><code>None</code></em>, <strong><code>stratify</code></strong>=<em><code>None</code></em>, <strong><code>train_size</code></strong>=<em><code>None</code></em>, <strong><code>shuffle</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="TrainTestSplitter" class="doc_header"><code>TrainTestSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TrainTestSplitter</code>(<strong><code>test_size</code></strong>=<em><code>0.2</code></em>, <strong><code>random_state</code></strong>=<em><code>None</code></em>, <strong><code>stratify</code></strong>=<em><code>None</code></em>, <strong><code>train_size</code></strong>=<em><code>None</code></em>, <strong><code>shuffle</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Split <code>items</code> into random train and test subsets using sklearn train_test_split utility.</p>
 
@@ -671,7 +654,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="IndexSplitter" class="doc_header"><code>IndexSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>IndexSplitter</code>(<strong><code>valid_idx</code></strong>)</p>
+<h4 id="IndexSplitter" class="doc_header"><code>IndexSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>IndexSplitter</code>(<strong><code>valid_idx</code></strong>)</p>
 </blockquote>
 <p>Split <code>items</code> so that <code>val_idx</code> are in the validation set and the others in the training set</p>
 
@@ -729,7 +712,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GrandparentSplitter" class="doc_header"><code>GrandparentSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GrandparentSplitter</code>(<strong><code>train_name</code></strong>=<em><code>'train'</code></em>, <strong><code>valid_name</code></strong>=<em><code>'valid'</code></em>)</p>
+<h4 id="GrandparentSplitter" class="doc_header"><code>GrandparentSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GrandparentSplitter</code>(<strong><code>train_name</code></strong>=<em><code>'train'</code></em>, <strong><code>valid_name</code></strong>=<em><code>'valid'</code></em>)</p>
 </blockquote>
 <p>Split <code>items</code> from the grand parent folder names (<code>train_name</code> and <code>valid_name</code>).</p>
 
@@ -802,7 +785,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FuncSplitter" class="doc_header"><code>FuncSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FuncSplitter</code>(<strong><code>func</code></strong>)</p>
+<h4 id="FuncSplitter" class="doc_header"><code>FuncSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FuncSplitter</code>(<strong><code>func</code></strong>)</p>
 </blockquote>
 <p>Split <code>items</code> by result of <code>func</code> (<code>True</code> for validation, <code>False</code> for training set).</p>
 
@@ -852,7 +835,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="MaskSplitter" class="doc_header"><code>MaskSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L131" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MaskSplitter</code>(<strong><code>mask</code></strong>)</p>
+<h4 id="MaskSplitter" class="doc_header"><code>MaskSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L131" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MaskSplitter</code>(<strong><code>mask</code></strong>)</p>
 </blockquote>
 <p>Split <code>items</code> depending on the value of <code>mask</code>.</p>
 
@@ -903,7 +886,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FileSplitter" class="doc_header"><code>FileSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L137" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FileSplitter</code>(<strong><code>fname</code></strong>)</p>
+<h4 id="FileSplitter" class="doc_header"><code>FileSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L137" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FileSplitter</code>(<strong><code>fname</code></strong>)</p>
 </blockquote>
 <p>Split <code>items</code> by providing file <code>fname</code> (contains names of valid items separated by newline).</p>
 
@@ -956,7 +939,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ColSplitter" class="doc_header"><code>ColSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ColSplitter</code>(<strong><code>col</code></strong>=<em><code>'is_valid'</code></em>)</p>
+<h4 id="ColSplitter" class="doc_header"><code>ColSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ColSplitter</code>(<strong><code>col</code></strong>=<em><code>'is_valid'</code></em>)</p>
 </blockquote>
 <p>Split <code>items</code> (supposed to be a dataframe) by value in <code>col</code></p>
 
@@ -1010,7 +993,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="RandomSubsetSplitter" class="doc_header"><code>RandomSubsetSplitter</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RandomSubsetSplitter</code>(<strong><code>train_sz</code></strong>, <strong><code>valid_sz</code></strong>, <strong><code>seed</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="RandomSubsetSplitter" class="doc_header"><code>RandomSubsetSplitter</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RandomSubsetSplitter</code>(<strong><code>train_sz</code></strong>, <strong><code>valid_sz</code></strong>, <strong><code>seed</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Take randoms subsets of <code>splits</code> with <code>train_sz</code> and <code>valid_sz</code></p>
 
@@ -1076,7 +1059,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parent_label" class="doc_header"><code>parent_label</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L168" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parent_label</code>(<strong><code>o</code></strong>)</p>
+<h4 id="parent_label" class="doc_header"><code>parent_label</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L168" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parent_label</code>(<strong><code>o</code></strong>)</p>
 </blockquote>
 <p>Label <code>item</code> with the parent folder name.</p>
 
@@ -1092,7 +1075,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that <a href="/data.transforms#parent_label"><code>parent_label</code></a> doesn't have anything customize, so it doesn't return a function - you can just use it directly.</p>
+<p>Note that <a href="/data.transforms.html#parent_label"><code>parent_label</code></a> doesn't have anything customize, so it doesn't return a function - you can just use it directly.</p>
 
 </div>
 </div>
@@ -1150,7 +1133,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="RegexLabeller" class="doc_header"><code>class</code> <code>RegexLabeller</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L173" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>RegexLabeller</code>(<strong><code>pat</code></strong>, <strong><code>match</code></strong>=<em><code>False</code></em>)</p>
+<h2 id="RegexLabeller" class="doc_header"><code>class</code> <code>RegexLabeller</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L173" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>RegexLabeller</code>(<strong><code>pat</code></strong>, <strong><code>match</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Label <code>item</code> with regex <code>pat</code>.</p>
 
@@ -1166,8 +1149,8 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/data.transforms#RegexLabeller"><code>RegexLabeller</code></a> is a very flexible function since it handles any regex search of the stringified item. Pass <code>match=True</code> to use <code>re.match</code> (i.e. check only start of string), or <code>re.search</code> otherwise (default).</p>
-<p>For instance, here's an example the replicates the previous <a href="/data.transforms#parent_label"><code>parent_label</code></a> results.</p>
+<p><a href="/data.transforms.html#RegexLabeller"><code>RegexLabeller</code></a> is a very flexible function since it handles any regex search of the stringified item. Pass <code>match=True</code> to use <code>re.match</code> (i.e. check only start of string), or <code>re.search</code> otherwise (default).</p>
+<p>For instance, here's an example the replicates the previous <a href="/data.transforms.html#parent_label"><code>parent_label</code></a> results.</p>
 
 </div>
 </div>
@@ -1243,7 +1226,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ColReader" class="doc_header"><code>class</code> <code>ColReader</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L185" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ColReader</code>(<strong><code>cols</code></strong>, <strong><code>pref</code></strong>=<em><code>''</code></em>, <strong><code>suff</code></strong>=<em><code>''</code></em>, <strong><code>label_delim</code></strong>=<em><code>None</code></em>)</p>
+<h2 id="ColReader" class="doc_header"><code>class</code> <code>ColReader</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L185" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ColReader</code>(<strong><code>cols</code></strong>, <strong><code>pref</code></strong>=<em><code>''</code></em>, <strong><code>suff</code></strong>=<em><code>''</code></em>, <strong><code>label_delim</code></strong>=<em><code>None</code></em>) :: <code>DisplayedTransform</code></p>
 </blockquote>
 <p>Read <code>cols</code> in <code>row</code> with potential <code>pref</code> and <code>suff</code></p>
 
@@ -1316,7 +1299,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CategoryMap" class="doc_header"><code>class</code> <code>CategoryMap</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L207" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CategoryMap</code>(<strong><code>col</code></strong>, <strong><code>sort</code></strong>=<em><code>True</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>, <strong><code>strict</code></strong>=<em><code>False</code></em>) :: <code>CollBase</code></p>
+<h2 id="CategoryMap" class="doc_header"><code>class</code> <code>CategoryMap</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L204" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CategoryMap</code>(<strong><code>col</code></strong>, <strong><code>sort</code></strong>=<em><code>True</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>, <strong><code>strict</code></strong>=<em><code>False</code></em>) :: <code>CollBase</code></p>
 </blockquote>
 <p>Collection of categories with the reverse mapping in <code>o2i</code></p>
 
@@ -1448,7 +1431,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Categorize" class="doc_header"><code>class</code> <code>Categorize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L233" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Categorize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>sort</code></strong>=<em><code>True</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>) :: <code>Transform</code></p>
+<h2 id="Categorize" class="doc_header"><code>class</code> <code>Categorize</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L230" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Categorize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>sort</code></strong>=<em><code>True</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>) :: <code>DisplayedTransform</code></p>
 </blockquote>
 <p>Reversible transform of category string to <code>vocab</code> id</p>
 
@@ -1480,7 +1463,7 @@ nb_path: "nbs/05_data.transforms.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Category" class="doc_header"><code>class</code> <code>Category</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L251" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Category</code>() :: <code>str</code></p>
+<h2 id="Category" class="doc_header"><code>class</code> <code>Category</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L245" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Category</code>() :: <code>str</code></p>
 </blockquote>
 <p>str(object='') -&gt; str
 str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
@@ -1586,7 +1569,7 @@ errors defaults to 'strict'.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="MultiCategorize" class="doc_header"><code>class</code> <code>MultiCategorize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L254" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MultiCategorize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>) :: <a href="/data.transforms#Categorize"><code>Categorize</code></a></p>
+<h2 id="MultiCategorize" class="doc_header"><code>class</code> <code>MultiCategorize</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L248" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MultiCategorize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>add_na</code></strong>=<em><code>False</code></em>) :: <a href="/data.transforms.html#Categorize"><code>Categorize</code></a></p>
 </blockquote>
 <p>Reversible transform of multi-category strings to <code>vocab</code> id</p>
 
@@ -1618,7 +1601,7 @@ errors defaults to 'strict'.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="MultiCategory" class="doc_header"><code>class</code> <code>MultiCategory</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L270" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MultiCategory</code>(<strong><code>items</code></strong>=<em><code>None</code></em>, <strong>*<code>rest</code></strong>, <strong><code>use_list</code></strong>=<em><code>False</code></em>, <strong><code>match</code></strong>=<em><code>None</code></em>) :: <code>L</code></p>
+<h2 id="MultiCategory" class="doc_header"><code>class</code> <code>MultiCategory</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L264" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MultiCategory</code>(<strong><code>items</code></strong>=<em><code>None</code></em>, <strong>*<code>rest</code></strong>, <strong><code>use_list</code></strong>=<em><code>False</code></em>, <strong><code>match</code></strong>=<em><code>None</code></em>) :: <code>L</code></p>
 </blockquote>
 <p>Behaves like a list of <code>items</code> but can also index with list of indices or masks</p>
 
@@ -1675,7 +1658,7 @@ errors defaults to 'strict'.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="OneHotEncode" class="doc_header"><code>class</code> <code>OneHotEncode</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L275" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>OneHotEncode</code>(<strong><code>c</code></strong>=<em><code>None</code></em>) :: <code>Transform</code></p>
+<h2 id="OneHotEncode" class="doc_header"><code>class</code> <code>OneHotEncode</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L269" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>OneHotEncode</code>(<strong><code>c</code></strong>=<em><code>None</code></em>) :: <code>DisplayedTransform</code></p>
 </blockquote>
 <p>One-hot encodes targets</p>
 
@@ -1755,7 +1738,7 @@ errors defaults to 'strict'.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="EncodedMultiCategorize" class="doc_header"><code>class</code> <code>EncodedMultiCategorize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L292" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EncodedMultiCategorize</code>(<strong><code>vocab</code></strong>) :: <a href="/data.transforms#Categorize"><code>Categorize</code></a></p>
+<h2 id="EncodedMultiCategorize" class="doc_header"><code>class</code> <code>EncodedMultiCategorize</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L283" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EncodedMultiCategorize</code>(<strong><code>vocab</code></strong>) :: <a href="/data.transforms.html#Categorize"><code>Categorize</code></a></p>
 </blockquote>
 <p>Transform of one-hot encoded multi-category that decodes with <code>vocab</code></p>
 
@@ -1844,7 +1827,7 @@ decodes: (object,object) -&gt; decodes
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="RegressionSetup" class="doc_header"><code>class</code> <code>RegressionSetup</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L302" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>RegressionSetup</code>(<strong><code>c</code></strong>=<em><code>None</code></em>) :: <code>Transform</code></p>
+<h2 id="RegressionSetup" class="doc_header"><code>class</code> <code>RegressionSetup</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L293" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>RegressionSetup</code>(<strong><code>c</code></strong>=<em><code>None</code></em>) :: <code>DisplayedTransform</code></p>
 </blockquote>
 <p>Transform that floatifies targets</p>
 
@@ -1900,7 +1883,7 @@ decodes: (object,object) -&gt; decodes
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_c" class="doc_header"><code>get_c</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L319" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_c</code>(<strong><code>dls</code></strong>)</p>
+<h4 id="get_c" class="doc_header"><code>get_c</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L307" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_c</code>(<strong><code>dls</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1921,7 +1904,7 @@ decodes: (object,object) -&gt; decodes
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's show how to use those functions to grab the mnist dataset in a <a href="/data.core#Datasets"><code>Datasets</code></a>. First we grab all the images.</p>
+<p>Let's show how to use those functions to grab the mnist dataset in a <a href="/data.core.html#Datasets"><code>Datasets</code></a>. First we grab all the images.</p>
 
 </div>
 </div>
@@ -2024,7 +2007,7 @@ decodes: (object,object) -&gt; decodes
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-32-2ebc7d11ee03&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-31-2ebc7d11ee03&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span> tfms = [[open_img, img2tensor],
 <span class="ansi-green-intense-fg ansi-bold">      6</span>         [parent_label, Categorize()]]
 <span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span>train_ds <span class="ansi-blue-fg">=</span> Datasets<span class="ansi-blue-fg">(</span>train<span class="ansi-blue-fg">,</span> tfms<span class="ansi-blue-fg">)</span>
@@ -2130,7 +2113,7 @@ decodes: (object,object) -&gt; decodes
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ToTensor" class="doc_header"><code>class</code> <code>ToTensor</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L328" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ToTensor</code>(<strong><code>enc</code></strong>=<em><code>None</code></em>, <strong><code>dec</code></strong>=<em><code>None</code></em>, <strong><code>split_idx</code></strong>=<em><code>None</code></em>, <strong><code>order</code></strong>=<em><code>None</code></em>) :: <code>Transform</code></p>
+<h2 id="ToTensor" class="doc_header"><code>class</code> <code>ToTensor</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L316" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ToTensor</code>(<strong><code>enc</code></strong>=<em><code>None</code></em>, <strong><code>dec</code></strong>=<em><code>None</code></em>, <strong><code>split_idx</code></strong>=<em><code>None</code></em>, <strong><code>order</code></strong>=<em><code>None</code></em>) :: <code>Transform</code></p>
 </blockquote>
 <p>Convert item to appropriate tensor class</p>
 
@@ -2162,7 +2145,7 @@ decodes: (object,object) -&gt; decodes
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="IntToFloatTensor" class="doc_header"><code>class</code> <code>IntToFloatTensor</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L333" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>IntToFloatTensor</code>(<strong><code>div</code></strong>=<em><code>255.0</code></em>, <strong><code>div_mask</code></strong>=<em><code>1</code></em>) :: <code>Transform</code></p>
+<h2 id="IntToFloatTensor" class="doc_header"><code>class</code> <code>IntToFloatTensor</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L321" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>IntToFloatTensor</code>(<strong><code>div</code></strong>=<em><code>255.0</code></em>, <strong><code>div_mask</code></strong>=<em><code>1</code></em>) :: <code>DisplayedTransform</code></p>
 </blockquote>
 <p>Transform image to float tensor, optionally dividing by 255 (e.g. for images).</p>
 
@@ -2219,7 +2202,7 @@ decodes: (object,object) -&gt; decodes
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="broadcast_vec" class="doc_header"><code>broadcast_vec</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L346" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>broadcast_vec</code>(<strong><code>dim</code></strong>, <strong><code>ndim</code></strong>, <strong>*<code>t</code></strong>, <strong><code>cuda</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="broadcast_vec" class="doc_header"><code>broadcast_vec</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L331" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>broadcast_vec</code>(<strong><code>dim</code></strong>, <strong><code>ndim</code></strong>, <strong>*<code>t</code></strong>, <strong><code>cuda</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Make a vector broadcastable over <code>dim</code> (out of <code>ndim</code> total) by prepending and appending unit axes</p>
 
@@ -2251,9 +2234,9 @@ decodes: (object,object) -&gt; decodes
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Normalize" class="doc_header"><code>class</code> <code>Normalize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/transforms.py#L355" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Normalize</code>(<strong><code>mean</code></strong>=<em><code>None</code></em>, <strong><code>std</code></strong>=<em><code>None</code></em>, <strong><code>axes</code></strong>=<em><code>(0, 2, 3)</code></em>) :: <code>Transform</code></p>
+<h2 id="Normalize" class="doc_header"><code>class</code> <code>Normalize</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/transforms.py#L340" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Normalize</code>(<strong><code>mean</code></strong>=<em><code>None</code></em>, <strong><code>std</code></strong>=<em><code>None</code></em>, <strong><code>axes</code></strong>=<em><code>(0, 2, 3)</code></em>) :: <code>DisplayedTransform</code></p>
 </blockquote>
-<p>Normalize/denorm batch of <a href="/torch_core#TensorImage"><code>TensorImage</code></a></p>
+<p>Normalize/denorm batch of <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a></p>
 
 </div>
 
@@ -2394,96 +2377,6 @@ decodes: (object,object) -&gt; decodes
 
 </div>
 
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">torch</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#Lose type of tensors (to emulate predictions)</span>
-<span class="n">test_ne</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">TensorImage</span><span class="p">)</span>
-<span class="n">tdl</span><span class="o">.</span><span class="n">show_batch</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="c1">#Check that types are put back by dl.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOcAAAD3CAYAAADmIkO7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4yLjIsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+WH4yJAAAGbElEQVR4nO3dTYhd5R3H8efMJCG+NLXoqIuilCYZjYpvC5lYChXjonQVEgWhEW0j2IWiuDFutDRbg2SjcaVZNSktBRUhi1BS6kuLRpAEX3C0QaptY2MiIWJmjiuFhLlP6D1zc3+59/OBQLj/uec8JHx5Qp45c5u2bQuQZ2LYCwAWJk4IJU4IJU4IJU4IJU4IJU4IJc4R0DTNl6f9mmuaZvuw10U3S4a9ALpr2/bCb3/fNM0FpZTPSim7h7ciFoOdc/RsKKX8u5Syb9gLoRtxjp57SikvtL4v85zX+DscHU3TXFFKmS2lrGzbdnbY66EbO+do2VRK+aswR4M4R8umUsrzw14Ei8M/a0dE0zRrSyl7SimXt217bNjroTs75+i4p5TyR2GODjsnhLJzQihxQihxQihxQqjqN76vm9jof4tgwPbM724Wet3OCaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaHECaGWDHsBwzA5vbI6f3nvHzpdf66dr873nej9x37fi/d3undXVz1zuOesnT1Ufe/8iROLvZyxZueEUOKEUOKEUOKEUOKEUOKEUOKEUGN5zvmfW6eq8//NHa/Oz59Y2un+M8vnes4Obtje6dqdbej/rdf+ZXN1vuqJY9X53Psf9h62bT9LOqfZOSGUOCGUOCGUOCGUOCGUOCGUOCFU01bOj9ZNbBy/w6VSyuHNM9X5s1ueHti9H37vrup82+rfd7r+9ya+rs6vXLKs0/W7WP+T3oesJ2c/PosrObv2zO9uFnrdzgmhxAmhxAmhxAmhxAmhxAmhxAmhnHOOmck1q6vzg4+u6Dnbf0f9WdPlTbfHg51znsrOCaHECaHECaHECaHECaHECaHECaHG8ufWjrO5A+9V5z/eeVPP2ce3LXgc953pbj/Ol9PYOSGUOCGUOCGUOCGUOCGUOCGUo5QxM3nR96vzQ2uX95xNL53sdO8Pvj5Z/4KTvT8acRzZOSGUOCGUOCGUOCGUOCGUOCGUOCGUc84x8/kvrq7O3/rN4D7e8NePPVydrzj02sDufS6yc0IocUIocUIocUIocUIocUIocUIo55wjZvKSi+tfcPd/B3bvez+6ozr/wUsHqnNPc57KzgmhxAmhxAmhxAmhxAmhxAmhxAmhnHOOmE9+OV2dv3H94J7XfO2t1dX5qqOvD+zeo8jOCaHECaHECaHECaHECaHECaHECaGcc55jjmyaqc53PvTUGa7Q/2ds3vjqvdX5VVsOVuee1/z/2DkhlDghlDghlDghlDghlDghlKOUMO3M9dX5c7/dVp1PL+3/qKSUUm742309Zz/a/M/qe+eOHu10b05l54RQ4oRQ4oRQ4oRQ4oRQ4oRQ4oRQzjmHYHJqqufs+JNfVN/b9RzzwU9+Wp3XzjLnjtTXxuKyc0IocUIocUIocUIocUIocUIocUIo55xD8O62H/acHbhmR6drv/7V0ur84NbrqvPzjrzR6f4sHjsnhBInhBInhBInhBInhBInhBInhHLOOQC15zVLKWX9mv0Du/cjWx+ozi/+86sDuzeLy84JocQJocQJocQJocQJocQJoRylDMC/7lxVnf/pspf7vvaWT2+pzqd2vVOdz/d9Z842OyeEEieEEieEEieEEieEEieEEieEcs7ZhzM9Enb7r/p/LOtMP9ryzcdvrs6XHft73/cmi50TQokTQokTQokTQokTQokTQokTQjnn7MP8FZdW57/r8LzmrsP15zWXveIcc1zYOSGUOCGUOCGUOCGUOCGUOCGUOCGUc84wL719XXW+uvzjLK2EYbNzQihxQihxQihxQihxQihxQihxQijnnGGa45PDXgIh7JwQSpwQSpwQSpwQSpwQSpwQylFKHyY/O1Kdr9l7f3V+4Gc7es5+PrO/+t73q1NGiZ0TQokTQokTQokTQokTQokTQokTQjVt2/YcrpvY2HsILIo987ubhV63c0IocUIocUIocUIocUIocUIocUKo6jknMDx2TgglTgglTgglTgglTgglTgj1DeCi4e2tg38ZAAAAAElFTkSuQmCC
-"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOcAAAD3CAYAAADmIkO7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4yLjIsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+WH4yJAAAGdklEQVR4nO3dS6hVVRzH8bXVUlJ7DMyiLDIr6EFFRKWSTYwkCKKEGqQV9IAeRJOKaFBUFE3SiJ6DbFDElR4TKyQIekhQGFFIBPaiIisselD42I0aFJ6lnXPPPb+77+cDgvh3773u1a9LXPccm7ZtC5Bn2qgXAOyZOCGUOCGUOCGUOCGUOCGUOCGUODugaZrf/vNtV9M0j4x6XQxmxqgXwODatp3zz/ebppldSvm+lDI2uhUxHuyc3XNpKWVbKeWtUS+EwYize1aXUp5tfV3mpNf4NeyOpmmOKqV8XkpZ1Lbt56NeD4Oxc3bLqlLK28LsBnF2y6pSyrpRL4Lx4a+1HdE0zeJSysZSymFt2/466vUwODtnd6wupbwozO6wc0IoOyeEEieEEieEEieEqn7h+/JpK/1rEQzZxt1jzZ5+3M4JocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJocQJoWaMegH829YHz6n/hHZi1jHZLLx906iXMO7snBBKnBBKnBBKnBBKnBBKnBBKnBAq9pzzu1sXV+e3XfdCdX72rC97zjb8dlL12seev7A63zG3ftj42mUPVec1x+73YXX+V7uj73t32UW3nznqJYw7OyeEEieEEieEEieEEieEEieEEieEatq295nd8mkrB3r14Nd39T6rfHj1U9Vrl876vTqf3jR9rWki/LG7fha55L1re85WHre5eu3Y2LLq/M9Ff1Xns+bU54O4/9SXq/MVB2zv+953bzujOv/g9Mm7z2zcPbbH38yT9yOCjhMnhBInhBInhBInhBInhBInhBrq6zmfuXpNz9mp++/t6sHOMa/64vyes02fHlu9dv4b9U/LA/c8WZ9femV1vmDzxz1n7x9xdP3ab/fy/qyVc+thu/OOVdX5iht7/37Ym/WvL6nOjynetxaYIOKEUOKEUOKEUOKEUOKEUOKEUEM957ziuZt7zk4597OB7v3NY4uq80M2bOk5O/7n96vXTps7tzq/76vV9es311+TWbPzm2/7vnbYps+bV50vvbj/j7uUUna0u3rO5vR+G+LOsnNCKHFCKHFCKHFCKHFCKHFCqKG+NSbdsvW506rzj5fV3+50bx7dfkLP2esnHzjQvZN5a0yYZMQJocQJocQJocQJocQJocQJoYb6kjEmn+kHH9RztuL4T4b67Kefv6DnbEF5d6jPTmTnhFDihFDihFDihFDihFDihFDihFDOOfmXbZec2HP20uFrJ3Al2DkhlDghlDghlDghlDghlDghlDghlHPOKabZb//q/IKb3h7aszf9ObM6P/LNP4b27MnIzgmhxAmhxAmhxAmhxAmhxAmhxAmhnHNOMT9dcUZ1fte84b1m85Y111fn89+Zeu9NW2PnhFDihFDihFDihFDihFDihFCOUqaYH5fuqM5nlOl93/vxX46uzuevdVTyf9g5IZQ4IZQ4IZQ4IZQ4IZQ4IZQ4IZRzzo5pzjylOl933tPV+c6yq+9n7279WT+efDYhlDghlDghlDghlDghlDghlDghlHPOjvn0+vp/s3fWzPrrOQfx1GeLq/PDy5ahPbuL7JwQSpwQSpwQSpwQSpwQSpwQSpwQyjlnxzyxbN3Inj3zlYNH9uwusnNCKHFCKHFCKHFCKHFCKHFCKEcp7LNHt59QnR/66tbqfOd4LmYKsHNCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKHFCKK/nZJ9dfuBH1fmLS5dX57PXfz+ey+k8OyeEEieEEieEEieEEieEEieEEieEcs7JPrvhi4ur89nr35uglUwNdk4IJU4IJU4IJU4IJU4IJU4IJU4I5ZyTfbZtzcLqfHb5YYJWMjXYOSGUOCGUOCGUOCGUOCGUOCGUo5SOueWZa6rznXPavu+9aMtP1fmuvu/Mntg5IZQ4IZQ4IZQ4IZQ4IZQ4IZQ4IZRzzo5ZcO+7Q7u3c8yJZeeEUOKEUOKEUOKEUOKEUOKEUOKEUE3b9v/6PmB47JwQSpwQSpwQSpwQSpwQSpwQ6m8vLdneQTNxxQAAAABJRU5ErkJggg==
-"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 

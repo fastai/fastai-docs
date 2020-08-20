@@ -53,7 +53,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ShortEpochCallback" class="doc_header"><code>class</code> <code>ShortEpochCallback</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L12" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ShortEpochCallback</code>(<strong><code>pct</code></strong>=<em><code>0.01</code></em>, <strong><code>short_valid</code></strong>=<em><code>True</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="ShortEpochCallback" class="doc_header"><code>class</code> <code>ShortEpochCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/training.py#L12" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ShortEpochCallback</code>(<strong><code>pct</code></strong>=<em><code>0.01</code></em>, <strong><code>short_valid</code></strong>=<em><code>True</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Fit just <code>pct</code> of an epoch, then stop</p>
 
@@ -182,7 +182,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="GradientAccumulation" class="doc_header"><code>class</code> <code>GradientAccumulation</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L22" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GradientAccumulation</code>(<strong><code>n_acc</code></strong>=<em><code>32</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="GradientAccumulation" class="doc_header"><code>class</code> <code>GradientAccumulation</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/training.py#L22" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GradientAccumulation</code>(<strong><code>n_acc</code></strong>=<em><code>32</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Accumulate gradients before updating weights</p>
 
@@ -315,7 +315,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_bn_eval" class="doc_header"><code>set_bn_eval</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_bn_eval</code>(<strong><code>m</code></strong>:<a href="/torch_core#Module"><code>Module</code></a>, <strong><code>use_eval</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="set_bn_eval" class="doc_header"><code>set_bn_eval</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/training.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_bn_eval</code>(<strong><code>m</code></strong>:<a href="/torch_core.html#Module"><code>Module</code></a>, <strong><code>use_eval</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Set bn layers in eval mode for all recursive children of <code>m</code>.</p>
 
@@ -340,7 +340,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BnFreeze" class="doc_header"><code>class</code> <code>BnFreeze</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/callback/training.py#L48" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BnFreeze</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>before_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core#Callback"><code>Callback</code></a></p>
+<h2 id="BnFreeze" class="doc_header"><code>class</code> <code>BnFreeze</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/training.py#L48" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BnFreeze</code>(<strong><code>before_fit</code></strong>=<em><code>None</code></em>, <strong><code>before_epoch</code></strong>=<em><code>None</code></em>, <strong><code>before_train</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_pred</code></strong>=<em><code>None</code></em>, <strong><code>after_loss</code></strong>=<em><code>None</code></em>, <strong><code>before_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_backward</code></strong>=<em><code>None</code></em>, <strong><code>after_step</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_train</code></strong>=<em><code>None</code></em>, <strong><code>after_train</code></strong>=<em><code>None</code></em>, <strong><code>before_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_validate</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_epoch</code></strong>=<em><code>None</code></em>, <strong><code>after_cancel_fit</code></strong>=<em><code>None</code></em>, <strong><code>after_fit</code></strong>=<em><code>None</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Freeze moving average statistics in all non-trainable batchnorm layers.</p>
 
@@ -356,8 +356,8 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/callback.training#BnFreeze"><code>BnFreeze</code></a> is useful when you'd like to train two separate models that have a common feature extractor / body. The only part of the model that's different is the head that you attach for transfer learning. <br></p>
-<p><a href="/learner#Learner.freeze("><code>Learner.freeze()</code></a>) doesn't suffice here as the <a href="/layers#BatchNorm"><code>BatchNorm</code></a> layers are trainable by default, and running mean and sdev of batches are tracked. For feature extractors to fully match, you need to set <code>train_bn=False</code> and these stats need to be frozen as well, which is precisely the function of <a href="/callback.training#BnFreeze"><code>BnFreeze</code></a>.</p>
+<p><a href="/callback.training.html#BnFreeze"><code>BnFreeze</code></a> is useful when you'd like to train two separate models that have a common feature extractor / body. The only part of the model that's different is the head that you attach for transfer learning. <br></p>
+<p><a href="/learner.html#Learner.freeze("><code>Learner.freeze()</code></a>) doesn't suffice here as the <a href="/layers.html#BatchNorm"><code>BatchNorm</code></a> layers are trainable by default, and running mean and sdev of batches are tracked. For feature extractors to fully match, you need to set <code>train_bn=False</code> and these stats need to be frozen as well, which is precisely the function of <a href="/callback.training.html#BnFreeze"><code>BnFreeze</code></a>.</p>
 
 </div>
 </div>
@@ -384,7 +384,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We first demonstrate the mismatch of the running stats when using only <code>train_bn=False</code>, by creating a <a href="/learner#Learner"><code>Learner</code></a>...:</p>
+<p>We first demonstrate the mismatch of the running stats when using only <code>train_bn=False</code>, by creating a <a href="/learner.html#Learner"><code>Learner</code></a>...:</p>
 
 </div>
 </div>
@@ -408,7 +408,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>...and grab the first <a href="/layers#BatchNorm"><code>BatchNorm</code></a> layer, and store its running mean:</p>
+<p>...and grab the first <a href="/layers.html#BatchNorm"><code>BatchNorm</code></a> layer, and store its running mean:</p>
 
 </div>
 </div>
@@ -489,7 +489,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When we use the <a href="/callback.training#BnFreeze"><code>BnFreeze</code></a> callback, the running statistics will not be changed during training. This is often important for getting good results from transfer learning.</p>
+<p>When we use the <a href="/callback.training.html#BnFreeze"><code>BnFreeze</code></a> callback, the running statistics will not be changed during training. This is often important for getting good results from transfer learning.</p>
 
 </div>
 </div>

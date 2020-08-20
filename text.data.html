@@ -60,7 +60,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="reverse_text" class="doc_header"><code>reverse_text</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L12" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reverse_text</code>(<strong><code>x</code></strong>)</p>
+<h4 id="reverse_text" class="doc_header"><code>reverse_text</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L12" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reverse_text</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -123,7 +123,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="make_vocab" class="doc_header"><code>make_vocab</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_vocab</code>(<strong><code>count</code></strong>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>special_toks</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="make_vocab" class="doc_header"><code>make_vocab</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_vocab</code>(<strong><code>count</code></strong>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>special_toks</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Create a vocab of <code>max_vocab</code> size from <code>Counter</code> <code>count</code> with items present more than <code>min_freq</code></p>
 
@@ -187,7 +187,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="TensorText" class="doc_header"><code>class</code> <code>TensorText</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L26" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>TensorText</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/torch_core#TensorBase"><code>TensorBase</code></a></p>
+<h3 id="TensorText" class="doc_header"><code>class</code> <code>TensorText</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L26" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>TensorText</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/torch_core.html#TensorBase"><code>TensorBase</code></a></p>
 </blockquote>
 <p>Semantic type for a tensor representing text</p>
 
@@ -212,7 +212,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="LMTensorText" class="doc_header"><code>class</code> <code>LMTensorText</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L27" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>LMTensorText</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/text.data#TensorText"><code>TensorText</code></a></p>
+<h3 id="LMTensorText" class="doc_header"><code>class</code> <code>LMTensorText</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L27" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>LMTensorText</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/text.data.html#TensorText"><code>TensorText</code></a></p>
 </blockquote>
 <p>Semantic type for a tensor representing text in language modeling</p>
 
@@ -244,7 +244,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="Numericalize" class="doc_header"><code>class</code> <code>Numericalize</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L33" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>Numericalize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>special_toks</code></strong>=<em><code>None</code></em>, <strong><code>pad_tok</code></strong>=<em><code>None</code></em>) :: <code>Transform</code></p>
+<h3 id="Numericalize" class="doc_header"><code>class</code> <code>Numericalize</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L33" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>Numericalize</code>(<strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>special_toks</code></strong>=<em><code>None</code></em>, <strong><code>pad_tok</code></strong>=<em><code>None</code></em>) :: <code>Transform</code></p>
 </blockquote>
 <p>Reversible transform of tokenized texts to numericalized ids</p>
 
@@ -260,7 +260,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If no <code>vocab</code> is passed, one is created at setup from the data, using <a href="/text.data#make_vocab"><code>make_vocab</code></a> with <code>min_freq</code> and <code>max_vocab</code>.</p>
+<p>If no <code>vocab</code> is passed, one is created at setup from the data, using <a href="/text.data.html#make_vocab"><code>make_vocab</code></a> with <code>min_freq</code> and <code>max_vocab</code>.</p>
 
 </div>
 </div>
@@ -354,9 +354,9 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="LMDataLoader" class="doc_header"><code>class</code> <code>LMDataLoader</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L72" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LMDataLoader</code>(<strong><code>dataset</code></strong>, <strong><code>lens</code></strong>=<em><code>None</code></em>, <strong><code>cache</code></strong>=<em><code>2</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>num_workers</code></strong>=<em><code>0</code></em>, <strong><code>shuffle</code></strong>=<em><code>False</code></em>, <strong><code>verbose</code></strong>=<em><code>False</code></em>, <strong><code>do_setup</code></strong>=<em><code>True</code></em>, <strong><code>pin_memory</code></strong>=<em><code>False</code></em>, <strong><code>timeout</code></strong>=<em><code>0</code></em>, <strong><code>batch_size</code></strong>=<em><code>None</code></em>, <strong><code>drop_last</code></strong>=<em><code>False</code></em>, <strong><code>indexed</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>, <strong><code>wif</code></strong>=<em><code>None</code></em>, <strong><code>before_iter</code></strong>=<em><code>None</code></em>, <strong><code>after_item</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_iter</code></strong>=<em><code>None</code></em>, <strong><code>create_batches</code></strong>=<em><code>None</code></em>, <strong><code>create_item</code></strong>=<em><code>None</code></em>, <strong><code>create_batch</code></strong>=<em><code>None</code></em>, <strong><code>retain</code></strong>=<em><code>None</code></em>, <strong><code>get_idxs</code></strong>=<em><code>None</code></em>, <strong><code>sample</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_fn</code></strong>=<em><code>None</code></em>, <strong><code>do_batch</code></strong>=<em><code>None</code></em>) :: <a href="/data.core#TfmdDL"><code>TfmdDL</code></a></p>
+<h2 id="LMDataLoader" class="doc_header"><code>class</code> <code>LMDataLoader</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L72" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LMDataLoader</code>(<strong><code>dataset</code></strong>, <strong><code>lens</code></strong>=<em><code>None</code></em>, <strong><code>cache</code></strong>=<em><code>2</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>num_workers</code></strong>=<em><code>0</code></em>, <strong><code>shuffle</code></strong>=<em><code>False</code></em>, <strong><code>verbose</code></strong>=<em><code>False</code></em>, <strong><code>do_setup</code></strong>=<em><code>True</code></em>, <strong><code>pin_memory</code></strong>=<em><code>False</code></em>, <strong><code>timeout</code></strong>=<em><code>0</code></em>, <strong><code>batch_size</code></strong>=<em><code>None</code></em>, <strong><code>drop_last</code></strong>=<em><code>False</code></em>, <strong><code>indexed</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>, <strong><code>wif</code></strong>=<em><code>None</code></em>, <strong><code>before_iter</code></strong>=<em><code>None</code></em>, <strong><code>after_item</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_iter</code></strong>=<em><code>None</code></em>, <strong><code>create_batches</code></strong>=<em><code>None</code></em>, <strong><code>create_item</code></strong>=<em><code>None</code></em>, <strong><code>create_batch</code></strong>=<em><code>None</code></em>, <strong><code>retain</code></strong>=<em><code>None</code></em>, <strong><code>get_idxs</code></strong>=<em><code>None</code></em>, <strong><code>sample</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_fn</code></strong>=<em><code>None</code></em>, <strong><code>do_batch</code></strong>=<em><code>None</code></em>) :: <a href="/data.core.html#TfmdDL"><code>TfmdDL</code></a></p>
 </blockquote>
-<p>A <a href="/data.load#DataLoader"><code>DataLoader</code></a> suitable for language modeling</p>
+<p>A <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> suitable for language modeling</p>
 
 </div>
 
@@ -370,8 +370,8 @@ nb_path: "nbs/31_text.data.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>dataset</code> should be a collection of numericalized texts for this to work. <code>lens</code> can be passed for optimizing the creation, otherwise, the <a href="/text.data#LMDataLoader"><code>LMDataLoader</code></a> will do a full pass of the <code>dataset</code> to compute them. <code>cache</code> is used to avoid reloading items unnecessarily.</p>
-<p>The <a href="/text.data#LMDataLoader"><code>LMDataLoader</code></a> will concatenate all texts (maybe <code>shuffle</code>d) in one big stream, split it in <code>bs</code> contiguous sentences, then go through those <code>seq_len</code> at a time.</p>
+<p><code>dataset</code> should be a collection of numericalized texts for this to work. <code>lens</code> can be passed for optimizing the creation, otherwise, the <a href="/text.data.html#LMDataLoader"><code>LMDataLoader</code></a> will do a full pass of the <code>dataset</code> to compute them. <code>cache</code> is used to avoid reloading items unnecessarily.</p>
+<p>The <a href="/text.data.html#LMDataLoader"><code>LMDataLoader</code></a> will concatenate all texts (maybe <code>shuffle</code>d) in one big stream, split it in <code>bs</code> contiguous sentences, then go through those <code>seq_len</code> at a time.</p>
 
 </div>
 </div>
@@ -483,7 +483,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="pad_input" class="doc_header"><code>pad_input</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L124" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pad_input</code>(<strong><code>samples</code></strong>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>pad_fields</code></strong>=<em><code>0</code></em>, <strong><code>pad_first</code></strong>=<em><code>False</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="pad_input" class="doc_header"><code>pad_input</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L124" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pad_input</code>(<strong><code>samples</code></strong>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>pad_fields</code></strong>=<em><code>0</code></em>, <strong><code>pad_first</code></strong>=<em><code>False</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Function that collect <code>samples</code> and adds padding</p>
 
@@ -548,7 +548,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="pad_input_chunk" class="doc_header"><code>pad_input_chunk</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pad_input_chunk</code>(<strong><code>samples</code></strong>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>pad_first</code></strong>=<em><code>True</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>)</p>
+<h4 id="pad_input_chunk" class="doc_header"><code>pad_input_chunk</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pad_input_chunk</code>(<strong><code>samples</code></strong>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>pad_first</code></strong>=<em><code>True</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>)</p>
 </blockquote>
 <p>Pad <code>samples</code> by adding padding by chunks of size <code>seq_len</code></p>
 
@@ -564,7 +564,7 @@ nb_path: "nbs/31_text.data.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The difference with the base <a href="/text.data#pad_input"><code>pad_input</code></a> is that most of the padding is applied first (if <code>pad_first=True</code>) or at the end (if <code>pad_first=False</code>) but only by a round multiple of <code>seq_len</code>. The rest of the padding is applied to the end (or the beginning if <code>pad_first=False</code>). This is to work with <code>SequenceEncoder</code> with recurrent models.</p>
+<p>The difference with the base <a href="/text.data.html#pad_input"><code>pad_input</code></a> is that most of the padding is applied first (if <code>pad_first=True</code>) or at the end (if <code>pad_first=False</code>) but only by a round multiple of <code>seq_len</code>. The rest of the padding is applied to the end (or the beginning if <code>pad_first=False</code>). This is to work with <code>SequenceEncoder</code> with recurrent models.</p>
 
 </div>
 </div>
@@ -609,9 +609,9 @@ nb_path: "nbs/31_text.data.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="SortedDL" class="doc_header"><code>class</code> <code>SortedDL</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L155" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>SortedDL</code>(<strong><code>dataset</code></strong>, <strong><code>sort_func</code></strong>=<em><code>None</code></em>, <strong><code>res</code></strong>=<em><code>None</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>shuffle</code></strong>=<em><code>False</code></em>, <strong><code>num_workers</code></strong>=<em><code>None</code></em>, <strong><code>verbose</code></strong>=<em><code>False</code></em>, <strong><code>do_setup</code></strong>=<em><code>True</code></em>, <strong><code>pin_memory</code></strong>=<em><code>False</code></em>, <strong><code>timeout</code></strong>=<em><code>0</code></em>, <strong><code>batch_size</code></strong>=<em><code>None</code></em>, <strong><code>drop_last</code></strong>=<em><code>False</code></em>, <strong><code>indexed</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>, <strong><code>wif</code></strong>=<em><code>None</code></em>, <strong><code>before_iter</code></strong>=<em><code>None</code></em>, <strong><code>after_item</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_iter</code></strong>=<em><code>None</code></em>, <strong><code>create_batches</code></strong>=<em><code>None</code></em>, <strong><code>create_item</code></strong>=<em><code>None</code></em>, <strong><code>create_batch</code></strong>=<em><code>None</code></em>, <strong><code>retain</code></strong>=<em><code>None</code></em>, <strong><code>get_idxs</code></strong>=<em><code>None</code></em>, <strong><code>sample</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_fn</code></strong>=<em><code>None</code></em>, <strong><code>do_batch</code></strong>=<em><code>None</code></em>) :: <a href="/data.core#TfmdDL"><code>TfmdDL</code></a></p>
+<h3 id="SortedDL" class="doc_header"><code>class</code> <code>SortedDL</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L155" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>SortedDL</code>(<strong><code>dataset</code></strong>, <strong><code>sort_func</code></strong>=<em><code>None</code></em>, <strong><code>res</code></strong>=<em><code>None</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>shuffle</code></strong>=<em><code>False</code></em>, <strong><code>num_workers</code></strong>=<em><code>None</code></em>, <strong><code>verbose</code></strong>=<em><code>False</code></em>, <strong><code>do_setup</code></strong>=<em><code>True</code></em>, <strong><code>pin_memory</code></strong>=<em><code>False</code></em>, <strong><code>timeout</code></strong>=<em><code>0</code></em>, <strong><code>batch_size</code></strong>=<em><code>None</code></em>, <strong><code>drop_last</code></strong>=<em><code>False</code></em>, <strong><code>indexed</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>, <strong><code>wif</code></strong>=<em><code>None</code></em>, <strong><code>before_iter</code></strong>=<em><code>None</code></em>, <strong><code>after_item</code></strong>=<em><code>None</code></em>, <strong><code>before_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_batch</code></strong>=<em><code>None</code></em>, <strong><code>after_iter</code></strong>=<em><code>None</code></em>, <strong><code>create_batches</code></strong>=<em><code>None</code></em>, <strong><code>create_item</code></strong>=<em><code>None</code></em>, <strong><code>create_batch</code></strong>=<em><code>None</code></em>, <strong><code>retain</code></strong>=<em><code>None</code></em>, <strong><code>get_idxs</code></strong>=<em><code>None</code></em>, <strong><code>sample</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_fn</code></strong>=<em><code>None</code></em>, <strong><code>do_batch</code></strong>=<em><code>None</code></em>) :: <a href="/data.core.html#TfmdDL"><code>TfmdDL</code></a></p>
 </blockquote>
-<p>A <a href="/data.load#DataLoader"><code>DataLoader</code></a> that goes throught the item in the order given by <code>sort_func</code></p>
+<p>A <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> that goes throught the item in the order given by <code>sort_func</code></p>
 
 </div>
 
@@ -626,7 +626,7 @@ nb_path: "nbs/31_text.data.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>res</code> is the result of <code>sort_func</code> applied on all elements of the <code>dataset</code>. You can pass it if available to make the init much faster by avoiding an initial pass over the whole dataset. For example if sorting by text length (as in the default <code>sort_func</code>, called <code>_default_sort</code>) you should pass a list with the length of each element in <code>dataset</code> to <code>res</code> to take advantage of this speed-up.</p>
-<p>To get the same init speed-up for the validation set, <code>val_res</code> (a list of text lengths for your validation set) can be passed to the <code>kwargs</code> argument of <a href="/text.data#SortedDL"><code>SortedDL</code></a>. Below is an example to reduce the init time by passing a list of text lengths for both the training set and the validation set:</p>
+<p>To get the same init speed-up for the validation set, <code>val_res</code> (a list of text lengths for your validation set) can be passed to the <code>kwargs</code> argument of <a href="/text.data.html#SortedDL"><code>SortedDL</code></a>. Below is an example to reduce the init time by passing a list of text lengths for both the training set and the validation set:</p>
 
 <pre><code># Pass the training dataset text lengths to SortedDL
 srtd_dl=partial(SortedDL, res = train_text_lens)
@@ -718,9 +718,9 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="TextBlock" class="doc_header"><code>class</code> <code>TextBlock</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L191" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>TextBlock</code>(<strong><code>tok_tfm</code></strong>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>special_toks</code></strong>=<em><code>None</code></em>, <strong><code>pad_tok</code></strong>=<em><code>None</code></em>) :: <a href="/data.block#TransformBlock"><code>TransformBlock</code></a></p>
+<h3 id="TextBlock" class="doc_header"><code>class</code> <code>TextBlock</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L191" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>TextBlock</code>(<strong><code>tok_tfm</code></strong>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>special_toks</code></strong>=<em><code>None</code></em>, <strong><code>pad_tok</code></strong>=<em><code>None</code></em>) :: <a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a></p>
 </blockquote>
-<p>A <a href="/data.block#TransformBlock"><code>TransformBlock</code></a> for texts</p>
+<p>A <a href="/data.block.html#TransformBlock"><code>TransformBlock</code></a> for texts</p>
 
 </div>
 
@@ -735,7 +735,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For efficient tokenization, you probably want to use one of the factory methods. Otherwise, you can pass your custom <code>tok_tfm</code> that will deal with tokenization (if your texts are already tokenized, you can pass <code>noop</code>), a <code>vocab</code>, or leave it to be inferred on the texts using <code>min_freq</code> and <code>max_vocab</code>.</p>
-<p><code>is_lm</code> indicates if we want to use texts for language modeling or another task, <code>seq_len</code> is only necessary to tune if <code>is_lm=False</code>, and is passed along to <a href="/text.data#pad_input_chunk"><code>pad_input_chunk</code></a>.</p>
+<p><code>is_lm</code> indicates if we want to use texts for language modeling or another task, <code>seq_len</code> is only necessary to tune if <code>is_lm=False</code>, and is passed along to <a href="/text.data.html#pad_input_chunk"><code>pad_input_chunk</code></a>.</p>
 
 </div>
 </div>
@@ -751,9 +751,9 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="TextBlock.from_df" class="doc_header"><code>TextBlock.from_df</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L201" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextBlock.from_df</code>(<strong><code>text_cols</code></strong>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>tok</code></strong>=<em><code>None</code></em>, <strong><code>rules</code></strong>=<em><code>None</code></em>, <strong><code>sep</code></strong>=<em><code>' '</code></em>, <strong><code>n_workers</code></strong>=<em><code>64</code></em>, <strong><code>mark_fields</code></strong>=<em><code>None</code></em>, <strong><code>res_col_name</code></strong>=<em><code>'text'</code></em>, <strong>**<code>kwargs</code></strong>)</p>
+<h4 id="TextBlock.from_df" class="doc_header"><code>TextBlock.from_df</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L201" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextBlock.from_df</code>(<strong><code>text_cols</code></strong>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>tok</code></strong>=<em><code>None</code></em>, <strong><code>rules</code></strong>=<em><code>None</code></em>, <strong><code>sep</code></strong>=<em><code>' '</code></em>, <strong><code>n_workers</code></strong>=<em><code>64</code></em>, <strong><code>mark_fields</code></strong>=<em><code>None</code></em>, <strong><code>res_col_name</code></strong>=<em><code>'text'</code></em>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
-<p>Build a <a href="/text.data#TextBlock"><code>TextBlock</code></a> from a dataframe using <code>text_cols</code></p>
+<p>Build a <a href="/text.data.html#TextBlock"><code>TextBlock</code></a> from a dataframe using <code>text_cols</code></p>
 
 </div>
 
@@ -852,7 +852,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>vocab</code>,  <code>is_lm</code>, <code>seq_len</code>, <code>min_freq</code> and <code>max_vocab</code> are passed to the main init, the other argument to <a href="/text.core#Tokenizer.from_df"><code>Tokenizer.from_df</code></a>.</p>
+<p><code>vocab</code>,  <code>is_lm</code>, <code>seq_len</code>, <code>min_freq</code> and <code>max_vocab</code> are passed to the main init, the other argument to <a href="/text.core.html#Tokenizer.from_df"><code>Tokenizer.from_df</code></a>.</p>
 
 </div>
 </div>
@@ -868,9 +868,9 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="TextBlock.from_folder" class="doc_header"><code>TextBlock.from_folder</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L208" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextBlock.from_folder</code>(<strong><code>path</code></strong>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>tok</code></strong>=<em><code>None</code></em>, <strong><code>rules</code></strong>=<em><code>None</code></em>, <strong><code>extensions</code></strong>=<em><code>None</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>, <strong><code>output_dir</code></strong>=<em><code>None</code></em>, <strong><code>skip_if_exists</code></strong>=<em><code>True</code></em>, <strong><code>output_names</code></strong>=<em><code>None</code></em>, <strong><code>n_workers</code></strong>=<em><code>64</code></em>, <strong><code>encoding</code></strong>=<em><code>'utf8'</code></em>, <strong>**<code>kwargs</code></strong>)</p>
+<h4 id="TextBlock.from_folder" class="doc_header"><code>TextBlock.from_folder</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L208" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextBlock.from_folder</code>(<strong><code>path</code></strong>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>min_freq</code></strong>=<em><code>3</code></em>, <strong><code>max_vocab</code></strong>=<em><code>60000</code></em>, <strong><code>tok</code></strong>=<em><code>None</code></em>, <strong><code>rules</code></strong>=<em><code>None</code></em>, <strong><code>extensions</code></strong>=<em><code>None</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>, <strong><code>output_dir</code></strong>=<em><code>None</code></em>, <strong><code>skip_if_exists</code></strong>=<em><code>True</code></em>, <strong><code>output_names</code></strong>=<em><code>None</code></em>, <strong><code>n_workers</code></strong>=<em><code>64</code></em>, <strong><code>encoding</code></strong>=<em><code>'utf8'</code></em>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
-<p>Build a <a href="/text.data#TextBlock"><code>TextBlock</code></a> from a <code>path</code></p>
+<p>Build a <a href="/text.data.html#TextBlock"><code>TextBlock</code></a> from a <code>path</code></p>
 
 </div>
 
@@ -884,7 +884,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>vocab</code>, <code>is_lm</code>, <code>seq_len</code>, <code>min_freq</code> and <code>max_vocab</code> are passed to the main init, the other argument to <a href="/text.core#Tokenizer.from_folder"><code>Tokenizer.from_folder</code></a>.</p>
+<p><code>vocab</code>, <code>is_lm</code>, <code>seq_len</code>, <code>min_freq</code> and <code>max_vocab</code> are passed to the main init, the other argument to <a href="/text.core.html#Tokenizer.from_folder"><code>Tokenizer.from_folder</code></a>.</p>
 
 </div>
 </div>
@@ -907,9 +907,9 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TextDataLoaders" class="doc_header"><code>class</code> <code>TextDataLoaders</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L216" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TextDataLoaders</code>(<strong>*<code>loaders</code></strong>, <strong><code>path</code></strong>=<em><code>'.'</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>) :: <a href="/data.core#DataLoaders"><code>DataLoaders</code></a></p>
+<h2 id="TextDataLoaders" class="doc_header"><code>class</code> <code>TextDataLoaders</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L216" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TextDataLoaders</code>(<strong>*<code>loaders</code></strong>, <strong><code>path</code></strong>=<em><code>'.'</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>) :: <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a></p>
 </blockquote>
-<p>Basic wrapper around several <a href="/data.load#DataLoader"><code>DataLoader</code></a>s with factory methods for NLP problems</p>
+<p>Basic wrapper around several <a href="/data.load.html#DataLoader"><code>DataLoader</code></a>s with factory methods for NLP problems</p>
 
 </div>
 
@@ -929,8 +929,8 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 <li><code>tok_tfm</code>: if passed, uses this <code>tok_tfm</code> instead of the default</li>
 <li><code>seq_len</code>: the sequence length used for batch</li>
 <li><code>bs</code>: the batch size</li>
-<li><code>val_bs</code>: the batch size for the validation <a href="/data.load#DataLoader"><code>DataLoader</code></a> (defaults to <code>bs</code>)</li>
-<li><code>shuffle_train</code>: if we shuffle the training <a href="/data.load#DataLoader"><code>DataLoader</code></a> or not</li>
+<li><code>val_bs</code>: the batch size for the validation <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> (defaults to <code>bs</code>)</li>
+<li><code>shuffle_train</code>: if we shuffle the training <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> or not</li>
 <li><code>device</code>: the PyTorch device to use (defaults to <code>default_device()</code>)</li>
 </ul>
 
@@ -948,7 +948,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="TextDataLoaders.from_folder" class="doc_header"><code>TextDataLoaders.from_folder</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L218" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextDataLoaders.from_folder</code>(<strong><code>path</code></strong>, <strong><code>train</code></strong>=<em><code>'train'</code></em>, <strong><code>valid</code></strong>=<em><code>'valid'</code></em>, <strong><code>valid_pct</code></strong>=<em><code>None</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>text_vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>tok_tfm</code></strong>=<em><code>None</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>val_bs</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_train</code></strong>=<em><code>True</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="TextDataLoaders.from_folder" class="doc_header"><code>TextDataLoaders.from_folder</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L218" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextDataLoaders.from_folder</code>(<strong><code>path</code></strong>, <strong><code>train</code></strong>=<em><code>'train'</code></em>, <strong><code>valid</code></strong>=<em><code>'valid'</code></em>, <strong><code>valid_pct</code></strong>=<em><code>None</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>, <strong><code>vocab</code></strong>=<em><code>None</code></em>, <strong><code>text_vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>tok_tfm</code></strong>=<em><code>None</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>val_bs</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_train</code></strong>=<em><code>True</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Create from imagenet style dataset in <code>path</code> with <code>train</code> and <code>valid</code> subfolders (or provide <code>valid_pct</code>)</p>
 
@@ -1040,7 +1040,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="TextDataLoaders.from_df" class="doc_header"><code>TextDataLoaders.from_df</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L233" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextDataLoaders.from_df</code>(<strong><code>df</code></strong>, <strong><code>path</code></strong>=<em><code>'.'</code></em>, <strong><code>valid_pct</code></strong>=<em><code>0.2</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>, <strong><code>text_col</code></strong>=<em><code>0</code></em>, <strong><code>label_col</code></strong>=<em><code>1</code></em>, <strong><code>label_delim</code></strong>=<em><code>None</code></em>, <strong><code>y_block</code></strong>=<em><code>None</code></em>, <strong><code>text_vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>valid_col</code></strong>=<em><code>None</code></em>, <strong><code>tok_tfm</code></strong>=<em><code>None</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>val_bs</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_train</code></strong>=<em><code>True</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="TextDataLoaders.from_df" class="doc_header"><code>TextDataLoaders.from_df</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L233" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextDataLoaders.from_df</code>(<strong><code>df</code></strong>, <strong><code>path</code></strong>=<em><code>'.'</code></em>, <strong><code>valid_pct</code></strong>=<em><code>0.2</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>, <strong><code>text_col</code></strong>=<em><code>0</code></em>, <strong><code>label_col</code></strong>=<em><code>1</code></em>, <strong><code>label_delim</code></strong>=<em><code>None</code></em>, <strong><code>y_block</code></strong>=<em><code>None</code></em>, <strong><code>text_vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>valid_col</code></strong>=<em><code>None</code></em>, <strong><code>tok_tfm</code></strong>=<em><code>None</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>val_bs</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_train</code></strong>=<em><code>True</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Create from <code>df</code> in <code>path</code> with <code>valid_pct</code></p>
 
@@ -1109,7 +1109,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="TextDataLoaders.from_csv" class="doc_header"><code>TextDataLoaders.from_csv</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/text/data.py#L249" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextDataLoaders.from_csv</code>(<strong><code>path</code></strong>, <strong><code>csv_fname</code></strong>=<em><code>'labels.csv'</code></em>, <strong><code>header</code></strong>=<em><code>'infer'</code></em>, <strong><code>delimiter</code></strong>=<em><code>None</code></em>, <strong><code>valid_pct</code></strong>=<em><code>0.2</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>, <strong><code>text_col</code></strong>=<em><code>0</code></em>, <strong><code>label_col</code></strong>=<em><code>1</code></em>, <strong><code>label_delim</code></strong>=<em><code>None</code></em>, <strong><code>y_block</code></strong>=<em><code>None</code></em>, <strong><code>text_vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>valid_col</code></strong>=<em><code>None</code></em>, <strong><code>tok_tfm</code></strong>=<em><code>None</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>val_bs</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_train</code></strong>=<em><code>True</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="TextDataLoaders.from_csv" class="doc_header"><code>TextDataLoaders.from_csv</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/data.py#L249" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>TextDataLoaders.from_csv</code>(<strong><code>path</code></strong>, <strong><code>csv_fname</code></strong>=<em><code>'labels.csv'</code></em>, <strong><code>header</code></strong>=<em><code>'infer'</code></em>, <strong><code>delimiter</code></strong>=<em><code>None</code></em>, <strong><code>valid_pct</code></strong>=<em><code>0.2</code></em>, <strong><code>seed</code></strong>=<em><code>None</code></em>, <strong><code>text_col</code></strong>=<em><code>0</code></em>, <strong><code>label_col</code></strong>=<em><code>1</code></em>, <strong><code>label_delim</code></strong>=<em><code>None</code></em>, <strong><code>y_block</code></strong>=<em><code>None</code></em>, <strong><code>text_vocab</code></strong>=<em><code>None</code></em>, <strong><code>is_lm</code></strong>=<em><code>False</code></em>, <strong><code>valid_col</code></strong>=<em><code>None</code></em>, <strong><code>tok_tfm</code></strong>=<em><code>None</code></em>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>backwards</code></strong>=<em><code>False</code></em>, <strong><code>bs</code></strong>=<em><code>64</code></em>, <strong><code>val_bs</code></strong>=<em><code>None</code></em>, <strong><code>shuffle_train</code></strong>=<em><code>True</code></em>, <strong><code>device</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Create from <code>csv</code> file in <code>path/csv_fname</code></p>
 
@@ -1125,7 +1125,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Opens the csv file with <code>header</code> and <code>delimiter</code>, then pass all the other arguments to <a href="/text.data#TextDataLoaders.from_df"><code>TextDataLoaders.from_df</code></a>.</p>
+<p>Opens the csv file with <code>header</code> and <code>delimiter</code>, then pass all the other arguments to <a href="/text.data.html#TextDataLoaders.from_df"><code>TextDataLoaders.from_df</code></a>.</p>
 
 </div>
 </div>

@@ -132,7 +132,7 @@ nb_path: "nbs/04_data.external.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To download any of the datasets or pretrained weights, simply run <a href="/data.external#untar_data"><code>untar_data</code></a> by passing any dataset name mentioned above like so:</p>
+<p>To download any of the datasets or pretrained weights, simply run <a href="/data.external.html#untar_data"><code>untar_data</code></a> by passing any dataset name mentioned above like so:</p>
 <div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
 <span class="n">path</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
 <span class="o">&gt;</span> <span class="o">&gt;</span> <span class="p">(</span><span class="c1">#7393) [Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/keeshond_34.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/Siamese_178.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/german_shorthaired_94.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/Abyssinian_92.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/basset_hound_111.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/Russian_Blue_194.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/staffordshire_bull_terrier_91.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/Persian_69.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/english_setter_33.jpg&#39;),Path(&#39;/home/ubuntu/.fastai/data/oxford-iiit-pet/images/Russian_Blue_155.jpg&#39;)...]</span>
@@ -165,7 +165,7 @@ path.ls()</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Config" class="doc_header"><code>class</code> <code>Config</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Config</code>()</p>
+<h2 id="Config" class="doc_header"><code>class</code> <code>Config</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Config</code>()</p>
 </blockquote>
 <p>Setup config at <code>~/.fastai</code> unless it exists already.</p>
 
@@ -181,7 +181,7 @@ path.ls()</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If a config file doesn't exist already, it is always created at <code>~/.fastai/config.yml</code> location by default whenever an instance of the <a href="/data.external#Config"><code>Config</code></a> class is created. Here is a quick example to explain:</p>
+<p>If a config file doesn't exist already, it is always created at <code>~/.fastai/config.yml</code> location by default whenever an instance of the <a href="/data.external.html#Config"><code>Config</code></a> class is created. Here is a quick example to explain:</p>
 
 </div>
 </div>
@@ -390,7 +390,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="URLs" class="doc_header"><code>class</code> <code>URLs</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L59" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>URLs</code>()</p>
+<h2 id="URLs" class="doc_header"><code>class</code> <code>URLs</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L59" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>URLs</code>()</p>
 </blockquote>
 <p>Global constants for dataset and model URLs.</p>
 
@@ -506,7 +506,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download_url" class="doc_header"><code>download_url</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_url</code>(<strong><code>url</code></strong>, <strong><code>dest</code></strong>, <strong><code>overwrite</code></strong>=<em><code>False</code></em>, <strong><code>pbar</code></strong>=<em><code>None</code></em>, <strong><code>show_progress</code></strong>=<em><code>True</code></em>, <strong><code>chunk_size</code></strong>=<em><code>1048576</code></em>, <strong><code>timeout</code></strong>=<em><code>4</code></em>, <strong><code>retries</code></strong>=<em><code>5</code></em>)</p>
+<h4 id="download_url" class="doc_header"><code>download_url</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_url</code>(<strong><code>url</code></strong>, <strong><code>dest</code></strong>, <strong><code>overwrite</code></strong>=<em><code>False</code></em>, <strong><code>pbar</code></strong>=<em><code>None</code></em>, <strong><code>show_progress</code></strong>=<em><code>True</code></em>, <strong><code>chunk_size</code></strong>=<em><code>1048576</code></em>, <strong><code>timeout</code></strong>=<em><code>4</code></em>, <strong><code>retries</code></strong>=<em><code>5</code></em>)</p>
 </blockquote>
 <p>Download <code>url</code> to <code>dest</code> unless it exists and not <code>overwrite</code></p>
 
@@ -522,7 +522,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="/data.external#download_url"><code>download_url</code></a> is a very handy function inside fastai! This function can be used to download any file from the internet to a location passed by <code>dest</code> argument of the function. It should not be confused, that this function can only be used to download fastai-files. That couldn't be further away from the truth. As an example, let's download the pets dataset from the actual source file:</p>
+<p>The <a href="/data.external.html#download_url"><code>download_url</code></a> is a very handy function inside fastai! This function can be used to download any file from the internet to a location passed by <code>dest</code> argument of the function. It should not be confused, that this function can only be used to download fastai-files. That couldn't be further away from the truth. As an example, let's download the pets dataset from the actual source file:</p>
 
 </div>
 </div>
@@ -639,7 +639,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also use the <a href="/data.external#download_url"><code>download_url</code></a> function to download the pet's dataset straight from the source by simply passing <code>https://www.robots.ox.ac.uk/~vgg/data/pets/data/images.tar.gz</code> in <code>url</code>.</p>
+<p>We can also use the <a href="/data.external.html#download_url"><code>download_url</code></a> function to download the pet's dataset straight from the source by simply passing <code>https://www.robots.ox.ac.uk/~vgg/data/pets/data/images.tar.gz</code> in <code>url</code>.</p>
 
 </div>
 </div>
@@ -662,7 +662,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download_data" class="doc_header"><code>download_data</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L188" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_data</code>(<strong><code>url</code></strong>, <strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>c_key</code></strong>=<em><code>'archive'</code></em>, <strong><code>force_download</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="download_data" class="doc_header"><code>download_data</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L188" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_data</code>(<strong><code>url</code></strong>, <strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>c_key</code></strong>=<em><code>'archive'</code></em>, <strong><code>force_download</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Download <code>url</code> to <code>fname</code>.</p>
 
@@ -678,14 +678,14 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="/data.external#download_data"><code>download_data</code></a> is a convenience function and a wrapper outside <a href="/data.external#download_url"><code>download_url</code></a> to download fastai files to the appropriate local path based on the <code>c_key</code>.</p>
+<p>The <a href="/data.external.html#download_data"><code>download_data</code></a> is a convenience function and a wrapper outside <a href="/data.external.html#download_url"><code>download_url</code></a> to download fastai files to the appropriate local path based on the <code>c_key</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If <code>fname</code> is None, it will default to the archive folder you have in your config file (or data, model if you specify a different <code>c_key</code>) followed by the last part of the url: for instance <a href="/data.external#URLs.MNIST_SAMPLE"><code>URLs.MNIST_SAMPLE</code></a> is <code>http://files.fast.ai/data/examples/mnist_sample.tgz</code> and the default value for <code>fname</code> will be <code>~/.fastai/archive/mnist_sample.tgz</code>.</p>
+<p>If <code>fname</code> is None, it will default to the archive folder you have in your config file (or data, model if you specify a different <code>c_key</code>) followed by the last part of the url: for instance <a href="/data.external.html#URLs.MNIST_SAMPLE"><code>URLs.MNIST_SAMPLE</code></a> is <code>http://files.fast.ai/data/examples/mnist_sample.tgz</code> and the default value for <code>fname</code> will be <code>~/.fastai/archive/mnist_sample.tgz</code>.</p>
 <p>If <code>force_download=True</code>, the file is alwayd downloaded. Otherwise, it's only when the file doesn't exists that the download is triggered.</p>
 
 </div>
@@ -763,7 +763,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="file_extract" class="doc_header"><code>file_extract</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L215" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>file_extract</code>(<strong><code>fname</code></strong>, <strong><code>dest</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="file_extract" class="doc_header"><code>file_extract</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L215" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>file_extract</code>(<strong><code>fname</code></strong>, <strong><code>dest</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Extract <code>fname</code> to <code>dest</code> using <code>tarfile</code> or <code>zipfile</code>.</p>
 
@@ -779,7 +779,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/data.external#file_extract"><code>file_extract</code></a> is used by default in <a href="/data.external#untar_data"><code>untar_data</code></a> to decompress the downloaded file.</p>
+<p><a href="/data.external.html#file_extract"><code>file_extract</code></a> is used by default in <a href="/data.external.html#untar_data"><code>untar_data</code></a> to decompress the downloaded file.</p>
 
 </div>
 </div>
@@ -809,7 +809,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="newest_folder" class="doc_header"><code>newest_folder</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L231" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>newest_folder</code>(<strong><code>path</code></strong>)</p>
+<h4 id="newest_folder" class="doc_header"><code>newest_folder</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L231" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>newest_folder</code>(<strong><code>path</code></strong>)</p>
 </blockquote>
 <p>Return newest folder on path</p>
 
@@ -841,7 +841,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="rename_extracted" class="doc_header"><code>rename_extracted</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L237" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rename_extracted</code>(<strong><code>dest</code></strong>)</p>
+<h4 id="rename_extracted" class="doc_header"><code>rename_extracted</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L237" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rename_extracted</code>(<strong><code>dest</code></strong>)</p>
 </blockquote>
 <p>Rename file if different from dest</p>
 
@@ -880,7 +880,7 @@ All future downloads occur at the paths defined in the config file based on the 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="untar_data" class="doc_header"><code>untar_data</code><a href="https://github.com/fastai/fastai2/tree/master/fastai2/data/external.py#L243" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>untar_data</code>(<strong><code>url</code></strong>, <strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>dest</code></strong>=<em><code>None</code></em>, <strong><code>c_key</code></strong>=<em><code>'data'</code></em>, <strong><code>force_download</code></strong>=<em><code>False</code></em>, <strong><code>extract_func</code></strong>=<em><code>'file_extract'</code></em>)</p>
+<h4 id="untar_data" class="doc_header"><code>untar_data</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/data/external.py#L243" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>untar_data</code>(<strong><code>url</code></strong>, <strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>dest</code></strong>=<em><code>None</code></em>, <strong><code>c_key</code></strong>=<em><code>'data'</code></em>, <strong><code>force_download</code></strong>=<em><code>False</code></em>, <strong><code>extract_func</code></strong>=<em><code>file_extract</code></em>)</p>
 </blockquote>
 <p>Download <code>url</code> to <code>fname</code> if <code>dest</code> doesn't exist, and un-tgz or unzip to folder <code>dest</code>.</p>
 
@@ -896,9 +896,9 @@ All future downloads occur at the paths defined in the config file based on the 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/data.external#untar_data"><code>untar_data</code></a> is a very powerful convenience function to download files from <code>url</code> to <code>dest</code>. The <code>url</code> can be a default <code>url</code> from the <a href="/data.external#URLs"><code>URLs</code></a> class or a custom url. If <code>dest</code> is not passed, files are downloaded at the <code>default_dest</code> which defaults to <code>~/.fastai/data/</code>.</p>
+<p><a href="/data.external.html#untar_data"><code>untar_data</code></a> is a very powerful convenience function to download files from <code>url</code> to <code>dest</code>. The <code>url</code> can be a default <code>url</code> from the <a href="/data.external.html#URLs"><code>URLs</code></a> class or a custom url. If <code>dest</code> is not passed, files are downloaded at the <code>default_dest</code> which defaults to <code>~/.fastai/data/</code>.</p>
 <p>This convenience function extracts the downloaded files to <code>dest</code> by default. In order, to simply download the files without extracting, pass the <code>noop</code> function as <code>extract_func</code>.</p>
-<p>Note, it is also possible to pass a custom <code>extract_func</code> to <a href="/data.external#untar_data"><code>untar_data</code></a> if the filetype doesn't end with <code>.tgz</code> or <code>.zip</code>. The <code>gzip</code> and <code>zip</code> files are supported by default and there is no need to pass custom <code>extract_func</code> for these type of files.</p>
+<p>Note, it is also possible to pass a custom <code>extract_func</code> to <a href="/data.external.html#untar_data"><code>untar_data</code></a> if the filetype doesn't end with <code>.tgz</code> or <code>.zip</code>. The <code>gzip</code> and <code>zip</code> files are supported by default and there is no need to pass custom <code>extract_func</code> for these type of files.</p>
 <p>Internally, if files are not available at <code>fname</code> location already which defaults to <code>~/.fastai/archive/</code>, the files get downloaded at <code>~/.fastai/archive</code> and are then extracted at <code>dest</code> location. If no <code>dest</code> is passed the <code>default_dest</code> to download the files is <code>~/.fastai/data</code>. If files are already available at the <code>fname</code> location but not available then a symbolic link is created for each file from <code>fname</code> location to <code>dest</code>.</p>
 <p>Also, if <code>force_download</code> is set to <code>True</code>, files are re downloaded even if they exist.</p>
 
