@@ -85,14 +85,11 @@ pip install pydicom kornia opencv-python scikit-image
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To run the tests in parallel, launch:</p>
-<div class="highlight"><pre><span></span>nbdev_test_nbs
-</pre></div>
-<p>or</p>
-<div class="highlight"><pre><span></span>make <span class="nb">test</span>
-</pre></div>
+<p><code>nbdev_test_nbs</code> or <code>make test</code></p>
 <p>For all the tests to pass, you'll need to install the following optional dependencies:</p>
 
 <pre><code>pip install "sentencepiece&lt;0.1.90" wandb tensorboard albumentations pydicom opencv-python scikit-image pyarrow kornia</code></pre>
+<p>Tests are written using <code>nbdev</code>, for example see the documentation for <code>test_eq</code>.</p>
 
 </div>
 </div>
