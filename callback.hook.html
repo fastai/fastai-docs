@@ -2,6 +2,7 @@
 
 title: Model hooks
 
+
 keywords: fastai
 sidebar: home_sidebar
 
@@ -240,7 +241,7 @@ nb_path: "nbs/15_callback.hook.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="Hook.hook_fn" class="doc_header"><code>Hook.hook_fn</code><a href="https://github.com/fastai/fastai/tree/master/fastai/callback/hook.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Hook.hook_fn</code>(<strong><code>module</code></strong>, <strong><code>input</code></strong>, <strong><code>output</code></strong>)</p>
 </blockquote>
-<p>Applies <code>hook_func</code> to <a href="/layers.html#module"><code>module</code></a>, <code>input</code>, <code>output</code>.</p>
+<p>Applies <code>hook_func</code> to <code>module</code>, <code>input</code>, <code>output</code>.</p>
 
 </div>
 
@@ -412,7 +413,7 @@ nb_path: "nbs/15_callback.hook.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="hook_output" class="doc_header"><code>hook_output</code><a href="https://github.com/fastai/fastai/tree/master/fastai/callback/hook.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>hook_output</code>(<strong><code>module</code></strong>, <strong><code>detach</code></strong>=<em><code>True</code></em>, <strong><code>cpu</code></strong>=<em><code>False</code></em>, <strong><code>grad</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
-<p>Return a <a href="/callback.hook.html#Hook"><code>Hook</code></a> that stores activations of <a href="/layers.html#module"><code>module</code></a> in <code>self.stored</code></p>
+<p>Return a <a href="/callback.hook.html#Hook"><code>Hook</code></a> that stores activations of <code>module</code> in <code>self.stored</code></p>
 
 </div>
 
@@ -1591,12 +1592,12 @@ Callbacks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,27.918107986450195,29.169435501098633,&#39;00:00&#39;]
-(#4) [0,17.46143341064453,13.88067626953125,&#39;00:00&#39;]
-(#4) [0,1.8650851249694824,1.9051005840301514,&#39;00:00&#39;]
-(#4) [0,2.9163620471954346,2.3465914726257324,&#39;00:00&#39;]
-(#4) [0,9.194561958312988,9.137530326843262,&#39;00:00&#39;]
-(#4) [0,17.321781158447266,15.816542625427246,&#39;00:00&#39;]
+<pre>(#4) [0,8.356965065002441,6.469820976257324,&#39;00:00&#39;]
+(#4) [0,5.166000843048096,3.962731122970581,&#39;00:00&#39;]
+(#4) [0,14.010619163513184,14.719940185546875,&#39;00:00&#39;]
+(#4) [0,4.930881023406982,3.9230780601501465,&#39;00:00&#39;]
+(#4) [0,18.175973892211914,14.968949317932129,&#39;00:00&#39;]
+(#4) [0,10.99303913116455,9.17985725402832,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
