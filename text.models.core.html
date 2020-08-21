@@ -66,7 +66,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="LinearDecoder" class="doc_header"><code>class</code> <code>LinearDecoder</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/models/core.py#L26" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>LinearDecoder</code>(<strong><code>n_out</code></strong>, <strong><code>n_hid</code></strong>, <strong><code>output_p</code></strong>=<em><code>0.1</code></em>, <strong><code>tie_encoder</code></strong>=<em><code>None</code></em>, <strong><code>bias</code></strong>=<em><code>True</code></em>) :: <a href="/torch_core.html#Module"><code>Module</code></a></p>
+<h3 id="LinearDecoder" class="doc_header"><code>class</code> <code>LinearDecoder</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/core.py#L26" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>LinearDecoder</code>(<strong><code>n_out</code></strong>, <strong><code>n_hid</code></strong>, <strong><code>output_p</code></strong>=<em><code>0.1</code></em>, <strong><code>tie_encoder</code></strong>=<em><code>None</code></em>, <strong><code>bias</code></strong>=<em><code>True</code></em>) :: <a href="/torch_core.html#Module"><code>Module</code></a></p>
 </blockquote>
 <p>To go on top of a RNNCore module and create a Language Model.</p>
 
@@ -87,7 +87,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastai2.text.models.awdlstm</span> <span class="kn">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastai.text.models.awdlstm</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">enc</span> <span class="o">=</span> <span class="n">AWD_LSTM</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">enc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -127,7 +127,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="SequentialRNN" class="doc_header"><code>class</code> <code>SequentialRNN</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/models/core.py#L42" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>SequentialRNN</code>(<strong>*<code>args</code></strong>:<code>Any</code>) :: <code>Sequential</code></p>
+<h3 id="SequentialRNN" class="doc_header"><code>class</code> <code>SequentialRNN</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/core.py#L42" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>SequentialRNN</code>(<strong>*<code>args</code></strong>:<code>Any</code>) :: <code>Sequential</code></p>
 </blockquote>
 <p>A sequential module that passes the reset call to its children.</p>
 
@@ -180,7 +180,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_language_model" class="doc_header"><code>get_language_model</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/models/core.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_language_model</code>(<strong><code>arch</code></strong>, <strong><code>vocab_sz</code></strong>, <strong><code>config</code></strong>=<em><code>None</code></em>, <strong><code>drop_mult</code></strong>=<em><code>1.0</code></em>)</p>
+<h4 id="get_language_model" class="doc_header"><code>get_language_model</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/core.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_language_model</code>(<strong><code>arch</code></strong>, <strong><code>vocab_sz</code></strong>, <strong><code>config</code></strong>=<em><code>None</code></em>, <strong><code>drop_mult</code></strong>=<em><code>1.0</code></em>)</p>
 </blockquote>
 <p>Create a language model from <code>arch</code> and its <code>config</code>.</p>
 
@@ -280,7 +280,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="SentenceEncoder" class="doc_header"><code>class</code> <code>SentenceEncoder</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/models/core.py#L68" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>SentenceEncoder</code>(<strong><code>bptt</code></strong>, <strong><code>module</code></strong>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>max_len</code></strong>=<em><code>None</code></em>) :: <a href="/torch_core.html#Module"><code>Module</code></a></p>
+<h3 id="SentenceEncoder" class="doc_header"><code>class</code> <code>SentenceEncoder</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/core.py#L68" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>SentenceEncoder</code>(<strong><code>bptt</code></strong>, <strong><code>module</code></strong>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>max_len</code></strong>=<em><code>None</code></em>) :: <a href="/torch_core.html#Module"><code>Module</code></a></p>
 </blockquote>
 <p>Create an encoder over <a href="/layers.html#module"><code>module</code></a> that can process a full sentence.</p>
 
@@ -344,7 +344,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="masked_concat_pool" class="doc_header"><code>masked_concat_pool</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/models/core.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>masked_concat_pool</code>(<strong><code>output</code></strong>, <strong><code>mask</code></strong>, <strong><code>bptt</code></strong>)</p>
+<h4 id="masked_concat_pool" class="doc_header"><code>masked_concat_pool</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/core.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>masked_concat_pool</code>(<strong><code>output</code></strong>, <strong><code>mask</code></strong>, <strong><code>bptt</code></strong>)</p>
 </blockquote>
 <p>Pool <code>MultiBatchEncoder</code> outputs into one vector [last_hidden, max_pool, avg_pool]</p>
 
@@ -423,7 +423,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="PoolingLinearClassifier" class="doc_header"><code>class</code> <code>PoolingLinearClassifier</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/models/core.py#L101" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>PoolingLinearClassifier</code>(<strong><code>dims</code></strong>, <strong><code>ps</code></strong>, <strong><code>bptt</code></strong>, <strong><code>y_range</code></strong>=<em><code>None</code></em>) :: <a href="/torch_core.html#Module"><code>Module</code></a></p>
+<h3 id="PoolingLinearClassifier" class="doc_header"><code>class</code> <code>PoolingLinearClassifier</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/core.py#L101" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>PoolingLinearClassifier</code>(<strong><code>dims</code></strong>, <strong><code>ps</code></strong>, <strong><code>bptt</code></strong>, <strong><code>y_range</code></strong>=<em><code>None</code></em>) :: <a href="/torch_core.html#Module"><code>Module</code></a></p>
 </blockquote>
 <p>Create a linear classifier with pooling</p>
 
@@ -480,7 +480,7 @@ nb_path: "nbs/33_text.models.core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_text_classifier" class="doc_header"><code>get_text_classifier</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/text/models/core.py#L118" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_text_classifier</code>(<strong><code>arch</code></strong>, <strong><code>vocab_sz</code></strong>, <strong><code>n_class</code></strong>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>config</code></strong>=<em><code>None</code></em>, <strong><code>drop_mult</code></strong>=<em><code>1.0</code></em>, <strong><code>lin_ftrs</code></strong>=<em><code>None</code></em>, <strong><code>ps</code></strong>=<em><code>None</code></em>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>max_len</code></strong>=<em><code>1440</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="get_text_classifier" class="doc_header"><code>get_text_classifier</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/core.py#L118" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_text_classifier</code>(<strong><code>arch</code></strong>, <strong><code>vocab_sz</code></strong>, <strong><code>n_class</code></strong>, <strong><code>seq_len</code></strong>=<em><code>72</code></em>, <strong><code>config</code></strong>=<em><code>None</code></em>, <strong><code>drop_mult</code></strong>=<em><code>1.0</code></em>, <strong><code>lin_ftrs</code></strong>=<em><code>None</code></em>, <strong><code>ps</code></strong>=<em><code>None</code></em>, <strong><code>pad_idx</code></strong>=<em><code>1</code></em>, <strong><code>max_len</code></strong>=<em><code>1440</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Create a text classifier from <code>arch</code> and its <code>config</code>, maybe <code>pretrained</code></p>
 

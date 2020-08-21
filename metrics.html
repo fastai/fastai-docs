@@ -80,7 +80,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="flatten_check" class="doc_header"><code>flatten_check</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/torch_core.py#L747" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_check</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
+<h4 id="flatten_check" class="doc_header"><code>flatten_check</code><a href="https://github.com/fastai/fastai/tree/master/fastai/torch_core.py#L747" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_check</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
 </blockquote>
 <p>Check that <code>out</code> and <code>targ</code> have the same number of elements and flatten them.</p>
 
@@ -141,7 +141,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="AccumMetric" class="doc_header"><code>class</code> <code>AccumMetric</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L27" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>AccumMetric</code>(<strong><code>func</code></strong>, <strong><code>dim_argmax</code></strong>=<em><code>None</code></em>, <strong><code>activation</code></strong>=<em><code>'no'</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>to_np</code></strong>=<em><code>False</code></em>, <strong><code>invert_arg</code></strong>=<em><code>False</code></em>, <strong><code>flatten</code></strong>=<em><code>True</code></em>, <strong>**<code>kwargs</code></strong>) :: <a href="/learner.html#Metric"><code>Metric</code></a></p>
+<h3 id="AccumMetric" class="doc_header"><code>class</code> <code>AccumMetric</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L27" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>AccumMetric</code>(<strong><code>func</code></strong>, <strong><code>dim_argmax</code></strong>=<em><code>None</code></em>, <strong><code>activation</code></strong>=<em><code>'no'</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>to_np</code></strong>=<em><code>False</code></em>, <strong><code>invert_arg</code></strong>=<em><code>False</code></em>, <strong><code>flatten</code></strong>=<em><code>True</code></em>, <strong>**<code>kwargs</code></strong>) :: <a href="/learner.html#Metric"><code>Metric</code></a></p>
 </blockquote>
 <p>Stores predictions and targets on CPU in accumulate to perform final calculations with <code>func</code>.</p>
 
@@ -276,7 +276,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="skm_to_fastai" class="doc_header"><code>skm_to_fastai</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>skm_to_fastai</code>(<strong><code>func</code></strong>, <strong><code>is_class</code></strong>=<em><code>True</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>activation</code></strong>=<em><code>None</code></em>, <strong>**<code>kwargs</code></strong>)</p>
+<h4 id="skm_to_fastai" class="doc_header"><code>skm_to_fastai</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>skm_to_fastai</code>(<strong><code>func</code></strong>, <strong><code>is_class</code></strong>=<em><code>True</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>activation</code></strong>=<em><code>None</code></em>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
 <p>Convert <code>func</code> from sklearn.metrics to a fastai metric</p>
 
@@ -398,7 +398,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="optim_metric" class="doc_header"><code>optim_metric</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>optim_metric</code>(<strong><code>f</code></strong>, <strong><code>argname</code></strong>, <strong><code>bounds</code></strong>, <strong><code>tol</code></strong>=<em><code>0.01</code></em>, <strong><code>do_neg</code></strong>=<em><code>True</code></em>, <strong><code>get_x</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="optim_metric" class="doc_header"><code>optim_metric</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>optim_metric</code>(<strong><code>f</code></strong>, <strong><code>argname</code></strong>, <strong><code>bounds</code></strong>, <strong><code>tol</code></strong>=<em><code>0.01</code></em>, <strong><code>do_neg</code></strong>=<em><code>True</code></em>, <strong><code>get_x</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Replace metric <code>f</code> with a version that optimizes argument <code>argname</code></p>
 
@@ -450,7 +450,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="accuracy" class="doc_header"><code>accuracy</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>accuracy</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>axis</code></strong>=<em><code>-1</code></em>)</p>
+<h4 id="accuracy" class="doc_header"><code>accuracy</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>accuracy</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>axis</code></strong>=<em><code>-1</code></em>)</p>
 </blockquote>
 <p>Compute accuracy with <code>targ</code> when <code>pred</code> is bs * n_classes</p>
 
@@ -525,7 +525,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="error_rate" class="doc_header"><code>error_rate</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L104" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>error_rate</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>axis</code></strong>=<em><code>-1</code></em>)</p>
+<h4 id="error_rate" class="doc_header"><code>error_rate</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L104" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>error_rate</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>axis</code></strong>=<em><code>-1</code></em>)</p>
 </blockquote>
 <p>1 - <a href="/metrics.html#accuracy"><code>accuracy</code></a></p>
 
@@ -579,7 +579,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="top_k_accuracy" class="doc_header"><code>top_k_accuracy</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L109" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>top_k_accuracy</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>k</code></strong>=<em><code>5</code></em>, <strong><code>axis</code></strong>=<em><code>-1</code></em>)</p>
+<h4 id="top_k_accuracy" class="doc_header"><code>top_k_accuracy</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L109" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>top_k_accuracy</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>k</code></strong>=<em><code>5</code></em>, <strong><code>axis</code></strong>=<em><code>-1</code></em>)</p>
 </blockquote>
 <p>Computes the Top-k accuracy (<code>targ</code> is in the top <code>k</code> predictions of <code>inp</code>)</p>
 
@@ -631,7 +631,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="APScoreBinary" class="doc_header"><code>APScoreBinary</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>APScoreBinary</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="APScoreBinary" class="doc_header"><code>APScoreBinary</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>APScoreBinary</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Average Precision for single-label binary classification problems</p>
 
@@ -670,7 +670,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="BalancedAccuracy" class="doc_header"><code>BalancedAccuracy</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>BalancedAccuracy</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>adjusted</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="BalancedAccuracy" class="doc_header"><code>BalancedAccuracy</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>BalancedAccuracy</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>adjusted</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Balanced Accuracy for single-label binary classification problems</p>
 
@@ -709,7 +709,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="BrierScore" class="doc_header"><code>BrierScore</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L128" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>BrierScore</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="BrierScore" class="doc_header"><code>BrierScore</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L128" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>BrierScore</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Brier score for single-label classification problems</p>
 
@@ -748,7 +748,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="CohenKappa" class="doc_header"><code>CohenKappa</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L134" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CohenKappa</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>weights</code></strong>=<em><code>None</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="CohenKappa" class="doc_header"><code>CohenKappa</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L134" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CohenKappa</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>weights</code></strong>=<em><code>None</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Cohen kappa for single-label classification problems</p>
 
@@ -787,7 +787,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="F1Score" class="doc_header"><code>F1Score</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>F1Score</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="F1Score" class="doc_header"><code>F1Score</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>F1Score</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>F1 score for single-label classification problems</p>
 
@@ -826,7 +826,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FBeta" class="doc_header"><code>FBeta</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L146" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FBeta</code>(<strong><code>beta</code></strong>, <strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="FBeta" class="doc_header"><code>FBeta</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L146" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FBeta</code>(<strong><code>beta</code></strong>, <strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>FBeta score with <code>beta</code> for single-label classification problems</p>
 
@@ -865,7 +865,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="HammingLoss" class="doc_header"><code>HammingLoss</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>HammingLoss</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="HammingLoss" class="doc_header"><code>HammingLoss</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>HammingLoss</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Hamming loss for single-label classification problems</p>
 
@@ -904,7 +904,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Jaccard" class="doc_header"><code>Jaccard</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Jaccard</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Jaccard" class="doc_header"><code>Jaccard</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Jaccard</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Jaccard score for single-label classification problems</p>
 
@@ -943,7 +943,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Precision" class="doc_header"><code>Precision</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L164" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Precision</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Precision" class="doc_header"><code>Precision</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L164" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Precision</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Precision for single-label classification problems</p>
 
@@ -982,7 +982,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Recall" class="doc_header"><code>Recall</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Recall</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Recall" class="doc_header"><code>Recall</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Recall</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'binary'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Recall for single-label classification problems</p>
 
@@ -1021,7 +1021,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="RocAuc" class="doc_header"><code>RocAuc</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RocAuc</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>max_fpr</code></strong>=<em><code>None</code></em>, <strong><code>multi_class</code></strong>=<em><code>'ovr'</code></em>)</p>
+<h4 id="RocAuc" class="doc_header"><code>RocAuc</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RocAuc</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>max_fpr</code></strong>=<em><code>None</code></em>, <strong><code>multi_class</code></strong>=<em><code>'ovr'</code></em>)</p>
 </blockquote>
 <p>Area Under the Receiver Operating Characteristic Curve for single-label multiclass classification problems</p>
 
@@ -1060,7 +1060,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="RocAucBinary" class="doc_header"><code>RocAucBinary</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L183" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RocAucBinary</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>max_fpr</code></strong>=<em><code>None</code></em>, <strong><code>multi_class</code></strong>=<em><code>'raise'</code></em>)</p>
+<h4 id="RocAucBinary" class="doc_header"><code>RocAucBinary</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L183" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RocAucBinary</code>(<strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>max_fpr</code></strong>=<em><code>None</code></em>, <strong><code>multi_class</code></strong>=<em><code>'raise'</code></em>)</p>
 </blockquote>
 <p>Area Under the Receiver Operating Characteristic Curve for single-label binary classification problems</p>
 
@@ -1099,7 +1099,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="MatthewsCorrCoef" class="doc_header"><code>MatthewsCorrCoef</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L189" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MatthewsCorrCoef</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong>**<code>kwargs</code></strong>)</p>
+<h4 id="MatthewsCorrCoef" class="doc_header"><code>MatthewsCorrCoef</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L189" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MatthewsCorrCoef</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
 <p>Matthews correlation coefficient for single-label classification problems</p>
 
@@ -1138,7 +1138,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="Perplexity" class="doc_header"><code>class</code> <code>Perplexity</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L194" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>Perplexity</code>() :: <a href="/learner.html#AvgLoss"><code>AvgLoss</code></a></p>
+<h3 id="Perplexity" class="doc_header"><code>class</code> <code>Perplexity</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L194" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>Perplexity</code>() :: <a href="/learner.html#AvgLoss"><code>AvgLoss</code></a></p>
 </blockquote>
 <p>Perplexity (exponential of cross-entropy loss) for Language Models</p>
 
@@ -1202,7 +1202,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="accuracy_multi" class="doc_header"><code>accuracy_multi</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L204" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>accuracy_multi</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="accuracy_multi" class="doc_header"><code>accuracy_multi</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L204" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>accuracy_multi</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Compute accuracy when <code>inp</code> and <code>targ</code> are the same size.</p>
 
@@ -1291,7 +1291,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="APScoreMulti" class="doc_header"><code>APScoreMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L211" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>APScoreMulti</code>(<strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="APScoreMulti" class="doc_header"><code>APScoreMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L211" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>APScoreMulti</code>(<strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Average Precision for multi-label classification problems</p>
 
@@ -1330,7 +1330,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="BrierScoreMulti" class="doc_header"><code>BrierScoreMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L218" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>BrierScoreMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="BrierScoreMulti" class="doc_header"><code>BrierScoreMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L218" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>BrierScoreMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Brier score for multi-label classification problems</p>
 
@@ -1369,7 +1369,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="F1ScoreMulti" class="doc_header"><code>F1ScoreMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>F1ScoreMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="F1ScoreMulti" class="doc_header"><code>F1ScoreMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>F1ScoreMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>F1 score for multi-label classification problems</p>
 
@@ -1408,7 +1408,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FBetaMulti" class="doc_header"><code>FBetaMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L232" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FBetaMulti</code>(<strong><code>beta</code></strong>, <strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="FBetaMulti" class="doc_header"><code>FBetaMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L232" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FBetaMulti</code>(<strong><code>beta</code></strong>, <strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>FBeta score with <code>beta</code> for multi-label classification problems</p>
 
@@ -1447,7 +1447,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="HammingLossMulti" class="doc_header"><code>HammingLossMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L239" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>HammingLossMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="HammingLossMulti" class="doc_header"><code>HammingLossMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L239" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>HammingLossMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Hamming loss for multi-label classification problems</p>
 
@@ -1486,7 +1486,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="JaccardMulti" class="doc_header"><code>JaccardMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L246" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>JaccardMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="JaccardMulti" class="doc_header"><code>JaccardMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L246" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>JaccardMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Jaccard score for multi-label classification problems</p>
 
@@ -1525,7 +1525,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="MatthewsCorrCoefMulti" class="doc_header"><code>MatthewsCorrCoefMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L253" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MatthewsCorrCoefMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="MatthewsCorrCoefMulti" class="doc_header"><code>MatthewsCorrCoefMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L253" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MatthewsCorrCoefMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Matthews correlation coefficient for multi-label classification problems</p>
 
@@ -1564,7 +1564,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="PrecisionMulti" class="doc_header"><code>PrecisionMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L259" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>PrecisionMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="PrecisionMulti" class="doc_header"><code>PrecisionMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L259" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>PrecisionMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Precision for multi-label classification problems</p>
 
@@ -1603,7 +1603,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="RecallMulti" class="doc_header"><code>RecallMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L266" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RecallMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="RecallMulti" class="doc_header"><code>RecallMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L266" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RecallMulti</code>(<strong><code>thresh</code></strong>=<em><code>0.5</code></em>, <strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>labels</code></strong>=<em><code>None</code></em>, <strong><code>pos_label</code></strong>=<em><code>1</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Recall for multi-label classification problems</p>
 
@@ -1642,7 +1642,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="RocAucMulti" class="doc_header"><code>RocAucMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L273" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RocAucMulti</code>(<strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>max_fpr</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="RocAucMulti" class="doc_header"><code>RocAucMulti</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L273" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>RocAucMulti</code>(<strong><code>sigmoid</code></strong>=<em><code>True</code></em>, <strong><code>average</code></strong>=<em><code>'macro'</code></em>, <strong><code>sample_weight</code></strong>=<em><code>None</code></em>, <strong><code>max_fpr</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Area Under the Receiver Operating Characteristic Curve for multi-label binary classification problems</p>
 
@@ -1706,7 +1706,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="mse" class="doc_header"><code>mse</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L280" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mse</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
+<h4 id="mse" class="doc_header"><code>mse</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L280" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mse</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
 </blockquote>
 <p>Mean squared error between <code>inp</code> and <code>targ</code>.</p>
 
@@ -1806,7 +1806,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="mae" class="doc_header"><code>mae</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L290" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mae</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
+<h4 id="mae" class="doc_header"><code>mae</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L290" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mae</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
 </blockquote>
 <p>Mean absolute error between <code>inp</code> and <code>targ</code>.</p>
 
@@ -1856,7 +1856,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="msle" class="doc_header"><code>msle</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L296" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>msle</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
+<h4 id="msle" class="doc_header"><code>msle</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L296" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>msle</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
 </blockquote>
 <p>Mean squared logarithmic error between <code>inp</code> and <code>targ</code>.</p>
 
@@ -1957,7 +1957,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ExplainedVariance" class="doc_header"><code>ExplainedVariance</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L309" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ExplainedVariance</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="ExplainedVariance" class="doc_header"><code>ExplainedVariance</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L309" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ExplainedVariance</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Explained variance betzeen predictions and targets</p>
 
@@ -1996,7 +1996,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="R2Score" class="doc_header"><code>R2Score</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L314" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R2Score</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="R2Score" class="doc_header"><code>R2Score</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L314" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R2Score</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>R2 score betzeen predictions and targets</p>
 
@@ -2035,7 +2035,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="PearsonCorrCoef" class="doc_header"><code>PearsonCorrCoef</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L319" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>PearsonCorrCoef</code>(<strong><code>dim_argmax</code></strong>=<em><code>None</code></em>, <strong><code>activation</code></strong>=<em><code>'no'</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>to_np</code></strong>=<em><code>False</code></em>, <strong><code>invert_arg</code></strong>=<em><code>False</code></em>, <strong><code>flatten</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="PearsonCorrCoef" class="doc_header"><code>PearsonCorrCoef</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L319" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>PearsonCorrCoef</code>(<strong><code>dim_argmax</code></strong>=<em><code>None</code></em>, <strong><code>activation</code></strong>=<em><code>'no'</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>to_np</code></strong>=<em><code>False</code></em>, <strong><code>invert_arg</code></strong>=<em><code>False</code></em>, <strong><code>flatten</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Pearson correlation coefficient for regression problem</p>
 
@@ -2093,7 +2093,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="SpearmanCorrCoef" class="doc_header"><code>SpearmanCorrCoef</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L326" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>SpearmanCorrCoef</code>(<strong><code>dim_argmax</code></strong>=<em><code>None</code></em>, <strong><code>axis</code></strong>=<em><code>0</code></em>, <strong><code>nan_policy</code></strong>=<em><code>'propagate'</code></em>, <strong><code>activation</code></strong>=<em><code>'no'</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>to_np</code></strong>=<em><code>False</code></em>, <strong><code>invert_arg</code></strong>=<em><code>False</code></em>, <strong><code>flatten</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="SpearmanCorrCoef" class="doc_header"><code>SpearmanCorrCoef</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L326" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>SpearmanCorrCoef</code>(<strong><code>dim_argmax</code></strong>=<em><code>None</code></em>, <strong><code>axis</code></strong>=<em><code>0</code></em>, <strong><code>nan_policy</code></strong>=<em><code>'propagate'</code></em>, <strong><code>activation</code></strong>=<em><code>'no'</code></em>, <strong><code>thresh</code></strong>=<em><code>None</code></em>, <strong><code>to_np</code></strong>=<em><code>False</code></em>, <strong><code>invert_arg</code></strong>=<em><code>False</code></em>, <strong><code>flatten</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Spearman correlation coefficient for regression problem</p>
 
@@ -2157,7 +2157,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="foreground_acc" class="doc_header"><code>foreground_acc</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L334" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>foreground_acc</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>bkg_idx</code></strong>=<em><code>0</code></em>, <strong><code>axis</code></strong>=<em><code>1</code></em>)</p>
+<h4 id="foreground_acc" class="doc_header"><code>foreground_acc</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L334" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>foreground_acc</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>, <strong><code>bkg_idx</code></strong>=<em><code>0</code></em>, <strong><code>axis</code></strong>=<em><code>1</code></em>)</p>
 </blockquote>
 <p>Computes non-background accuracy for multiclass segmentation</p>
 
@@ -2210,7 +2210,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="Dice" class="doc_header"><code>class</code> <code>Dice</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L341" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>Dice</code>(<strong><code>axis</code></strong>=<em><code>1</code></em>) :: <a href="/learner.html#Metric"><code>Metric</code></a></p>
+<h3 id="Dice" class="doc_header"><code>class</code> <code>Dice</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L341" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>Dice</code>(<strong><code>axis</code></strong>=<em><code>1</code></em>) :: <a href="/learner.html#Metric"><code>Metric</code></a></p>
 </blockquote>
 <p>Dice coefficient metric for binary target in segmentation</p>
 
@@ -2264,7 +2264,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="JaccardCoeff" class="doc_header"><code>class</code> <code>JaccardCoeff</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L354" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>JaccardCoeff</code>(<strong><code>axis</code></strong>=<em><code>1</code></em>) :: <a href="/metrics.html#Dice"><code>Dice</code></a></p>
+<h3 id="JaccardCoeff" class="doc_header"><code>class</code> <code>JaccardCoeff</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L354" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>JaccardCoeff</code>(<strong><code>axis</code></strong>=<em><code>1</code></em>) :: <a href="/metrics.html#Dice"><code>Dice</code></a></p>
 </blockquote>
 <p>Implemetation of the jaccard coefficient that is lighter in RAM</p>
 
@@ -2324,7 +2324,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="CorpusBLEUMetric" class="doc_header"><code>class</code> <code>CorpusBLEUMetric</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L360" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>CorpusBLEUMetric</code>(<strong><code>vocab_sz</code></strong>=<em><code>5000</code></em>, <strong><code>axis</code></strong>=<em><code>-1</code></em>) :: <a href="/learner.html#Metric"><code>Metric</code></a></p>
+<h3 id="CorpusBLEUMetric" class="doc_header"><code>class</code> <code>CorpusBLEUMetric</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L360" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>CorpusBLEUMetric</code>(<strong><code>vocab_sz</code></strong>=<em><code>5000</code></em>, <strong><code>axis</code></strong>=<em><code>-1</code></em>) :: <a href="/learner.html#Metric"><code>Metric</code></a></p>
 </blockquote>
 <p>Blueprint for defining a metric</p>
 
@@ -2406,7 +2406,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h3 id="LossMetric" class="doc_header"><code>class</code> <code>LossMetric</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L412" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>LossMetric</code>(<strong><code>attr</code></strong>, <strong><code>nm</code></strong>=<em><code>None</code></em>) :: <a href="/learner.html#AvgMetric"><code>AvgMetric</code></a></p>
+<h3 id="LossMetric" class="doc_header"><code>class</code> <code>LossMetric</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L412" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>LossMetric</code>(<strong><code>attr</code></strong>, <strong><code>nm</code></strong>=<em><code>None</code></em>) :: <a href="/learner.html#AvgMetric"><code>AvgMetric</code></a></p>
 </blockquote>
 <p>Create a metric from <code>loss_func.attr</code> named <code>nm</code></p>
 
@@ -2438,7 +2438,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="LossMetrics" class="doc_header"><code>LossMetrics</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/metrics.py#L424" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>LossMetrics</code>(<strong><code>attrs</code></strong>, <strong><code>nms</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="LossMetrics" class="doc_header"><code>LossMetrics</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L424" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>LossMetrics</code>(<strong><code>attrs</code></strong>, <strong><code>nms</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>List of <a href="/metrics.html#LossMetric"><code>LossMetric</code></a> for each of <code>attrs</code> and <code>nms</code></p>
 

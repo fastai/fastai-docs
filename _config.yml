@@ -1,4 +1,4 @@
-repository: fastai/fastai2
+repository: fastai/fastai
 output: web
 topnav_title: fastai
 site_title: fastai

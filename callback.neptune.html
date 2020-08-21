@@ -66,7 +66,7 @@ nb_path: "nbs/72_callback.neptune.ipynb"
 <h2 id="How-to-use?">How to use?<a class="anchor-link" href="#How-to-use?"> </a></h2><p>Key is to call <code>neptune.init()</code> before you create <code>Learner()</code> and call <code>neptune_create_experiment()</code>, before you fit the model.</p>
 <p>Use <a href="/callback.neptune.html#NeptuneCallback"><code>NeptuneCallback</code></a> in your <a href="/learner.html#Learner"><code>Learner</code></a>, like this:</p>
 
-<pre><code>from fastai2.callback.neptune import NeptuneCallback
+<pre><code>from fastai.callback.neptune import NeptuneCallback
 
 neptune.init('USERNAME/PROJECT_NAME')  # specify project
 
@@ -105,7 +105,7 @@ learn.fit_one_cycle(1)</code></pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="NeptuneCallback" class="doc_header"><code>class</code> <code>NeptuneCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/neptune.py#L14" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NeptuneCallback</code>(<strong><code>log_model_weights</code></strong>=<em><code>True</code></em>, <strong><code>keep_experiment_running</code></strong>=<em><code>False</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
+<h2 id="NeptuneCallback" class="doc_header"><code>class</code> <code>NeptuneCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai/callback/neptune.py#L14" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NeptuneCallback</code>(<strong><code>log_model_weights</code></strong>=<em><code>True</code></em>, <strong><code>keep_experiment_running</code></strong>=<em><code>False</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Log losses, metrics, model weights, model architecture summary to neptune</p>
 

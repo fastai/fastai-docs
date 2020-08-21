@@ -73,7 +73,7 @@ nb_path: "nbs/70_callback.wandb.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="WandbCallback" class="doc_header"><code>class</code> <code>WandbCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/wandb.py#L17" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WandbCallback</code>(<strong><code>log</code></strong>=<em><code>'gradients'</code></em>, <strong><code>log_preds</code></strong>=<em><code>True</code></em>, <strong><code>log_model</code></strong>=<em><code>True</code></em>, <strong><code>log_dataset</code></strong>=<em><code>False</code></em>, <strong><code>dataset_name</code></strong>=<em><code>None</code></em>, <strong><code>valid_dl</code></strong>=<em><code>None</code></em>, <strong><code>n_preds</code></strong>=<em><code>36</code></em>, <strong><code>seed</code></strong>=<em><code>12345</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
+<h2 id="WandbCallback" class="doc_header"><code>class</code> <code>WandbCallback</code><a href="https://github.com/fastai/fastai/tree/master/fastai/callback/wandb.py#L17" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WandbCallback</code>(<strong><code>log</code></strong>=<em><code>'gradients'</code></em>, <strong><code>log_preds</code></strong>=<em><code>True</code></em>, <strong><code>log_model</code></strong>=<em><code>True</code></em>, <strong><code>log_dataset</code></strong>=<em><code>False</code></em>, <strong><code>dataset_name</code></strong>=<em><code>None</code></em>, <strong><code>valid_dl</code></strong>=<em><code>None</code></em>, <strong><code>n_preds</code></strong>=<em><code>36</code></em>, <strong><code>seed</code></strong>=<em><code>12345</code></em>) :: <a href="/callback.core.html#Callback"><code>Callback</code></a></p>
 </blockquote>
 <p>Saves model topology, losses &amp; metrics</p>
 
@@ -142,7 +142,7 @@ nb_path: "nbs/70_callback.wandb.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="log_dataset" class="doc_header"><code>log_dataset</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/wandb.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_dataset</code>(<strong><code>path</code></strong>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>metadata</code></strong>=<em><code>{}</code></em>)</p>
+<h4 id="log_dataset" class="doc_header"><code>log_dataset</code><a href="https://github.com/fastai/fastai/tree/master/fastai/callback/wandb.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_dataset</code>(<strong><code>path</code></strong>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>metadata</code></strong>=<em><code>{}</code></em>)</p>
 </blockquote>
 <p>Log dataset folder</p>
 
@@ -174,7 +174,7 @@ nb_path: "nbs/70_callback.wandb.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="log_model" class="doc_header"><code>log_model</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/callback/wandb.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_model</code>(<strong><code>path</code></strong>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>metadata</code></strong>=<em><code>{}</code></em>)</p>
+<h4 id="log_model" class="doc_header"><code>log_model</code><a href="https://github.com/fastai/fastai/tree/master/fastai/callback/wandb.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_model</code>(<strong><code>path</code></strong>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>metadata</code></strong>=<em><code>{}</code></em>)</p>
 </blockquote>
 <p>Log model file</p>
 
@@ -232,7 +232,7 @@ wandb.init()</code></pre>
 <p>To use Weights &amp; Biases without an account, you can call <code>wandb.init(anonymous='allow')</code>.</p>
 <p>Then you add the callback to your <a href="/learner.html"><code>learner</code></a> or call to <code>fit</code> methods, potentially with <a href="/callback.tracker.html#SaveModelCallback"><code>SaveModelCallback</code></a> if you want to save the best model:</p>
 
-<pre><code>from fastai2.callback.wandb import *
+<pre><code>from fastai.callback.wandb import *
 
 # To log only during one training phase
 learn.fit(..., cbs=WandbCallback())

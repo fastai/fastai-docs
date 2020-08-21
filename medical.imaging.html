@@ -66,7 +66,7 @@ nb_path: "nbs/60_medical.imaging.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_dicom_files" class="doc_header"><code>get_dicom_files</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dicom_files</code>(<strong><code>path</code></strong>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="get_dicom_files" class="doc_header"><code>get_dicom_files</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dicom_files</code>(<strong><code>path</code></strong>, <strong><code>recurse</code></strong>=<em><code>True</code></em>, <strong><code>folders</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get dicom files in <code>path</code> recursively, only in <code>folders</code>, if specified.</p>
 
@@ -98,7 +98,7 @@ nb_path: "nbs/60_medical.imaging.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Path.dcmread" class="doc_header"><code>Path.dcmread</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Path.dcmread</code>(<strong><code>fn</code></strong>:<code>Path</code>, <strong><code>force</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="Path.dcmread" class="doc_header"><code>Path.dcmread</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Path.dcmread</code>(<strong><code>fn</code></strong>:<code>Path</code>, <strong><code>force</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Open a <code>DICOM</code> file</p>
 
@@ -130,7 +130,7 @@ nb_path: "nbs/60_medical.imaging.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TensorDicom" class="doc_header"><code>class</code> <code>TensorDicom</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L38" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TensorDicom</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a></p>
+<h2 id="TensorDicom" class="doc_header"><code>class</code> <code>TensorDicom</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L38" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TensorDicom</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/torch_core.html#TensorImage"><code>TensorImage</code></a></p>
 </blockquote>
 
 </div>
@@ -161,7 +161,7 @@ nb_path: "nbs/60_medical.imaging.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="PILDicom" class="doc_header"><code>class</code> <code>PILDicom</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L41" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PILDicom</code>() :: <a href="/vision.core.html#PILBase"><code>PILBase</code></a></p>
+<h2 id="PILDicom" class="doc_header"><code>class</code> <code>PILDicom</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L41" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PILDicom</code>() :: <a href="/vision.core.html#PILBase"><code>PILBase</code></a></p>
 </blockquote>
 <p>This class represents an image object.  To create
 :py:class:<code>~PIL.Image.Image</code> objects, use the appropriate factory
@@ -237,7 +237,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="pixels" class="doc_header"><code>pixels</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pixels</code>()</p>
+<h4 id="pixels" class="doc_header"><code>pixels</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pixels</code>()</p>
 </blockquote>
 <p><code>pixel_array</code> as a tensor</p>
 
@@ -269,7 +269,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="scaled_px" class="doc_header"><code>scaled_px</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scaled_px</code>()</p>
+<h4 id="scaled_px" class="doc_header"><code>scaled_px</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scaled_px</code>()</p>
 </blockquote>
 <p><a href="/medical.imaging.html#pixels"><code>pixels</code></a> scaled by <code>RescaleSlope</code> and <code>RescaleIntercept</code></p>
 
@@ -301,7 +301,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="array_freqhist_bins" class="doc_header"><code>array_freqhist_bins</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>array_freqhist_bins</code>(<strong><code>n_bins</code></strong>=<em><code>100</code></em>)</p>
+<h4 id="array_freqhist_bins" class="doc_header"><code>array_freqhist_bins</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>array_freqhist_bins</code>(<strong><code>n_bins</code></strong>=<em><code>100</code></em>)</p>
 </blockquote>
 <p>A numpy based function to split the range of pixel values into groups, such that each group has around the same number of pixels</p>
 
@@ -333,7 +333,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.freqhist_bins" class="doc_header"><code>Tensor.freqhist_bins</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L78" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.freqhist_bins</code>(<strong><code>n_bins</code></strong>=<em><code>100</code></em>)</p>
+<h4 id="Tensor.freqhist_bins" class="doc_header"><code>Tensor.freqhist_bins</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L78" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.freqhist_bins</code>(<strong><code>n_bins</code></strong>=<em><code>100</code></em>)</p>
 </blockquote>
 <p>A function to split the range of pixel values into groups, such that each group has around the same number of pixels</p>
 
@@ -365,7 +365,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.hist_scaled_pt" class="doc_header"><code>Tensor.hist_scaled_pt</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.hist_scaled_pt</code>(<strong><code>brks</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Tensor.hist_scaled_pt" class="doc_header"><code>Tensor.hist_scaled_pt</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.hist_scaled_pt</code>(<strong><code>brks</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -396,7 +396,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.hist_scaled" class="doc_header"><code>Tensor.hist_scaled</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.hist_scaled</code>(<strong><code>brks</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Tensor.hist_scaled" class="doc_header"><code>Tensor.hist_scaled</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.hist_scaled</code>(<strong><code>brks</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -427,7 +427,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.hist_scaled" class="doc_header"><code>Dataset.hist_scaled</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.hist_scaled</code>(<strong><code>brks</code></strong>=<em><code>None</code></em>, <strong><code>min_px</code></strong>=<em><code>None</code></em>, <strong><code>max_px</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Dataset.hist_scaled" class="doc_header"><code>Dataset.hist_scaled</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.hist_scaled</code>(<strong><code>brks</code></strong>=<em><code>None</code></em>, <strong><code>min_px</code></strong>=<em><code>None</code></em>, <strong><code>max_px</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -458,7 +458,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.windowed" class="doc_header"><code>Tensor.windowed</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.windowed</code>(<strong><code>w</code></strong>, <strong><code>l</code></strong>)</p>
+<h4 id="Tensor.windowed" class="doc_header"><code>Tensor.windowed</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.windowed</code>(<strong><code>w</code></strong>, <strong><code>l</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -489,7 +489,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.windowed" class="doc_header"><code>Dataset.windowed</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.windowed</code>(<strong><code>w</code></strong>, <strong><code>l</code></strong>)</p>
+<h4 id="Dataset.windowed" class="doc_header"><code>Dataset.windowed</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.windowed</code>(<strong><code>w</code></strong>, <strong><code>l</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -527,7 +527,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TensorCTScan" class="doc_header"><code>class</code> <code>TensorCTScan</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L147" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TensorCTScan</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/torch_core.html#TensorImageBW"><code>TensorImageBW</code></a></p>
+<h2 id="TensorCTScan" class="doc_header"><code>class</code> <code>TensorCTScan</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L147" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TensorCTScan</code>(<strong><code>x</code></strong>, <strong>**<code>kwargs</code></strong>) :: <a href="/torch_core.html#TensorImageBW"><code>TensorImageBW</code></a></p>
 </blockquote>
 
 </div>
@@ -558,7 +558,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="PILCTScan" class="doc_header"><code>class</code> <code>PILCTScan</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L150" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PILCTScan</code>() :: <a href="/vision.core.html#PILBase"><code>PILBase</code></a></p>
+<h2 id="PILCTScan" class="doc_header"><code>class</code> <code>PILCTScan</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L150" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PILCTScan</code>() :: <a href="/vision.core.html#PILBase"><code>PILBase</code></a></p>
 </blockquote>
 <p>This class represents an image object.  To create
 :py:class:<code>~PIL.Image.Image</code> objects, use the appropriate factory
@@ -598,7 +598,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.show" class="doc_header"><code>Dataset.show</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L153" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.show</code>(<strong><code>scale</code></strong>=<em><code>True</code></em>, <strong><code>cmap</code></strong>=<em><code>&lt;matplotlib.colors.LinearSegmentedColormap object at 0x7f9a2406f2d0&gt;</code></em>, <strong><code>min_px</code></strong>=<em><code>-1100</code></em>, <strong><code>max_px</code></strong>=<em><code>None</code></em>, <strong><code>ax</code></strong>=<em><code>None</code></em>, <strong><code>figsize</code></strong>=<em><code>None</code></em>, <strong><code>title</code></strong>=<em><code>None</code></em>, <strong><code>ctx</code></strong>=<em><code>None</code></em>, <strong><code>norm</code></strong>=<em><code>None</code></em>, <strong><code>aspect</code></strong>=<em><code>None</code></em>, <strong><code>interpolation</code></strong>=<em><code>None</code></em>, <strong><code>alpha</code></strong>=<em><code>None</code></em>, <strong><code>vmin</code></strong>=<em><code>None</code></em>, <strong><code>vmax</code></strong>=<em><code>None</code></em>, <strong><code>origin</code></strong>=<em><code>None</code></em>, <strong><code>extent</code></strong>=<em><code>None</code></em>, <strong><code>filternorm</code></strong>=<em><code>1</code></em>, <strong><code>filterrad</code></strong>=<em><code>4.0</code></em>, <strong><code>resample</code></strong>=<em><code>None</code></em>, <strong><code>url</code></strong>=<em><code>None</code></em>, <strong><code>data</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Dataset.show" class="doc_header"><code>Dataset.show</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L153" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.show</code>(<strong><code>scale</code></strong>=<em><code>True</code></em>, <strong><code>cmap</code></strong>=<em><code>&lt;matplotlib.colors.LinearSegmentedColormap object at 0x7f9a2406f2d0&gt;</code></em>, <strong><code>min_px</code></strong>=<em><code>-1100</code></em>, <strong><code>max_px</code></strong>=<em><code>None</code></em>, <strong><code>ax</code></strong>=<em><code>None</code></em>, <strong><code>figsize</code></strong>=<em><code>None</code></em>, <strong><code>title</code></strong>=<em><code>None</code></em>, <strong><code>ctx</code></strong>=<em><code>None</code></em>, <strong><code>norm</code></strong>=<em><code>None</code></em>, <strong><code>aspect</code></strong>=<em><code>None</code></em>, <strong><code>interpolation</code></strong>=<em><code>None</code></em>, <strong><code>alpha</code></strong>=<em><code>None</code></em>, <strong><code>vmin</code></strong>=<em><code>None</code></em>, <strong><code>vmax</code></strong>=<em><code>None</code></em>, <strong><code>origin</code></strong>=<em><code>None</code></em>, <strong><code>extent</code></strong>=<em><code>None</code></em>, <strong><code>filternorm</code></strong>=<em><code>1</code></em>, <strong><code>filterrad</code></strong>=<em><code>4.0</code></em>, <strong><code>resample</code></strong>=<em><code>None</code></em>, <strong><code>url</code></strong>=<em><code>None</code></em>, <strong><code>data</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -702,7 +702,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.pct_in_window" class="doc_header"><code>Dataset.pct_in_window</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L163" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.pct_in_window</code>(<strong><code>dcm</code></strong>:<code>Dataset</code>, <strong><code>w</code></strong>, <strong><code>l</code></strong>)</p>
+<h4 id="Dataset.pct_in_window" class="doc_header"><code>Dataset.pct_in_window</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L163" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.pct_in_window</code>(<strong><code>dcm</code></strong>:<code>Dataset</code>, <strong><code>w</code></strong>, <strong><code>l</code></strong>)</p>
 </blockquote>
 <p>% of pixels in the window <code>(w,l)</code></p>
 
@@ -767,7 +767,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="uniform_blur2d" class="doc_header"><code>uniform_blur2d</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>uniform_blur2d</code>(<strong><code>x</code></strong>, <strong><code>s</code></strong>)</p>
+<h4 id="uniform_blur2d" class="doc_header"><code>uniform_blur2d</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>uniform_blur2d</code>(<strong><code>x</code></strong>, <strong><code>s</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -834,7 +834,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="gauss_blur2d" class="doc_header"><code>gauss_blur2d</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L179" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gauss_blur2d</code>(<strong><code>x</code></strong>, <strong><code>s</code></strong>)</p>
+<h4 id="gauss_blur2d" class="doc_header"><code>gauss_blur2d</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L179" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gauss_blur2d</code>(<strong><code>x</code></strong>, <strong><code>s</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -865,7 +865,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.mask_from_blur" class="doc_header"><code>Tensor.mask_from_blur</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L186" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.mask_from_blur</code>(<strong><code>x</code></strong>:<code>Tensor</code>, <strong><code>window</code></strong>, <strong><code>sigma</code></strong>=<em><code>0.3</code></em>, <strong><code>thresh</code></strong>=<em><code>0.05</code></em>, <strong><code>remove_max</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="Tensor.mask_from_blur" class="doc_header"><code>Tensor.mask_from_blur</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L186" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.mask_from_blur</code>(<strong><code>x</code></strong>:<code>Tensor</code>, <strong><code>window</code></strong>, <strong><code>sigma</code></strong>=<em><code>0.3</code></em>, <strong><code>thresh</code></strong>=<em><code>0.05</code></em>, <strong><code>remove_max</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -896,7 +896,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.mask_from_blur" class="doc_header"><code>Dataset.mask_from_blur</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.mask_from_blur</code>(<strong><code>x</code></strong>:<code>Dataset</code>, <strong><code>window</code></strong>, <strong><code>sigma</code></strong>=<em><code>0.3</code></em>, <strong><code>thresh</code></strong>=<em><code>0.05</code></em>, <strong><code>remove_max</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="Dataset.mask_from_blur" class="doc_header"><code>Dataset.mask_from_blur</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.mask_from_blur</code>(<strong><code>x</code></strong>:<code>Dataset</code>, <strong><code>window</code></strong>, <strong><code>sigma</code></strong>=<em><code>0.3</code></em>, <strong><code>thresh</code></strong>=<em><code>0.05</code></em>, <strong><code>remove_max</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -974,7 +974,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="mask2bbox" class="doc_header"><code>mask2bbox</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L209" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mask2bbox</code>(<strong><code>mask</code></strong>)</p>
+<h4 id="mask2bbox" class="doc_header"><code>mask2bbox</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L209" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mask2bbox</code>(<strong><code>mask</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1049,7 +1049,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="crop_resize" class="doc_header"><code>crop_resize</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L228" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>crop_resize</code>(<strong><code>x</code></strong>, <strong><code>crops</code></strong>, <strong><code>new_sz</code></strong>)</p>
+<h4 id="crop_resize" class="doc_header"><code>crop_resize</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L228" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>crop_resize</code>(<strong><code>x</code></strong>, <strong><code>crops</code></strong>, <strong><code>new_sz</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1127,7 +1127,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.to_nchan" class="doc_header"><code>Tensor.to_nchan</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L241" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.to_nchan</code>(<strong><code>x</code></strong>:<code>Tensor</code>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Tensor.to_nchan" class="doc_header"><code>Tensor.to_nchan</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L241" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.to_nchan</code>(<strong><code>x</code></strong>:<code>Tensor</code>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1158,7 +1158,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.to_nchan" class="doc_header"><code>Dataset.to_nchan</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L249" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.to_nchan</code>(<strong><code>x</code></strong>:<code>Dataset</code>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Dataset.to_nchan" class="doc_header"><code>Dataset.to_nchan</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L249" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.to_nchan</code>(<strong><code>x</code></strong>:<code>Dataset</code>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1189,7 +1189,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.to_3chan" class="doc_header"><code>Tensor.to_3chan</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L254" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.to_3chan</code>(<strong><code>x</code></strong>:<code>Tensor</code>, <strong><code>win1</code></strong>, <strong><code>win2</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Tensor.to_3chan" class="doc_header"><code>Tensor.to_3chan</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L254" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.to_3chan</code>(<strong><code>x</code></strong>:<code>Tensor</code>, <strong><code>win1</code></strong>, <strong><code>win2</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1220,7 +1220,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.to_3chan" class="doc_header"><code>Dataset.to_3chan</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L259" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.to_3chan</code>(<strong><code>x</code></strong>:<code>Dataset</code>, <strong><code>win1</code></strong>, <strong><code>win2</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Dataset.to_3chan" class="doc_header"><code>Dataset.to_3chan</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L259" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.to_3chan</code>(<strong><code>x</code></strong>:<code>Dataset</code>, <strong><code>win1</code></strong>, <strong><code>win2</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1286,7 +1286,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.save_jpg" class="doc_header"><code>Tensor.save_jpg</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L264" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.save_jpg</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>quality</code></strong>=<em><code>90</code></em>)</p>
+<h4 id="Tensor.save_jpg" class="doc_header"><code>Tensor.save_jpg</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L264" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.save_jpg</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>quality</code></strong>=<em><code>90</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1310,62 +1310,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.save_jpg" class="doc_header"><code>Dataset.save_jpg</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L264" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.save_jpg</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>quality</code></strong>=<em><code>90</code></em>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.to_uint16" class="doc_header"><code>Tensor.to_uint16</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L272" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.to_uint16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.to_uint16" class="doc_header"><code>Dataset.to_uint16</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L272" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.to_uint16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="Dataset.save_jpg" class="doc_header"><code>Dataset.save_jpg</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L264" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.save_jpg</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>wins</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>quality</code></strong>=<em><code>90</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1396,7 +1341,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Tensor.save_tif16" class="doc_header"><code>Tensor.save_tif16</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L278" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.save_tif16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>compress</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="Tensor.to_uint16" class="doc_header"><code>Tensor.to_uint16</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L272" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.to_uint16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1420,7 +1365,62 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.save_tif16" class="doc_header"><code>Dataset.save_tif16</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L278" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.save_tif16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>compress</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="Dataset.to_uint16" class="doc_header"><code>Dataset.to_uint16</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L272" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.to_uint16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>bins</code></strong>=<em><code>None</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="Tensor.save_tif16" class="doc_header"><code>Tensor.save_tif16</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L278" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Tensor.save_tif16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>compress</code></strong>=<em><code>True</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="Dataset.save_tif16" class="doc_header"><code>Dataset.save_tif16</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L278" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.save_tif16</code>(<strong><code>x</code></strong>:<code>Dataset'&gt;)</code>, <strong><code>path</code></strong>, <strong><code>bins</code></strong>=<em><code>None</code></em>, <strong><code>compress</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1492,7 +1492,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.set_pixels" class="doc_header"><code>Dataset.set_pixels</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L284" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.set_pixels</code>(<strong><code>px</code></strong>)</p>
+<h4 id="Dataset.set_pixels" class="doc_header"><code>Dataset.set_pixels</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L284" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.set_pixels</code>(<strong><code>px</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1523,7 +1523,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.zoom" class="doc_header"><code>Dataset.zoom</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L291" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.zoom</code>(<strong><code>ratio</code></strong>)</p>
+<h4 id="Dataset.zoom" class="doc_header"><code>Dataset.zoom</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L291" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.zoom</code>(<strong><code>ratio</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1554,7 +1554,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.zoom_to" class="doc_header"><code>Dataset.zoom_to</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L298" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.zoom_to</code>(<strong><code>sz</code></strong>)</p>
+<h4 id="Dataset.zoom_to" class="doc_header"><code>Dataset.zoom_to</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L298" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.zoom_to</code>(<strong><code>sz</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1585,7 +1585,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="shape" class="doc_header"><code>shape</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/vision/core.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>shape</code>(<strong><code>x</code></strong>:<code>Image</code>)</p>
+<h4 id="shape" class="doc_header"><code>shape</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/core.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>shape</code>(<strong><code>x</code></strong>:<code>Image</code>)</p>
 </blockquote>
 
 </div>
@@ -1679,7 +1679,7 @@ directly.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Dataset.as_dict" class="doc_header"><code>Dataset.as_dict</code><a href="https://github.com/fastai/fastai/tree/master/fastai2/medical/imaging.py#L321" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.as_dict</code>(<strong><code>px_summ</code></strong>=<em><code>True</code></em>, <strong><code>window</code></strong>=<em><code>(80, 40)</code></em>)</p>
+<h4 id="Dataset.as_dict" class="doc_header"><code>Dataset.as_dict</code><a href="https://github.com/fastai/fastai/tree/master/fastai/medical/imaging.py#L321" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Dataset.as_dict</code>(<strong><code>px_summ</code></strong>=<em><code>True</code></em>, <strong><code>window</code></strong>=<em><code>(80, 40)</code></em>)</p>
 </blockquote>
 
 </div>
