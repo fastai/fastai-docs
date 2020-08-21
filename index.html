@@ -31,17 +31,14 @@ nb_path: "nbs/index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://github.com/fastai/fastai/actions?query=workflow%3ACI"><img src="https://github.com/fastai/fastai/workflows/CI/badge.svg" alt="CI-Badge"></a> <a href="https://pypi.org/project/fastai/#description"><img src="https://img.shields.io/pypi/v/fastai?color=blue&amp;label=pypi%20version" alt="PyPI"></a> <a href="https://anaconda.org/fastai/fastai"><img src="https://img.shields.io/conda/vn/fastai/fastai?color=seagreen&amp;label=conda%20version" alt="Conda (channel only)"></a> <a href="https://github.com/fastai/docker-containers"><img src="https://github.com/fastai/docker-containers/workflows/Build%20fastai%20images/badge.svg" alt="Build fastai images"></a></p>
+<p><strong>Important</strong>: This documentation covers fastai v2, which is a from-scratch rewrite of fastai. The v1 documentation has moved to <a href="https://fastai1.fast.ai">fastai1.fast.ai</a>. To stop fastai from updating to v2, run in your terminal <code>echo 'fastai 1.*' &gt;&gt; $CONDA_PREFIX/conda-meta/pinned</code> (if you use conda).</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To learn more about the design and motivation of the library, read the <a href="https://arxiv.org/abs/2002.04688">peer reviewed paper</a>.</p>
-<p>Note that the docs are in a submodule, so to clone with docs included, you should use:</p>
-
-<pre><code> git clone --recurse-submodules https://github.com/fastai/fastai</code></pre>
+<p><a href="https://github.com/fastai/fastai/actions?query=workflow%3ACI"><img src="https://github.com/fastai/fastai/workflows/CI/badge.svg" alt="CI-Badge"></a> <a href="https://pypi.org/project/fastai/#description"><img src="https://img.shields.io/pypi/v/fastai?color=blue&amp;label=pypi%20version" alt="PyPI"></a> <a href="https://anaconda.org/fastai/fastai"><img src="https://img.shields.io/conda/vn/fastai/fastai?color=seagreen&amp;label=conda%20version" alt="Conda (channel only)"></a> <a href="https://github.com/fastai/docker-containers"><img src="https://github.com/fastai/docker-containers/workflows/Build%20fastai%20images/badge.svg" alt="Build fastai images"></a></p>
 
 </div>
 </div>
@@ -54,17 +51,36 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can install fastai with conda (highly recommended; requires <a href="https://www.anaconda.com/products/individual">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>: <code>conda install -c fastai -c pytorch fastai</code>, or with pip: <code>pip install fastai</code>. If you install with pip, you should install PyTorch first by following the PyTorch <a href="https://pytorch.org/get-started/locally/">installation instructions</a>.</p>
-<p>Or if you plan to develop fastai yourself, or want to be on the cutting edge, you can use an editable install (if you do this, youu should also use an editable install of <a href="https://github.com/fastai/fastcore">fastcore</a> to go with it.):</p>
+<p>You can install fastai with conda (highly recommended; requires <a href="https://www.anaconda.com/products/individual">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>): <code>conda install -c fastai -c pytorch fastai</code>, or with pip: <code>pip install fastai</code>. If you install with pip, you should install PyTorch first by following the PyTorch <a href="https://pytorch.org/get-started/locally/">installation instructions</a>.</p>
+<p>If you plan to develop fastai yourself, or want to be on the cutting edge, you can use an editable install (if you do this, you should also use an editable install of <a href="https://github.com/fastai/fastcore">fastcore</a> to go with it.):</p>
 
 <pre><code>git clone --recurse-submodules https://github.com/fastai/fastai
-cd fastai
-pip install -e ".[dev]"</code></pre>
-<p>If you want to browse the notebooks and build the library from them you will need nbdev, which you can install with conda or pip.</p>
-<p>To use <code>fastai.medical.imaging</code> you'll also need to:</p>
-<div class="highlight"><pre><span></span>conda install pyarrow
-pip install pydicom kornia opencv-python scikit-image
-</pre></div>
+pip install -e "fastai[dev]"</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="About-fastai">About fastai<a class="anchor-link" href="#About-fastai"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To see what's possible with fastai, take a look at the <a href="quick_start">Quick Start</a>, which shows how to use around 5 lines of code to build an image classifier, an image segmentation model, a text sentiment model, a recommendation system, and a tabular model. For each of the applications, the code is much the same.</p>
+<p>To learn about the design and motivation of the library, read the <a href="https://arxiv.org/abs/2002.04688">peer reviewed paper</a>. We provide here just a brief summary.</p>
+<p>fastai is a deep learning library which provides practitioners with high-level components that can quickly and easily provide state-of-the-art results in standard deep learning domains, and provides researchers with low-level components that can be mixed and matched to build new approaches. It aims to do both things without substantial compromises in ease of use, flexibility, or performance. This is possible thanks to a carefully layered architecture, which expresses common underlying patterns of many deep learning and data processing techniques in terms of decoupled abstractions. These abstractions can be expressed concisely and clearly by leveraging the dynamism of the underlying Python language and the flexibility of the PyTorch library. fastai includes:</p>
+<ul>
+<li>A new type dispatch system for Python along with a semantic type hierarchy for tensors</li>
+<li>A GPU-optimized computer vision library which can be extended in pure Python</li>
+<li>An optimizer which refactors out the common functionality of modern optimizers into two basic pieces, allowing optimization algorithms to be implemented in 4–5 lines of code</li>
+<li>A novel 2-way callback system that can access any part of the data, model, or optimizer and change it at any point during training</li>
+<li>A new data block API</li>
+<li>And much more...</li>
+</ul>
+<p>fastai is organized around two main design goals: to be approachable and rapidly productive, while also being deeply hackable and configurable. It is built on top of a hierarchy of lower-level APIs which provide composable building blocks. This way, a user wanting to rewrite part of the high-level API or add particular behavior to suit their needs does not have to learn how to use the lowest level.</p>
+<p>{% include image.html alt="Layered API" max-width="345" file="/images/layered.png" %}</p>
 
 </div>
 </div>

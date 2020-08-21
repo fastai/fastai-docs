@@ -9,6 +9,9 @@ entries:
     - output: web,pdf
       title: Overview
       url: /
+    - output: web,pdf
+      title: Quick start
+      url: /quick_start.html
     output: web
     title: Getting started
   - folderitems:

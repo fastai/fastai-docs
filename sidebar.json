@@ -1,6 +1,7 @@
 {
   "Getting started": {
-    "Overview": "/"
+    "Overview": "/",
+    "Quick start": "/quick_start.html"
   },
   "Tutorials": {
     "Overview": "/tutorial",

@@ -19,10 +19,12 @@ highlighter: rouge
 
 markdown: kramdown
 kramdown:
- input: GFM
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
+
+default_badges:
+  colab: true
 
 collections:
   tooltips:
