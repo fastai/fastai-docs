@@ -141,6 +141,11 @@ margin-top: -40px
     max-height: 100%;
 }
 
+.post-content figure img {
+    margin: 12px auto 3px auto;
+    display: block;
+}
+
 .post-content ol li, .post-content ul li {
     /*margin: 10px 0px;*/
 }
