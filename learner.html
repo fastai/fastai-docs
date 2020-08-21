@@ -325,9 +325,9 @@ nb_path: "nbs/13a_learner.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can use regular PyTorch functionality for most of the arguments of the <a href="/learner.html#Learner"><code>Learner</code></a>, although the experience will be smoother with pure fastai objects and you will be able to use the full functionality of the library. The expectation is that the training loop will work smoothly even if you did not use fastai end to end. What you might lose are interpretation objects or showing functionality. The list below explains how to use plain PyTorch objects for all the arguments and what you might lose.</p>
-<p>The most important is <code>opt_func</code>. If you are not using a fastai optimizer, you will need to write a function that wraps your PyTorch optimizer in an <a href="/optimizer.html#OptimWrapper"><code>OptimWrapper</code></a>. See the <a href="http://dev.fast.ai/optimizer">optimizer module</a> for more details. This is to ensure the library's schedulers/freeze API work with your code.</p>
+<p>The most important is <code>opt_func</code>. If you are not using a fastai optimizer, you will need to write a function that wraps your PyTorch optimizer in an <a href="/optimizer.html#OptimWrapper"><code>OptimWrapper</code></a>. See the <a href="http://docs.fast.ai/optimizer">optimizer module</a> for more details. This is to ensure the library's schedulers/freeze API work with your code.</p>
 <ul>
-<li><code>dls</code> is a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object, that you can create from standard PyTorch dataloaders. By doing so, you will lose all showing functionality like <code>show_batch</code>/<code>show_results</code>. You can check the <a href="http://dev.fast.ai/tutorial.datablock">data block API</a> or the <a href="http://dev.fast.ai/tutorial.pets">mid-level data API tutorial</a> to learn how to use fastai to gather your data!</li>
+<li><code>dls</code> is a <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> object, that you can create from standard PyTorch dataloaders. By doing so, you will lose all showing functionality like <code>show_batch</code>/<code>show_results</code>. You can check the <a href="http://docs.fast.ai/tutorial.datablock">data block API</a> or the <a href="http://docs.fast.ai/tutorial.pets">mid-level data API tutorial</a> to learn how to use fastai to gather your data!</li>
 <li><code>model</code> is a standard PyTorch model. You can use anyone you like, just make sure it accepts the number of inputs you have in your <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a> and returns as many outputs as you have targets.</li>
 <li><code>loss_func</code> can be any loss function you like. It needs to be one of fastai's if you want to use <code>Learn.predict</code> or <code>Learn.get_preds</code>, or you will have to implement special methods (see more details after the <a href="/layers.html#BaseLoss"><code>BaseLoss</code></a> documentation).</li>
 </ul>
@@ -687,7 +687,7 @@ nb_path: "nbs/13a_learner.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We only describe the basic functionality linked to <a href="/callback.core.html#Callback"><code>Callback</code></a>s here. To learn more about <a href="/callback.core.html#Callback"><code>Callback</code></a>s an how to write them, check the <a href="http://dev.fast.ai/callback.core">callback.core</a> module documentation.</p>
+<p>We only describe the basic functionality linked to <a href="/callback.core.html#Callback"><code>Callback</code></a>s here. To learn more about <a href="/callback.core.html#Callback"><code>Callback</code></a>s an how to write them, check the <a href="http://docs.fast.ai/callback.core">callback.core</a> module documentation.</p>
 <p>Let's first see how the <a href="/callback.core.html#Callback"><code>Callback</code></a>s become attributes of <a href="/learner.html#Learner"><code>Learner</code></a>:</p>
 
 </div>
