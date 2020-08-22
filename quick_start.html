@@ -444,9 +444,7 @@ Probability it&#39;s a cat: 0.999722
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastai.text.all</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">dls</span> <span class="o">=</span> <span class="n">TextDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">IMDB</span><span class="p">),</span> <span class="n">valid</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">TextDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">IMDB</span><span class="p">),</span> <span class="n">valid</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
 <span class="n">learn</span> <span class="o">=</span> <span class="n">text_classifier_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">accuracy</span><span class="p">)</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
 </pre></div>
@@ -457,6 +455,15 @@ Probability it&#39;s a cat: 0.999722
 
 <div class="output_wrapper">
 <div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -475,10 +482,10 @@ Probability it&#39;s a cat: 0.999722
   <tbody>
     <tr>
       <td>0</td>
-      <td>0.876030</td>
-      <td>0.703359</td>
-      <td>0.511600</td>
-      <td>01:28</td>
+      <td>0.594912</td>
+      <td>0.407416</td>
+      <td>0.823640</td>
+      <td>01:35</td>
     </tr>
   </tbody>
 </table>
@@ -503,17 +510,31 @@ Probability it&#39;s a cat: 0.999722
   <tbody>
     <tr>
       <td>0</td>
-      <td>0.676585</td>
-      <td>0.676040</td>
-      <td>0.580200</td>
-      <td>02:41</td>
+      <td>0.268259</td>
+      <td>0.316242</td>
+      <td>0.876000</td>
+      <td>03:03</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>0.649289</td>
-      <td>0.655191</td>
-      <td>0.615120</td>
-      <td>02:52</td>
+      <td>0.184861</td>
+      <td>0.246242</td>
+      <td>0.898080</td>
+      <td>03:10</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.136392</td>
+      <td>0.220086</td>
+      <td>0.918200</td>
+      <td>03:16</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.106423</td>
+      <td>0.191092</td>
+      <td>0.931360</td>
+      <td>03:15</td>
     </tr>
   </tbody>
 </table>
@@ -596,8 +617,7 @@ Probability it&#39;s a cat: 0.999722
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastai.tabular.all</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">ADULT_SAMPLE</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">ADULT_SAMPLE</span><span class="p">)</span>
 
 <span class="n">dls</span> <span class="o">=</span> <span class="n">TabularDataLoaders</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;adult.csv&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">y_names</span><span class="o">=</span><span class="s2">&quot;salary&quot;</span><span class="p">,</span>
     <span class="n">cat_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;marital-status&#39;</span><span class="p">,</span> <span class="s1">&#39;occupation&#39;</span><span class="p">,</span>
@@ -633,17 +653,17 @@ Probability it&#39;s a cat: 0.999722
   <tbody>
     <tr>
       <td>0</td>
-      <td>0.365058</td>
-      <td>0.346343</td>
-      <td>0.840756</td>
-      <td>00:07</td>
+      <td>0.372298</td>
+      <td>0.359698</td>
+      <td>0.829392</td>
+      <td>00:06</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>0.348438</td>
-      <td>0.343461</td>
-      <td>0.841063</td>
-      <td>00:07</td>
+      <td>0.357530</td>
+      <td>0.349440</td>
+      <td>0.837377</td>
+      <td>00:06</td>
     </tr>
   </tbody>
 </table>
@@ -677,8 +697,7 @@ Probability it&#39;s a cat: 0.999722
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastai.collab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">ML_SAMPLE</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">ML_SAMPLE</span><span class="p">)</span>
 <span class="n">dls</span> <span class="o">=</span> <span class="n">CollabDataLoaders</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;ratings.csv&#39;</span><span class="p">)</span>
 <span class="n">learn</span> <span class="o">=</span> <span class="n">collab_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">y_range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">))</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
@@ -707,8 +726,8 @@ Probability it&#39;s a cat: 0.999722
   <tbody>
     <tr>
       <td>0</td>
-      <td>1.537084</td>
-      <td>1.351734</td>
+      <td>1.497551</td>
+      <td>1.435720</td>
       <td>00:00</td>
     </tr>
   </tbody>
@@ -733,38 +752,38 @@ Probability it&#39;s a cat: 0.999722
   <tbody>
     <tr>
       <td>0</td>
-      <td>1.370044</td>
-      <td>1.267283</td>
+      <td>1.332337</td>
+      <td>1.351769</td>
       <td>00:00</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>1.182677</td>
-      <td>0.972037</td>
+      <td>1.180177</td>
+      <td>1.046801</td>
       <td>00:00</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>0.898837</td>
-      <td>0.757221</td>
+      <td>0.913091</td>
+      <td>0.799319</td>
       <td>00:00</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>0.741979</td>
-      <td>0.702947</td>
+      <td>0.749806</td>
+      <td>0.731218</td>
       <td>00:00</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>0.683604</td>
-      <td>0.691294</td>
+      <td>0.686577</td>
+      <td>0.715372</td>
       <td>00:00</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>0.660863</td>
-      <td>0.689800</td>
+      <td>0.665683</td>
+      <td>0.713309</td>
       <td>00:00</td>
     </tr>
   </tbody>

@@ -226,7 +226,23 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">ids</span><span class="p">)[</span><span class="kc">None</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">ids</span><span class="p">)[</span><span class="kc">None</span><span class="p">]</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
@@ -239,16 +255,9 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-3-71ded8accb3e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">import</span> torch
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>t <span class="ansi-blue-fg">=</span> torch<span class="ansi-blue-fg">.</span>LongTensor<span class="ansi-blue-fg">(</span>ids<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> preds <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">.</span>generate<span class="ansi-blue-fg">(</span>t<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;ids&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Setting `pad_token_id` to 50256 (first `eos_token_id`) to generate sequence
+</pre>
 </div>
 </div>
 

@@ -1569,8 +1569,23 @@ Callbacks:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
 
-<span class="k">def</span> <span class="nf">test_every</span><span class="p">(</span><span class="n">n_tr</span><span class="p">,</span> <span class="n">every</span><span class="p">):</span>
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_every</span><span class="p">(</span><span class="n">n_tr</span><span class="p">,</span> <span class="n">every</span><span class="p">):</span>
     <span class="s2">&quot;create a learner, fit, then check number of stats collected&quot;</span>
     <span class="n">learn</span> <span class="o">=</span> <span class="n">synth_learner</span><span class="p">(</span><span class="n">n_trn</span><span class="o">=</span><span class="n">n_tr</span><span class="p">,</span> <span class="n">cbs</span><span class="o">=</span><span class="n">ActivationStats</span><span class="p">(</span><span class="n">every</span><span class="o">=</span><span class="n">every</span><span class="p">))</span>
     <span class="n">learn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -1592,12 +1607,12 @@ Callbacks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(#4) [0,8.356965065002441,6.469820976257324,&#39;00:00&#39;]
-(#4) [0,5.166000843048096,3.962731122970581,&#39;00:00&#39;]
-(#4) [0,14.010619163513184,14.719940185546875,&#39;00:00&#39;]
-(#4) [0,4.930881023406982,3.9230780601501465,&#39;00:00&#39;]
-(#4) [0,18.175973892211914,14.968949317932129,&#39;00:00&#39;]
-(#4) [0,10.99303913116455,9.17985725402832,&#39;00:00&#39;]
+<pre>(#4) [0,4.477747440338135,3.7352094650268555,&#39;00:00&#39;]
+(#4) [0,10.678933143615723,9.956993103027344,&#39;00:00&#39;]
+(#4) [0,13.817577362060547,11.273590087890625,&#39;00:00&#39;]
+(#4) [0,6.385880470275879,6.805768966674805,&#39;00:00&#39;]
+(#4) [0,4.044031620025635,3.037524700164795,&#39;00:00&#39;]
+(#4) [0,15.187829971313477,14.165755271911621,&#39;00:00&#39;]
 </pre>
 </div>
 </div>
