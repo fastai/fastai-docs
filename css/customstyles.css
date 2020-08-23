@@ -1284,7 +1284,8 @@ h4.panel-title {
     color: #000
 }
 blockquote {
-        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+        font-size: 1em;
+        font-style: italic;
 }
 blockquote code {
         background-color: white;
