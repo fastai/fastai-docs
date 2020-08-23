@@ -122,7 +122,7 @@ nb_path: "nbs/45_collab.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This class should not be used directly, one of the factory methods should be prefered instead. All those factory methods accept as arguments:</p>
+<p>This class should not be used directly, one of the factory methods should be preferred instead. All those factory methods accept as arguments:</p>
 <ul>
 <li><code>valid_pct</code>: the random percentage of the dataset to set aside for validation (with an optional <code>seed</code>)</li>
 <li><code>user_name</code>: the name of the column containing the user (defaults to the first column)</li>
@@ -708,7 +708,7 @@ nb_path: "nbs/45_collab.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="EmbeddingNN" class="doc_header"><code>class</code> <code>EmbeddingNN</code><a href="https://github.com/fastai/fastai/tree/master/fastai/collab.py#L83" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EmbeddingNN</code>(<strong><code>emb_szs</code></strong>, <strong><code>layers</code></strong>, <strong><code>ps</code></strong>=<em><code>None</code></em>, <strong><code>embed_p</code></strong>=<em><code>0.0</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>, <strong><code>use_bn</code></strong>=<em><code>True</code></em>, <strong><code>bn_final</code></strong>=<em><code>False</code></em>, <strong><code>bn_cont</code></strong>=<em><code>True</code></em>) :: <a href="/tabular.model.html#TabularModel"><code>TabularModel</code></a></p>
+<h2 id="EmbeddingNN" class="doc_header"><code>class</code> <code>EmbeddingNN</code><a href="https://github.com/fastai/fastai/tree/master/fastai/collab.py#L83" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>EmbeddingNN</code>(<strong><code>emb_szs</code></strong>, <strong><code>layers</code></strong>, <strong><code>ps</code></strong>=<em><code>None</code></em>, <strong><code>embed_p</code></strong>=<em><code>0.0</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>, <strong><code>use_bn</code></strong>=<em><code>True</code></em>, <strong><code>bn_final</code></strong>=<em><code>False</code></em>, <strong><code>bn_cont</code></strong>=<em><code>True</code></em>, <strong><code>act_cls</code></strong>=<em><code>ReLU(inplace=True)</code></em>) :: <a href="/tabular.model.html#TabularModel"><code>TabularModel</code></a></p>
 </blockquote>
 <p>Subclass <a href="/tabular.model.html#TabularModel"><code>TabularModel</code></a> to create a NN suitable for collaborative filtering.</p>
 
@@ -797,7 +797,7 @@ nb_path: "nbs/45_collab.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If <code>use_nn=False</code>, the model used is an <a href="/collab.html#EmbeddingDotBias"><code>EmbeddingDotBias</code></a> with <code>n_factors</code> and <code>y_range</code>. Otherwise, it's a <a href="/collab.html#EmbeddingNN"><code>EmbeddingNN</code></a> for which you can pass <code>emb_szs</code> (will be infered from the <code>dls</code> with <a href="/tabular.model.html#get_emb_sz"><code>get_emb_sz</code></a> if you don't provide any), <a href="/layers.html"><code>layers</code></a> (defaults to <code>[n_factors]</code>) <code>y_range</code>, and a <code>config</code> that you can create with <a href="/tabular.model.html#tabular_config"><code>tabular_config</code></a> to customize your model.</p>
+<p>If <code>use_nn=False</code>, the model used is an <a href="/collab.html#EmbeddingDotBias"><code>EmbeddingDotBias</code></a> with <code>n_factors</code> and <code>y_range</code>. Otherwise, it's a <a href="/collab.html#EmbeddingNN"><code>EmbeddingNN</code></a> for which you can pass <code>emb_szs</code> (will be inferred from the <code>dls</code> with <a href="/tabular.model.html#get_emb_sz"><code>get_emb_sz</code></a> if you don't provide any), <a href="/layers.html"><code>layers</code></a> (defaults to <code>[n_factors]</code>) <code>y_range</code>, and a <code>config</code> that you can create with <a href="/tabular.model.html#tabular_config"><code>tabular_config</code></a> to customize your model.</p>
 <p><code>loss_func</code> will default to <a href="/layers.html#MSELossFlat"><code>MSELossFlat</code></a> and all the other arguments are passed to <a href="/learner.html#Learner"><code>Learner</code></a>.</p>
 
 </div>

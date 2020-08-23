@@ -169,7 +169,7 @@ nb_path: "nbs/12_optimizer.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>cbs</code> is a list of functions that will be composed when applying the step. For instance, you can compose a function making the SGD step, with another one applying weight decay. Additionally, each <code>cb</code> can have a <a href="https://fastcore.fast.ai/foundation#defaults"><code>defaults</code></a> attribute that contains hyper-parameters and their default value. Those are all gathered at initialization, and new values can be passed to override those defaults with the <a href="https://fastcore.fast.ai/foundation#defaults"><code>defaults</code></a> kwargs. The steppers will be called by <a href="/optimizer.html#Optimizer.step"><code>Optimizer.step</code></a> (which is the standard PyTorch name), and gradients can be cleared with <a href="/optimizer.html#Optimizer.zero_grad"><code>Optimizer.zero_grad</code></a> (also a standard PyTorch name).</p>
-<p>Once the defaults have all been pulled off, they are copied as many times as there are <code>param_groups</code> and stored in <code>hypers</code>. To apply different hyper-parameters to different groups (differential learning rates, or no weight decay for certain layers for instance), you will need to adjsut those values after the init.</p>
+<p>Once the defaults have all been pulled off, they are copied as many times as there are <code>param_groups</code> and stored in <code>hypers</code>. To apply different hyper-parameters to different groups (differential learning rates, or no weight decay for certain layers for instance), you will need to adjust those values after the init.</p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ nb_path: "nbs/12_optimizer.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For each hyper-parameter, you can pass a slice or a collection to set them, if there are multiple parameter groups. A slice will be converted to a log-uniform collection from its beginning to its end, or if it only has an end <code>e</code>, to a collection of as many values as there are parameter groups that are <code>...,e/10,e/10,e</code>.</p>
-<p>Setting an yper-paramter with a collection that has a different number of elements than the optimizer has paramter groups will raise an error.</p>
+<p>Setting an hyper-parameter with a collection that has a different number of elements than the optimizer has parameter groups will raise an error.</p>
 
 </div>
 </div>
@@ -1508,7 +1508,7 @@ nb_path: "nbs/12_optimizer.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Adam was introduced by Diederik P. Kingma and Jimmy Ba in <a href="https://arxiv.org/abs/1412.6980">Adam: A Method for Stochastic Optimization</a>. For consistency accross optimizers, we renamed <code>beta1</code> and <code>beta2</code> in the paper to <code>mom</code> and  <code>sqr_mom</code>. Note that our defaults also differ from the paper (0.99 for <code>sqr_mom</code> or <code>beta2</code>, 1e-5 for <code>eps</code>). Those values seem to be better from our experiments in a wide range of situations.</p>
+<p>Adam was introduced by Diederik P. Kingma and Jimmy Ba in <a href="https://arxiv.org/abs/1412.6980">Adam: A Method for Stochastic Optimization</a>. For consistency across optimizers, we renamed <code>beta1</code> and <code>beta2</code> in the paper to <code>mom</code> and  <code>sqr_mom</code>. Note that our defaults also differ from the paper (0.99 for <code>sqr_mom</code> or <code>beta2</code>, 1e-5 for <code>eps</code>). Those values seem to be better from our experiments in a wide range of situations.</p>
 <p>Optional weight decay of <code>wd</code> is applied, as true weight decay (decay the weights directly) if <code>decouple_wd=True</code> else as L2 regularization (add the decay to the gradients).
 {% include note.html content='Don&#8217;t forget that <code>eps</code> is an hyper-parameter you can change. Some models won&#8217;t train without a very high <code>eps</code> like 0.1 (intuitively, the higher <code>eps</code> is, the closer we are to normal SGD). The usual default of 1e-8 is often too extreme in the sense we don&#8217;t manage to get as good results as with SGD. ' %}</p>
 
@@ -1618,7 +1618,7 @@ nb_path: "nbs/12_optimizer.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the effective correction apported to the adam step for 500 iterations in RAdam. We can see how it goes from 0 to 1, mimicking the effect of a warm-up.</p>
+<p>This is the effective correction reported to the adam step for 500 iterations in RAdam. We can see how it goes from 0 to 1, mimicking the effect of a warm-up.</p>
 
 </div>
 </div>
@@ -1671,7 +1671,7 @@ nb_path: "nbs/12_optimizer.ipynb"
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="n">tst_param</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">])</span>
 <span class="n">opt</span> <span class="o">=</span> <span class="n">RAdam</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="c1">#The r factor is lower than 5 during the first 5 steps so updates use the aveage of gradients (all the same)</span>
+<span class="c1">#The r factor is lower than 5 during the first 5 steps so updates use the average of gradients (all the same)</span>
 <span class="n">r_inf</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.99</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> 
     <span class="n">r</span> <span class="o">=</span> <span class="n">r_inf</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.99</span><span class="o">**</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.99</span><span class="o">**</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
@@ -2060,7 +2060,7 @@ nb_path: "nbs/12_optimizer.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lookahead was introduced by Zhang et al. in <a href="https://arxiv.org/abs/1907.08610">Lookahead Optimizer: k steps forward, 1 step back</a>. It can be run on top of any optimizer and consists in having the final weights of the model be a moving average. In practice, we update our model using the internal optimizer but keep a copy of old weights that and every <code>k</code> steps, we change the weghts by a moving average of the <em>fast weights</em> (the ones updated by the inner optimizer) with the <em>slow weights</em> (the copy of old weights). Those <em>slow weights</em> act like a stability mechanism.</p>
+<p>Lookahead was introduced by Zhang et al. in <a href="https://arxiv.org/abs/1907.08610">Lookahead Optimizer: k steps forward, 1 step back</a>. It can be run on top of any optimizer and consists in having the final weights of the model be a moving average. In practice, we update our model using the internal optimizer but keep a copy of old weights that and every <code>k</code> steps, we change the weights by a moving average of the <em>fast weights</em> (the ones updated by the inner optimizer) with the <em>slow weights</em> (the copy of old weights). Those <em>slow weights</em> act like a stability mechanism.</p>
 
 </div>
 </div>
@@ -2110,7 +2110,7 @@ nb_path: "nbs/12_optimizer.ipynb"
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="n">opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 <span class="c1">#first 5 steps are normal SGD steps</span>
 <span class="n">test_close</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
-<span class="c1">#Since k=6, sixth step is a moving average of the 6 SGD steps with the intial weight</span>
+<span class="c1">#Since k=6, sixth step is a moving average of the 6 SGD steps with the initial weight</span>
 <span class="n">opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 <span class="n">test_close</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mf">0.6</span><span class="o">*</span><span class="n">g</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></div>

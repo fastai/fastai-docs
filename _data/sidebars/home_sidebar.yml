@@ -57,6 +57,9 @@ entries:
         - output: web,pdf
           title: Siamese tutorial
           url: /tutorial.siamese
+        - output: web,pdf
+          title: Developers guide
+          url: /dev-setup
         title: Advanced
       - output: web
         subfolderitems:

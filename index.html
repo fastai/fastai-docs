@@ -52,7 +52,13 @@ nb_path: "nbs/index.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can use fastai without any installation by using <a href="https://colab.research.google.com/">Google Colab</a>. In fact, every page of this documentation is also available as an interactive notebook - click "Open in colab" at the top of any page to open it (be sure to change the Colab runtime to "GPU" to have it run fast!) See the fast.ai course <a href="https://colab.research.google.com/">Introduction to Colab</a> for more information.</p>
-<p>You can install fastai on your own machines with conda (highly recommended; requires <a href="https://www.anaconda.com/products/individual">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>): <code>conda install -c fastai -c pytorch fastai</code>, or with pip: <code>pip install fastai</code>. If you install with pip, you should install PyTorch first by following the PyTorch <a href="https://pytorch.org/get-started/locally/">installation instructions</a>.</p>
+<p>You can install fastai on your own machines with conda (highly recommended). If you're using <a href="https://www.anaconda.com/products/individual">Anaconda</a> then run:</p>
+<div class="highlight"><pre><span></span>conda install -c fastai -c pytorch -c anaconda fastai gh anaconda
+</pre></div>
+<p>...or if you're using <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>) then run:</p>
+<div class="highlight"><pre><span></span>conda install -c fastai -c pytorch fastai
+</pre></div>
+<p>To install with pip, use: <code>pip install fastai</code>. If you install with pip, you should install PyTorch first by following the PyTorch <a href="https://pytorch.org/get-started/locally/">installation instructions</a>.</p>
 <p>If you plan to develop fastai yourself, or want to be on the cutting edge, you can use an editable install (if you do this, you should also use an editable install of <a href="https://github.com/fastai/fastcore">fastcore</a> to go with it.):</p>
 
 <pre><code>git clone --recurse-submodules https://github.com/fastai/fastai
@@ -63,7 +69,13 @@ pip install -e "fastai[dev]"</code></pre>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-fastai">Learning fastai<a class="anchor-link" href="#Learning-fastai"> </a></h2><p>The best way to get start with fastai (and deep learning) is to read <a href="https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527">the book</a>, and complete <a href="https://course.fast.ai">the free course</a>.</p>
+<h2 id="Learning-fastai">Learning fastai<a class="anchor-link" href="#Learning-fastai"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The best way to get start with fastai (and deep learning) is to read <a href="https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527">the book</a>, and complete <a href="https://course.fast.ai">the free course</a>.</p>
 <p>To see what's possible with fastai, take a look at the <a href="quick_start">Quick Start</a>, which shows how to use around 5 lines of code to build an image classifier, an image segmentation model, a text sentiment model, a recommendation system, and a tabular model. For each of the applications, the code is much the same.</p>
 <p>Read through the <a href="tutorial">Tutorials</a> to learn how to train your own models on your own datasets. Use the navigation sidebar to look through the fastai documentation. Every class, function, and method is documented here.</p>
 <p>To learn about the design and motivation of the library, read the <a href="https://www.mdpi.com/2078-2489/11/2/108/htm">peer reviewed paper</a>.</p>
@@ -166,10 +178,11 @@ pip install -e "fastai[dev]"</code></pre>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For those interested in offical docker containers for this project, they can be found <a href="https://github.com/fastai/docker-containers#fastai">here</a>.</p>
+<p>For those interested in official docker containers for this project, they can be found <a href="https://github.com/fastai/docker-containers#fastai">here</a>.</p>
 
 </div>
 </div>
 </div>
 </div>
  
+

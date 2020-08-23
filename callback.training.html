@@ -358,7 +358,7 @@ nb_path: "nbs/18a_callback.training.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="/callback.training.html#BnFreeze"><code>BnFreeze</code></a> is useful when you'd like to train two separate models that have a common feature extractor / body. The only part of the model that's different is the head that you attach for transfer learning. <br></p>
-<p><a href="/learner.html#Learner.freeze("><code>Learner.freeze()</code></a>) doesn't suffice here as the <a href="/layers.html#BatchNorm"><code>BatchNorm</code></a> layers are trainable by default, and running mean and sdev of batches are tracked. For feature extractors to fully match, you need to set <code>train_bn=False</code> and these stats need to be frozen as well, which is precisely the function of <a href="/callback.training.html#BnFreeze"><code>BnFreeze</code></a>.</p>
+<p><a href="/learner.html#Learner.freeze("><code>Learner.freeze()</code></a>) doesn't suffice here as the <a href="/layers.html#BatchNorm"><code>BatchNorm</code></a> layers are trainable by default, and running mean and std of batches are tracked. For feature extractors to fully match, you need to set <code>train_bn=False</code> and these stats need to be frozen as well, which is precisely the function of <a href="/callback.training.html#BnFreeze"><code>BnFreeze</code></a>.</p>
 
 </div>
 </div>

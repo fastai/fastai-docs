@@ -91,7 +91,7 @@ nb_path: "nbs/70_callback.wandb.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Optionally logs weights and or gradients depending on <code>log</code> (can be "gradients", "parameters", "all" or None), sample predictions if <code>log_preds=True</code> that will come from <code>valid_dl</code> or a random sample pf the validation set (determined by <code>seed</code>). <code>n_preds</code> are logged in this case.</p>
-<p>If used in combination with <a href="/callback.tracker.html#SaveModelCallback"><code>SaveModelCallback</code></a>, the best model is saved as well (can be desactivated with <code>log_model=False</code>).</p>
+<p>If used in combination with <a href="/callback.tracker.html#SaveModelCallback"><code>SaveModelCallback</code></a>, the best model is saved as well (can be deactivated with <code>log_model=False</code>).</p>
 <p>Datasets can also be tracked:</p>
 <ul>
 <li>if <a href="/callback.wandb.html#log_dataset"><code>log_dataset</code></a> is <code>True</code>, tracked folder is retrieved from <code>learn.dls.path</code></li>

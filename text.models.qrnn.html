@@ -6,8 +6,8 @@ title: QRNN
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Quasi-recurrent neural networs introduced in <a href='https://arxiv.org/abs/1611.01576'>Bradbury et al.</a>"
-description: "Quasi-recurrent neural networs introduced in <a href='https://arxiv.org/abs/1611.01576'>Bradbury et al.</a>"
+summary: "Quasi-recurrent neural networks introduced in <a href='https://arxiv.org/abs/1611.01576'>Bradbury et al.</a>"
+description: "Quasi-recurrent neural networks introduced in <a href='https://arxiv.org/abs/1611.01576'>Bradbury et al.</a>"
 nb_path: "nbs/36_text.models.qrnn.ipynb"
 ---
 <!--
@@ -145,7 +145,7 @@ nb_path: "nbs/36_text.models.qrnn.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The ForgetMult gate is the quai-recurrent part of the network, computing the following from <code>x</code> and <code>f</code>.</p>
+<p>The ForgetMult gate is the quasi-recurrent part of the network, computing the following from <code>x</code> and <code>f</code>.</p>
 <div class="highlight"><pre><span></span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 <p>The initial value for <code>h[0]</code> is either a tensor of zeros or the previous hidden state.</p>
@@ -282,7 +282,7 @@ nb_path: "nbs/36_text.models.qrnn.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h3 id="ForgetMultGPU" class="doc_header"><code>class</code> <code>ForgetMultGPU</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/models/qrnn.py#L61" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>ForgetMultGPU</code>() :: <code>Function</code></p>
 </blockquote>
-<p>Wraper around the CUDA kernels for the ForgetMult gate.</p>
+<p>Wrapper around the CUDA kernels for the ForgetMult gate.</p>
 
 </div>
 

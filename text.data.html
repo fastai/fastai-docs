@@ -926,7 +926,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You should not use the init directly but one of the following factory methods. All those factory methods accept as arguments:</p>
 <ul>
-<li><code>text_vocab</code>: the vocabulary used for numericalizing texts (if not passed, it's infered from the data)</li>
+<li><code>text_vocab</code>: the vocabulary used for numericalizing texts (if not passed, it's inferred from the data)</li>
 <li><code>tok_tfm</code>: if passed, uses this <code>tok_tfm</code> instead of the default</li>
 <li><code>seq_len</code>: the sequence length used for batch</li>
 <li><code>bs</code>: the batch size</li>
@@ -1057,7 +1057,7 @@ dls = dsets.dataloaders(...,dl_type = srtd_dl, dl_kwargs = dl_kwargs)</code></pr
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>seed</code> can optionally be passed for reproducibility. <code>text_col</code>, <code>label_col</code> and optionaly <code>valid_col</code> are indices or names of columns for texts/labels and the validation flag. <code>label_delim</code> can be passed for a multi-label problem if your labels are in one column, separated by a particular char. <code>y_block</code> should be passed to indicate your type of targets, in case the library did no infer it properly.</p>
+<p><code>seed</code> can optionally be passed for reproducibility. <code>text_col</code>, <code>label_col</code> and optionally <code>valid_col</code> are indices or names of columns for texts/labels and the validation flag. <code>label_delim</code> can be passed for a multi-label problem if your labels are in one column, separated by a particular char. <code>y_block</code> should be passed to indicate your type of targets, in case the library did no infer it properly.</p>
 <p>Here are examples on subsets of IMDB:</p>
 
 </div>

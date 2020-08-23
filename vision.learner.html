@@ -169,7 +169,7 @@ nb_path: "nbs/21_vision.learner.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>cut</code> can either be an integer, in which case we cut the model at the coresponding layer, or a function, in which case, this function returns <code>cut(model)</code>. It defaults to the first layer that contains some pooling otherwise.</p>
+<p><code>cut</code> can either be an integer, in which case we cut the model at the corresponding layer, or a function, in which case, this function returns <code>cut(model)</code>. It defaults to the first layer that contains some pooling otherwise.</p>
 
 </div>
 </div>
@@ -244,7 +244,7 @@ nb_path: "nbs/21_vision.learner.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The head begins with fastai's <a href="/layers.html#AdaptiveConcatPool2d"><code>AdaptiveConcatPool2d</code></a> if <code>concat_pool=True</code> otherwise, it uses traditional average pooling. Then it uses a <a href="/layers.html#Flatten"><code>Flatten</code></a> layer before going on blocks of <a href="/layers.html#BatchNorm"><code>BatchNorm</code></a>, <code>Dropout</code> and <code>Linear</code> layers (if <code>lin_first=True</code>, those are <code>Linear</code>, <a href="/layers.html#BatchNorm"><code>BatchNorm</code></a>, <code>Dropout</code>).</p>
-<p>Those blocks start at <code>nf</code>, then every element of <code>lin_ftrs</code> (defaults to <code>[512]</code>) and end at <code>n_out</code>. <code>ps</code> is a list of probabiliies used for the dropouts (if you only pass 1, it will use half the value then that value as many times as necessary).</p>
+<p>Those blocks start at <code>nf</code>, then every element of <code>lin_ftrs</code> (defaults to <code>[512]</code>) and end at <code>n_out</code>. <code>ps</code> is a list of probabilities used for the dropouts (if you only pass 1, it will use half the value then that value as many times as necessary).</p>
 <p>If <code>bn_final=True</code>, a final <a href="/layers.html#BatchNorm"><code>BatchNorm</code></a> layer is added. If <code>y_range</code> is passed, the function adds a <a href="/layers.html#SigmoidRange"><code>SigmoidRange</code></a> to that range.</p>
 
 </div>

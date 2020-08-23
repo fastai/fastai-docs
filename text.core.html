@@ -1041,8 +1041,8 @@ nb_path: "nbs/30_text.core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This function returns a new dataframe with the same non-text columns, a colum named text that contains the tokenized texts and a column named text_lengths that contains their respective length. It also returns a counter of all words see to quickly build a vocabulary afterward.</p>
-<p><code>rules</code> (that defaults to <a href="/text.core.html#defaults.text_proc_rules"><code>defaults.text_proc_rules</code></a>) are applied to each text before going in the tokenizer. If <code>mark_fields</code> isn't specified, it defaults to <code>False</code> when there is a single text column, <code>True</code> when there are several. In that case, the texts in each of those columns are joined with <code>FLD</code> markes followed by the number of the field.</p>
+<p>This function returns a new dataframe with the same non-text columns, a column named text that contains the tokenized texts and a column named text_lengths that contains their respective length. It also returns a counter of all seen words to quickly build a vocabulary afterward.</p>
+<p><code>rules</code> (that defaults to <a href="/text.core.html#defaults.text_proc_rules"><code>defaults.text_proc_rules</code></a>) are applied to each text before going in the tokenizer. If <code>mark_fields</code> isn't specified, it defaults to <code>False</code> when there is a single text column, <code>True</code> when there are several. In that case, the texts in each of those columns are joined with <code>FLD</code> markers followed by the number of the field.</p>
 
 </div>
 </div>
@@ -1114,8 +1114,8 @@ nb_path: "nbs/30_text.core.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The result will be written in a new csv file in <code>outname</code> (defaults to the same as <code>fname</code> with the suffix <code>_tok.csv</code>) and will have the same header as the original file, the same non-text columns, a text and a text_lengths column as described in <a href="/text.core.html#tokenize_df"><code>tokenize_df</code></a>.</p>
-<p><code>rules</code> (that defaults to <a href="/text.core.html#defaults.text_proc_rules"><code>defaults.text_proc_rules</code></a>) are applied to each text before going in the tokenizer. If <code>mark_fields</code> isn't specified, it defaults to <code>False</code> when there is a single text column, <code>True</code> when there are several. In that case, the texts in each of those columns are joined with <code>FLD</code> markes followed by the number of the field.</p>
-<p>The csv file is opened with <code>header</code> and optionally with blocks of <code>chunksize</code> at a time. If this argument is passed, each chunk is processed independtly and saved in the output file to save memory usage.</p>
+<p><code>rules</code> (that defaults to <a href="/text.core.html#defaults.text_proc_rules"><code>defaults.text_proc_rules</code></a>) are applied to each text before going in the tokenizer. If <code>mark_fields</code> isn't specified, it defaults to <code>False</code> when there is a single text column, <code>True</code> when there are several. In that case, the texts in each of those columns are joined with <code>FLD</code> markers followed by the number of the field.</p>
+<p>The csv file is opened with <code>header</code> and optionally with blocks of <code>chunksize</code> at a time. If this argument is passed, each chunk is processed independently and saved in the output file to save memory usage.</p>
 
 </div>
 </div>

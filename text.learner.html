@@ -441,7 +441,7 @@ nb_path: "nbs/37_text.learner.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h3 id="LMLearner" class="doc_header"><code>class</code> <code>LMLearner</code><a href="https://github.com/fastai/fastai/tree/master/fastai/text/learner.py#L154" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>LMLearner</code>(<strong><code>dls</code></strong>, <strong><code>model</code></strong>, <strong><code>alpha</code></strong>=<em><code>2.0</code></em>, <strong><code>beta</code></strong>=<em><code>1.0</code></em>, <strong><code>moms</code></strong>=<em><code>(0.8, 0.7, 0.8)</code></em>, <strong><code>loss_func</code></strong>=<em><code>None</code></em>, <strong><code>opt_func</code></strong>=<em><code>Adam</code></em>, <strong><code>lr</code></strong>=<em><code>0.001</code></em>, <strong><code>splitter</code></strong>=<em><code>trainable_params</code></em>, <strong><code>cbs</code></strong>=<em><code>None</code></em>, <strong><code>metrics</code></strong>=<em><code>None</code></em>, <strong><code>path</code></strong>=<em><code>None</code></em>, <strong><code>model_dir</code></strong>=<em><code>'models'</code></em>, <strong><code>wd</code></strong>=<em><code>None</code></em>, <strong><code>wd_bn_bias</code></strong>=<em><code>False</code></em>, <strong><code>train_bn</code></strong>=<em><code>True</code></em>) :: <a href="/text.learner.html#TextLearner"><code>TextLearner</code></a></p>
 </blockquote>
-<p>Add functionality to <a href="/text.learner.html#TextLearner"><code>TextLearner</code></a> when dealingwith a language model</p>
+<p>Add functionality to <a href="/text.learner.html#TextLearner"><code>TextLearner</code></a> when dealing with a language model</p>
 
 </div>
 
@@ -480,7 +480,7 @@ nb_path: "nbs/37_text.learner.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The words are picked randomly among the predictions, depending on the probability of each index. <code>no_unk</code> means we never pick the <code>UNK</code> token, <code>tempreature</code> is applied to the predictions, if <code>min_p</code> is passed, we don't consider the indices with a probability lower than it. Set <code>no_bar</code> to <code>True</code> if you don't want any progress bar, and you can pass a long a custom <code>decoder</code> to process the predicted tokens.</p>
+<p>The words are picked randomly among the predictions, depending on the probability of each index. <code>no_unk</code> means we never pick the <code>UNK</code> token, <code>temperature</code> is applied to the predictions, if <code>min_p</code> is passed, we don't consider the indices with a probability lower than it. Set <code>no_bar</code> to <code>True</code> if you don't want any progress bar, and you can pass a long a custom <code>decoder</code> to process the predicted tokens.</p>
 
 </div>
 </div>
@@ -711,7 +711,7 @@ nb_path: "nbs/37_text.learner.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can use the <code>config</code> to customize the architecture used (change the values from <a href="/text.models.awdlstm.html#awd_lstm_clas_config"><code>awd_lstm_clas_config</code></a> for this), <code>pretrained</code> will use fastai's pretrained model for this <code>arch</code> (if available). <code>drop_mult</code> is a global multiplier applied to control all dropouts. <code>n_out</code> is usually infered from the <code>dls</code> but you may pass it.</p>
+<p>You can use the <code>config</code> to customize the architecture used (change the values from <a href="/text.models.awdlstm.html#awd_lstm_clas_config"><code>awd_lstm_clas_config</code></a> for this), <code>pretrained</code> will use fastai's pretrained model for this <code>arch</code> (if available). <code>drop_mult</code> is a global multiplier applied to control all dropouts. <code>n_out</code> is usually inferred from the <code>dls</code> but you may pass it.</p>
 <p>The model uses a <a href="/text.models.core.html#SentenceEncoder"><code>SentenceEncoder</code></a>, which means the texts are passed <code>seq_len</code> tokens at a time, and will only compute the gradients on the last <code>max_len</code> steps. <code>lin_ftrs</code> and <code>ps</code> are passed to <a href="/text.models.core.html#get_text_classifier"><code>get_text_classifier</code></a>.</p>
 <p>All other arguments are passed to <a href="/learner.html#Learner"><code>Learner</code></a>.</p>
 

@@ -97,7 +97,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To ensure that you are refering to an event (that is, the name of one of the times when callbacks are called) that exists, and to get tab completion of event names, use <code>event</code>:</p>
+<p>To ensure that you are referring to an event (that is, the name of one of the times when callbacks are called) that exists, and to get tab completion of event names, use <code>event</code>:</p>
 
 </div>
 </div>
@@ -739,7 +739,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 <li><code>model</code>: the model used for training/validation</li>
 <li><code>data</code>: the underlying <a href="/data.core.html#DataLoaders"><code>DataLoaders</code></a></li>
 <li><code>loss_func</code>: the loss function used</li>
-<li><code>opt</code>: the optimizer used to udpate the model parameters</li>
+<li><code>opt</code>: the optimizer used to update the model parameters</li>
 <li><code>opt_func</code>: the function used to create the optimizer</li>
 <li><code>cbs</code>: the list containing all <a href="/callback.core.html#Callback"><code>Callback</code></a>s</li>
 <li><code>dl</code>: current <a href="/data.load.html#DataLoader"><code>DataLoader</code></a> used for iteration</li>
@@ -774,7 +774,7 @@ nb_path: "nbs/13_callback.core.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It happens that we may want to skip some of the steps of the training loop: in gradient accumulation, we don't aways want to do the step/zeroing of the grads for instance. During an LR finder test, we don't want to do the validation phase of an epoch. Or if we're training with a strategy of early stopping, we want to be able to completely interrupt the training loop.</p>
+<p>It happens that we may want to skip some of the steps of the training loop: in gradient accumulation, we don't always want to do the step/zeroing of the grads for instance. During an LR finder test, we don't want to do the validation phase of an epoch. Or if we're training with a strategy of early stopping, we want to be able to completely interrupt the training loop.</p>
 <p>This is made possible by raising specific exceptions the training loop will look for (and properly catch).</p>
 
 </div>
@@ -916,11 +916,11 @@ nb_path: "nbs/13_callback.core.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can detect one of those exceptions occurred and add code that executes right after with the following events:</p>
 <ul>
-<li><code>after_cancel_batch</code>: reached imediately after a <code>CancelBatchException</code> before proceeding to <code>after_batch</code></li>
-<li><code>after_cancel_train</code>: reached imediately after a <code>CancelTrainException</code> before proceeding to <code>after_epoch</code></li>
-<li><code>after_cancel_valid</code>: reached imediately after a <code>CancelValidException</code> before proceeding to <code>after_epoch</code></li>
-<li><code>after_cancel_epoch</code>: reached imediately after a <code>CancelEpochException</code> before proceeding to <code>after_epoch</code></li>
-<li><code>after_cancel_fit</code>: reached imediately after a <code>CancelFitException</code> before proceeding to <code>after_fit</code></li>
+<li><code>after_cancel_batch</code>: reached immediately after a <code>CancelBatchException</code> before proceeding to <code>after_batch</code></li>
+<li><code>after_cancel_train</code>: reached immediately after a <code>CancelTrainException</code> before proceeding to <code>after_epoch</code></li>
+<li><code>after_cancel_valid</code>: reached immediately after a <code>CancelValidException</code> before proceeding to <code>after_epoch</code></li>
+<li><code>after_cancel_epoch</code>: reached immediately after a <code>CancelEpochException</code> before proceeding to <code>after_epoch</code></li>
+<li><code>after_cancel_fit</code>: reached immediately after a <code>CancelFitException</code> before proceeding to <code>after_fit</code></li>
 </ul>
 
 </div>

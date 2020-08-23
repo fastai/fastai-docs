@@ -81,7 +81,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="flatten_check" class="doc_header"><code>flatten_check</code><a href="https://github.com/fastai/fastai/tree/master/fastai/torch_core.py#L747" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_check</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
+<h4 id="flatten_check" class="doc_header"><code>flatten_check</code><a href="https://github.com/fastai/fastai/tree/master/fastai/torch_core.py#L750" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_check</code>(<strong><code>inp</code></strong>, <strong><code>targ</code></strong>)</p>
 </blockquote>
 <p>Check that <code>out</code> and <code>targ</code> have the same number of elements and flatten them.</p>
 
@@ -158,9 +158,9 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>func</code> is only applied to the accumulated predictions/targets when the <code>value</code> attribute is asked for (so at the end of a validation/trianing phase, in use with <a href="/learner.html#Learner"><code>Learner</code></a> and its <a href="/learner.html#Recorder"><code>Recorder</code></a>).The signature of <code>func</code> should be <code>inp,targ</code> (where <code>inp</code> are the predictions of the model and <code>targ</code> the corresponding labels).</p>
-<p>For classification problems with single label, predictions need to be transformed with a sofmax then an argmax before being compared to the targets. Since a softmax doesn't change the order of the numbers, we can just apply the argmax. Pass along <code>dim_argmax</code> to have this done by <a href="/metrics.html#AccumMetric"><code>AccumMetric</code></a> (usually -1 will work pretty well). If you need to pass to your metrics the probabilities and not the predictions, use <code>softmax=True</code>.</p>
-<p>For classification problems with multiple labels, or if your targets are onehot-encoded, predictions may need to pass through a sigmoid (if it wasn't included in your model) then be compared to a given threshold (to decide between 0 and 1), this is done by <a href="/metrics.html#AccumMetric"><code>AccumMetric</code></a> if you pass <code>sigmoid=True</code> and/or a value for <code>thresh</code>.</p>
+<p><code>func</code> is only applied to the accumulated predictions/targets when the <code>value</code> attribute is asked for (so at the end of a validation/training phase, in use with <a href="/learner.html#Learner"><code>Learner</code></a> and its <a href="/learner.html#Recorder"><code>Recorder</code></a>).The signature of <code>func</code> should be <code>inp,targ</code> (where <code>inp</code> are the predictions of the model and <code>targ</code> the corresponding labels).</p>
+<p>For classification problems with single label, predictions need to be transformed with a softmax then an argmax before being compared to the targets. Since a softmax doesn't change the order of the numbers, we can just apply the argmax. Pass along <code>dim_argmax</code> to have this done by <a href="/metrics.html#AccumMetric"><code>AccumMetric</code></a> (usually -1 will work pretty well). If you need to pass to your metrics the probabilities and not the predictions, use <code>softmax=True</code>.</p>
+<p>For classification problems with multiple labels, or if your targets are one-hot encoded, predictions may need to pass through a sigmoid (if it wasn't included in your model) then be compared to a given threshold (to decide between 0 and 1), this is done by <a href="/metrics.html#AccumMetric"><code>AccumMetric</code></a> if you pass <code>sigmoid=True</code> and/or a value for <code>thresh</code>.</p>
 <p>If you want to use a metric function sklearn.metrics, you will need to convert predictions and labels to numpy arrays with <code>to_np=True</code>. Also, scikit-learn metrics adopt the convention <code>y_true</code>, <code>y_preds</code> which is the opposite from us, so you will need to pass <code>invert_arg=True</code> to make <a href="/metrics.html#AccumMetric"><code>AccumMetric</code></a> do the inversion for you.</p>
 
 </div>
@@ -293,7 +293,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the quickest way to use a sckit-learn metric in a fastai training loop. <code>is_class</code> indicates if you are in a classification problem or not. In this case:</p>
+<p>This is the quickest way to use a scikit-learn metric in a fastai training loop. <code>is_class</code> indicates if you are in a classification problem or not. In this case:</p>
 <ul>
 <li>leaving <code>thresh</code> to <code>None</code> indicates it's a single-label classification problem and predictions will pass through an argmax over <code>axis</code> before being compared to the targets</li>
 <li>setting a value for <code>thresh</code> indicates it's a multi-label classification problem and predictions will pass through a sigmoid (can be deactivated with <code>sigmoid=False</code>) and be compared to <code>thresh</code> before being compared to the targets</li>
@@ -428,7 +428,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>{% include warning.html content='Many metrics in fastai are thin wrappers around sklearn functionality. However, sklearn metrics can handle python list strings, amongst other things, whereas fastai metrics work with PyTorch, and thus require tensors. The arguments that are passed to metrics are after all transformations, such as categories being converted to indices, have occured. This means that when you pass a label of a metric, for instance, that you must pass indices, not strings. This can be converted with <code>vocab.map_obj</code>.' %}</p>
+<p>{% include warning.html content='Many metrics in fastai are thin wrappers around sklearn functionality. However, sklearn metrics can handle python list strings, amongst other things, whereas fastai metrics work with PyTorch, and thus require tensors. The arguments that are passed to metrics are after all transformations, such as categories being converted to indices, have occurred. This means that when you pass a label of a metric, for instance, that you must pass indices, not strings. This can be converted with <code>vocab.map_obj</code>.' %}</p>
 
 </div>
 </div>
@@ -1960,7 +1960,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="ExplainedVariance" class="doc_header"><code>ExplainedVariance</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L309" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ExplainedVariance</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Explained variance betzeen predictions and targets</p>
+<p>Explained variance between predictions and targets</p>
 
 </div>
 
@@ -1999,7 +1999,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="R2Score" class="doc_header"><code>R2Score</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L314" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R2Score</code>(<strong><code>sample_weight</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>R2 score betzeen predictions and targets</p>
+<p>R2 score between predictions and targets</p>
 
 </div>
 
@@ -2267,7 +2267,7 @@ nb_path: "nbs/13b_metrics.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h3 id="JaccardCoeff" class="doc_header"><code>class</code> <code>JaccardCoeff</code><a href="https://github.com/fastai/fastai/tree/master/fastai/metrics.py#L354" class="source_link" style="float:right">[source]</a></h3><blockquote><p><code>JaccardCoeff</code>(<strong><code>axis</code></strong>=<em><code>1</code></em>) :: <a href="/metrics.html#Dice"><code>Dice</code></a></p>
 </blockquote>
-<p>Implemetation of the jaccard coefficient that is lighter in RAM</p>
+<p>Implementation of the Jaccard coefficient that is lighter in RAM</p>
 
 </div>
 
