@@ -54,7 +54,51 @@ nb_path: "nbs/dev-setup.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First, you'll need to set up <code>ssh</code> access to GitHub, if you haven't already. To do so, follow <a href="https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account">these steps</a>. Once you've created an ssh key (generally by running <code>ssh-keygen</code>), you can copy the contents of your <code>.~/ssh/id_rsa.pub</code> file and paste them into GitHub by clicking "New SSH Key" on <a href="https://github.com/settings/keys">this page</a>.</p>
+<p>Install <code>fastai</code>, <code>gh</code>, and <code>nbdev</code> (this also checks you have the latest versions, if they're already installed):</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">c</span> <span class="n">fastai</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> <span class="o">-</span><span class="n">c</span> <span class="n">anaconda</span> <span class="n">anaconda</span> <span class="n">fastai</span> <span class="n">gh</span> <span class="n">nbdev</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>NB</strong>: if you're using miniconda instead of Anaconda, remove <code>-c anaconda anaconda</code> from the above command.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You'll need to set up <code>ssh</code> access to GitHub, if you haven't already. To do so, follow <a href="https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account">these steps</a>. Once you've created an ssh key (generally by running <code>ssh-keygen</code>), you can copy the contents of your <code>.~/ssh/id_rsa.pub</code> file and paste them into GitHub by clicking "New SSH Key" on <a href="https://github.com/settings/keys">this page</a>.</p>
 <p>Once that's working, we need to get a <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">personal access token</a> to allow <code>gh</code> to connect to GitHub. To do so, <a href="https://github.com/settings/tokens/new">click here</a> and enter "gh" in the "Note" section, and click the <code>repo</code>, <code>read:discussion</code>, and <code>read:org</code> checkboxes (note that <code>gh</code> can do this automatically for you, but it only works conveniently if you're running the code on your local machine; most fastai developers are probably using a remote GPU server, such as Paperspace, AWS, or GCP, so we show the approach below because it works for everyone).</p>
 
 </div>
@@ -154,50 +198,6 @@ nb_path: "nbs/dev-setup.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Install <code>fastai</code>, <code>gh</code>, and <code>nbdev</code> (this also checks you have the latest versions, if they're already installed):</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">c</span> <span class="n">fastai</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> <span class="o">-</span><span class="n">c</span> <span class="n">anaconda</span> <span class="n">anaconda</span> <span class="n">fastai</span> <span class="n">gh</span> <span class="n">nbdev</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre></pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>NB</strong>: if you're using miniconda instead of Anaconda, remove <code>-c anaconda anaconda</code> from the above command.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Set-up-fastcore">Set up <code>fastcore</code><a class="anchor-link" href="#Set-up-fastcore"> </a></h3>
@@ -376,9 +376,6 @@ Success: hooks are installed and repo&#39;s .gitconfig is now trusted
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
 <span class="n">gh</span> <span class="n">repo</span> <span class="n">clone</span> <span class="n">fastai</span><span class="o">/</span><span class="n">fastai</span>
 <span class="n">cd</span> <span class="n">fastai</span>
-<span class="n">git</span> <span class="n">submodule</span> <span class="n">init</span>
-<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span>
-<span class="n">git</span> <span class="n">pull</span>
 </pre></div>
 
     </div>
@@ -503,6 +500,37 @@ Success: hooks are installed and repo&#39;s .gitconfig is now trusted
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Submodules">Submodules<a class="anchor-link" href="#Submodules"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If the repo you are cloning has any submodules (fastai has <a href="https://fastcore.fast.ai/foundation#docs"><code>docs</code></a> as a submodule), initialize them too:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
